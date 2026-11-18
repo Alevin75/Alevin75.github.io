@@ -1,0 +1,52 @@
+# Новости для газеты «ОСТРОВ» (полоса «В МИРЕ»).
+#
+# Раз в час забирает ленту Lenta.ru, оставляет спокойные рубрики и обновляет
+# файл news/world.json в этом же репозитории. Приложение читает этот файл со
+# своего домена — поэтому в браузере нет проблемы CORS, и новости грузятся
+# даже при выключенном компьютере владельца.
+#
+# Ручной запуск: вкладка Actions → «Новости для газеты» → Run workflow.
+
+name: Новости для газеты
+
+on:
+  schedule:
+    # каждый час в 00 минут по UTC (по Москве — тот же час)
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+# без этого права шаг с git push не сможет записать файл
+permissions:
+  contents: write
+
+# два запуска одновременно не нужны
+concurrency:
+  group: news-hourly
+  cancel-in-progress: false
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Получить репозиторий
+        uses: actions/checkout@v4
+
+      - name: Подготовить Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Забрать новости в news/world.json
+        run: python .github/scripts/fetch_news.py
+
+      - name: Закоммитить и выложить
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news/world.json
+          if git diff --staged --quiet; then
+            echo "изменений нет — новости те же"
+          else
+            git commit -m "Новости газеты: $(date -u '+%d.%m.%Y %H:%M') UTC"
+            git push
+          fi
