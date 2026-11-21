@@ -1,14 +1,161 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-21T16:40:29.667200+00:00",
+ "updated": "2026-11-21T22:05:26.643869+00:00",
  "count": 25,
  "items": [
+  {
+   "id": "manchester-siti-ne-smog-obygrat-fulhem-doma",
+   "title": "«Манчестер Сити» не смог обыграть «Фулхэм» дома",
+   "link": "https://lenta.ru/news/2026/11/22/manchester-siti-ne-smog-obygrat-fulhem-doma/",
+   "category": "Спорт",
+   "date": "2026-11-21T21:58:22+00:00"
+  },
+  {
+   "id": "gaziev-proigral-teysheyre-na-turnire-ufc-v-dohe",
+   "title": "Газиев проиграл Тейшейре на турнире UFC в Дохе",
+   "link": "https://lenta.ru/news/2026/11/22/gaziev-proigral-teysheyre-na-turnire-ufc-v-dohe/",
+   "category": "Спорт",
+   "date": "2026-11-21T21:49:04+00:00"
+  },
+  {
+   "id": "kirichenko-vydvinul-usloviya-vozvrascheniya-rossii-v-mirovoy-hokkey",
+   "title": "Кириченко выдвинул условия возвращения России в мировой хоккей",
+   "link": "https://lenta.ru/news/2026/11/22/kirichenko-vydvinul-usloviya-vozvrascheniya-rossii-v-mirovoy-hokkey/",
+   "category": "Спорт",
+   "date": "2026-11-21T21:43:07+00:00"
+  },
+  {
+   "id": "zenit-proigral-chetyre-matcha-za-pervyy-krug-rpl-vpervye-s-2009-goda",
+   "title": "«Зенит» проиграл четыре матча за первый круг РПЛ впервые с 2009 года",
+   "link": "https://lenta.ru/news/2026/11/22/zenit-proigral-chetyre-matcha-za-pervyy-krug-rpl-vpervye-s-2009-goda/",
+   "category": "Спорт",
+   "date": "2026-11-21T21:38:38+00:00"
+  },
+  {
+   "id": "medvedev-ne-vyshel-v-final-itogovogo-turnira-atr",
+   "title": "Медведев не вышел в финал Итогового турнира АТР",
+   "link": "https://lenta.ru/news/2026/11/22/medvedev-ne-vyshel-v-final-itogovogo-turnira-atr/",
+   "category": "Спорт",
+   "date": "2026-11-21T21:29:33+00:00"
+  },
+  {
+   "id": "finlyandiya-ob-yavila-opasnym-dlya-poletov-uchastok-nad-finskim-zalivom",
+   "title": "Финляндия объявила опасным для полетов участок над Финским заливом",
+   "link": "https://lenta.ru/news/2026/11/22/finlyandiya-ob-yavila-opasnym-dlya-poletov-uchastok-nad-finskim-zalivom/",
+   "category": "Путешествия",
+   "date": "2026-11-21T21:02:51+00:00"
+  },
+  {
+   "id": "long-kndr",
+   "title": "«Был шок от черной икры и фуа-гра». Россияне побывали в гастротуре в Северной Корее. Чем кормили в самых закрытых ресторанах мира?",
+   "link": "https://lenta.ru/news/2026/11/22/long-kndr/",
+   "category": "Путешествия",
+   "date": "2026-11-21T21:01:27+00:00"
+  },
+  {
+   "id": "v-odnoy-evropeyskoy-stolitse-otkrylsya-pervyy-festival-rossiyskogo-kino",
+   "title": "В одной европейской столице открылся первый Фестиваль российского кино",
+   "link": "https://lenta.ru/news/2026/11/21/v-odnoy-evropeyskoy-stolitse-otkrylsya-pervyy-festival-rossiyskogo-kino/",
+   "category": "Культура",
+   "date": "2026-11-21T20:46:00+00:00"
+  },
+  {
+   "id": "onischenko-sdelal-zayavlenie-pro-rasprostranenie-superbakterii",
+   "title": "Онищенко сделал заявление о распространении супербактерии",
+   "link": "https://lenta.ru/news/2026/11/21/onischenko-sdelal-zayavlenie-pro-rasprostranenie-superbakterii/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T20:16:00+00:00"
+  },
+  {
+   "id": "sevilya-i-betis-pomirilis-pered-ocherednym-derbi",
+   "title": "«Севилья» и «Бетис» помирились перед очередным дерби",
+   "link": "https://lenta.ru/news/2026/11/21/sevilya-i-betis-pomirilis-pered-ocherednym-derbi/",
+   "category": "Спорт",
+   "date": "2026-11-21T20:09:00+00:00"
+  },
+  {
+   "id": "eks-figurist-odnoy-frazoy-otreagiroval-na-nedopusk-rossiyan-na-evropeyskie-turniry",
+   "title": "Экс-фигурист одной фразой отреагировал на недопуск россиян на европейские турниры",
+   "link": "https://lenta.ru/news/2026/11/21/eks-figurist-odnoy-frazoy-otreagiroval-na-nedopusk-rossiyan-na-evropeyskie-turniry/",
+   "category": "Спорт",
+   "date": "2026-11-21T20:08:00+00:00"
+  },
+  {
+   "id": "koksharov-poluchil-perelom-nogi-i-propustit-ostatok-sezona",
+   "title": "Кокшаров получил перелом ноги и пропустит остаток сезона",
+   "link": "https://lenta.ru/news/2026/11/21/koksharov-poluchil-perelom-nogi-i-propustit-ostatok-sezona/",
+   "category": "Спорт",
+   "date": "2026-11-21T20:04:46+00:00"
+  },
+  {
+   "id": "ukraina-stolknetsya-s-trudnostyami-v-proizvodstve-dronov-dlya-vsu",
+   "title": "Украина столкнется с трудностями в производстве дронов для ВСУ",
+   "link": "https://lenta.ru/news/2026/11/21/ukraina-stolknetsya-s-trudnostyami-v-proizvodstve-dronov-dlya-vsu/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-21T19:53:00+00:00"
+  },
+  {
+   "id": "guberniev-sdelal-novoe-zayavlenie-ob-otstranenii-rossiyskih-sportsmenov",
+   "title": "Губерниев сделал новое заявление об отстранении российских спортсменов",
+   "link": "https://lenta.ru/news/2026/11/21/guberniev-sdelal-novoe-zayavlenie-ob-otstranenii-rossiyskih-sportsmenov/",
+   "category": "Спорт",
+   "date": "2026-11-21T19:33:00+00:00"
+  },
+  {
+   "id": "tsska-ustupil-doma-ahmatu-v-matche-15-go-tura-rpl",
+   "title": "ЦСКА уступил дома «Ахмату» в матче 15-го тура РПЛ",
+   "link": "https://lenta.ru/news/2026/11/21/tsska-ustupil-doma-ahmatu-v-matche-15-go-tura-rpl/",
+   "category": "Спорт",
+   "date": "2026-11-21T18:46:00+00:00"
+  },
+  {
+   "id": "v-voz-nazvali-luchshiy-sposob-zaschity-ot-grippa",
+   "title": "В ВОЗ назвали лучший способ защиты от гриппа",
+   "link": "https://lenta.ru/news/2026/11/21/v-voz-nazvali-luchshiy-sposob-zaschity-ot-grippa/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T18:37:00+00:00"
+  },
+  {
+   "id": "rossiyskih-basketbolistov-snova-otstranili-ot-evropeyskih-sorevnovaniy",
+   "title": "Российских баскетболистов снова отстранили от европейских соревнований",
+   "link": "https://lenta.ru/news/2026/11/21/rossiyskih-basketbolistov-snova-otstranili-ot-evropeyskih-sorevnovaniy/",
+   "category": "Спорт",
+   "date": "2026-11-21T18:33:00+00:00"
+  },
+  {
+   "id": "trenera-komandy-batrakova-udalili-posle-matcha-s-samsunsporom",
+   "title": "Тренера команды Батракова удалили после матча с «Самсунспором»",
+   "link": "https://lenta.ru/news/2026/11/21/trenera-komandy-batrakova-udalili-posle-matcha-s-samsunsporom/",
+   "category": "Спорт",
+   "date": "2026-11-21T17:52:54+00:00"
+  },
+  {
+   "id": "zenit-obygral-mba-v-edinoy-lige-vtb",
+   "title": "«Зенит» обыграл МБА в Единой лиге ВТБ",
+   "link": "https://lenta.ru/news/2026/11/21/zenit-obygral-mba-v-edinoy-lige-vtb/",
+   "category": "Спорт",
+   "date": "2026-11-21T17:15:00+00:00"
+  },
+  {
+   "id": "v-rossiyskom-futbolnom-klube-rasskazali-o-hode-dela-po-snyatiyu-transfernogo-bana",
+   "title": "В российском футбольном клубе рассказали о ходе дела по снятию трансферного бана",
+   "link": "https://lenta.ru/news/2026/11/21/v-rossiyskom-futbolnom-klube-rasskazali-o-hode-dela-po-snyatiyu-transfernogo-bana/",
+   "category": "Спорт",
+   "date": "2026-11-21T17:13:57+00:00"
+  },
+  {
+   "id": "fil-dopustila-desyat-rossiyskih-sanochnikov-v-neytralnom-statuse",
+   "title": "FIL допустила десять российских саночников в нейтральном статусе",
+   "link": "https://lenta.ru/news/2026/11/21/fil-dopustila-desyat-rossiyskih-sanochnikov-v-neytralnom-statuse/",
+   "category": "Спорт",
+   "date": "2026-11-21T16:41:00+00:00"
+  },
   {
    "id": "rubin-obygral-zenit-v-matche-15-go-tura-rpl",
    "title": "«Рубин» обыграл «Зенит» в матче 15-го тура РПЛ",
    "link": "https://lenta.ru/news/2026/11/21/rubin-obygral-zenit-v-matche-15-go-tura-rpl/",
    "category": "Спорт",
-   "date": "2026-11-21T16:34:57+00:00"
+   "date": "2026-11-21T16:34:00+00:00"
   },
   {
    "id": "filatov-pereizbran-prezidentom-federatsii-shahmat-rossii",
@@ -30,153 +177,6 @@
    "link": "https://lenta.ru/news/2026/11/21/fakel-obygral-akron-v-bolshinstve/",
    "category": "Спорт",
    "date": "2026-11-21T16:11:00+00:00"
-  },
-  {
-   "id": "byvshiy-glavnyy-trener-sbornoy-rossii-porazilsya-kolichestvu-podpischikov-batrakova-v-sotssetyah",
-   "title": "Бывший главный тренер сборной России поразился количеству подписчиков Батракова в соцсетях",
-   "link": "https://lenta.ru/news/2026/11/21/byvshiy-glavnyy-trener-sbornoy-rossii-porazilsya-kolichestvu-podpischikov-batrakova-v-sotssetyah/",
-   "category": "Спорт",
-   "date": "2026-11-21T15:46:47+00:00"
-  },
-  {
-   "id": "polsha-ne-dopustila-rossiyskih-figuristov-k-turniru",
-   "title": "Польша не допустила российских фигуристов к турниру",
-   "link": "https://lenta.ru/news/2026/11/21/polsha-ne-dopustila-rossiyskih-figuristov-k-turniru/",
-   "category": "Спорт",
-   "date": "2026-11-21T15:12:00+00:00"
-  },
-  {
-   "id": "shimada-vyigrala-etap-gran-pri-v-finlyandii",
-   "title": "Шимада выиграла этап Гран-при ISU в Финляндии",
-   "link": "https://lenta.ru/news/2026/11/21/shimada-vyigrala-etap-gran-pri-v-finlyandii/",
-   "category": "Спорт",
-   "date": "2026-11-21T15:10:00+00:00"
-  },
-  {
-   "id": "televizory-stali-lomatsya-posle-zapuska-gta-vi",
-   "title": "Телевизоры стали ломаться после запуска GTA VI",
-   "link": "https://lenta.ru/news/2026/11/21/televizory-stali-lomatsya-posle-zapuska-gta-vi/",
-   "category": "Наука и техника",
-   "date": "2026-11-21T14:58:48+00:00"
-  },
-  {
-   "id": "ufc-ob-yavil-programmu-turnira-v-dohe",
-   "title": "UFC объявил программу турнира в Дохе",
-   "link": "https://lenta.ru/news/2026/11/21/ufc-ob-yavil-programmu-turnira-v-dohe/",
-   "category": "Спорт",
-   "date": "2026-11-21T14:58:14+00:00"
-  },
-  {
-   "id": "latsio-primet-lechche-v-dvenadtsatom-ture-serii-a",
-   "title": "«Лацио» примет «Лечче» в двенадцатом туре Серии А",
-   "link": "https://lenta.ru/news/2026/11/21/latsio-primet-lechche-v-dvenadtsatom-ture-serii-a/",
-   "category": "Спорт",
-   "date": "2026-11-21T14:56:00+00:00"
-  },
-  {
-   "id": "ignatova-popala-v-final-serii-turnirov-gran-pri",
-   "title": "Игнатова попала в финал серии турниров Гран-при",
-   "link": "https://lenta.ru/news/2026/11/21/ignatova-popala-v-final-serii-turnirov-gran-pri/",
-   "category": "Спорт",
-   "date": "2026-11-21T14:45:19+00:00"
-  },
-  {
-   "id": "evropu-ulichili-v-bezrazlichii-k-sudbe-ukrainy",
-   "title": "Европу уличили в безразличии к судьбе Украины",
-   "link": "https://lenta.ru/news/2026/11/21/evropu-ulichili-v-bezrazlichii-k-sudbe-ukrainy/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-21T14:44:00+00:00"
-  },
-  {
-   "id": "narkolog-opredelila-glavnyy-priznak-alkogolizma",
-   "title": "Нарколог определила главный признак алкоголизма",
-   "link": "https://lenta.ru/news/2026/11/21/narkolog-opredelila-glavnyy-priznak-alkogolizma/",
-   "category": "Забота о себе",
-   "date": "2026-11-21T14:31:00+00:00"
-  },
-  {
-   "id": "rossiyanin-opisal-poezdku-v-nepal-frazoy-k-vecheru-litso-hochetsya-sdat-v-himchistku",
-   "title": "Россиянин описал поездку в Непал фразой «к вечеру лицо хочется сдать в химчистку»",
-   "link": "https://lenta.ru/news/2026/11/21/rossiyanin-opisal-poezdku-v-nepal-frazoy-k-vecheru-litso-hochetsya-sdat-v-himchistku/",
-   "category": "Путешествия",
-   "date": "2026-11-21T14:30:00+00:00"
-  },
-  {
-   "id": "olimpiyskaya-chempionka-otsenila-obraschenie-finlyandii-k-stranam-es-iz-za-rossiyskih-atletov",
-   "title": "Олимпийская чемпионка оценила обращение Финляндии к странам ЕС из-за российских атлетов",
-   "link": "https://lenta.ru/news/2026/11/21/olimpiyskaya-chempionka-otsenila-obraschenie-finlyandii-k-stranam-es-iz-za-rossiyskih-atletov/",
-   "category": "Спорт",
-   "date": "2026-11-21T14:08:00+00:00"
-  },
-  {
-   "id": "denver-obygral-hyuston-v-matche-regulyarnogo-sezona-nba",
-   "title": "«Денвер» обыграл «Хьюстон» в матче регулярного сезона НБА",
-   "link": "https://lenta.ru/news/2026/11/21/denver-obygral-hyuston-v-matche-regulyarnogo-sezona-nba/",
-   "category": "Спорт",
-   "date": "2026-11-21T14:07:00+00:00"
-  },
-  {
-   "id": "ronaldu-ne-realizoval-penalti-v-matche-s-al-ahli",
-   "title": "Роналду не реализовал пенальти в матче с «Аль-Ахли»",
-   "link": "https://lenta.ru/news/2026/11/21/ronaldu-ne-realizoval-penalti-v-matche-s-al-ahli/",
-   "category": "Спорт",
-   "date": "2026-11-21T13:58:00+00:00"
-  },
-  {
-   "id": "v-rossii-dopustili-blokirovku-esche-odnogo-populyarnogo-inostrannogo-servisa",
-   "title": "В России допустили блокировку еще одного популярного иностранного сервиса",
-   "link": "https://lenta.ru/news/2026/11/21/v-rossii-dopustili-blokirovku-esche-odnogo-populyarnogo-inostrannogo-servisa/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-21T13:54:00+00:00"
-  },
-  {
-   "id": "v-shveytsarii-otkryli-ugolovnoe-delo-protiv-hokkeista-za-draku-vo-vremya-matcha",
-   "title": "В Швейцарии открыли уголовное дело против хоккеиста за драку во время матча",
-   "link": "https://lenta.ru/news/2026/11/21/v-shveytsarii-otkryli-ugolovnoe-delo-protiv-hokkeista-za-draku-vo-vremya-matcha/",
-   "category": "Спорт",
-   "date": "2026-11-21T13:41:00+00:00"
-  },
-  {
-   "id": "rossiyskie-uchenye-pobedili-opasnuyu-evropeyskuyu-bakteriyu",
-   "title": "Российские ученые победили опасную европейскую бактерию",
-   "link": "https://lenta.ru/news/2026/11/21/rossiyskie-uchenye-pobedili-opasnuyu-evropeyskuyu-bakteriyu/",
-   "category": "Наука и техника",
-   "date": "2026-11-21T13:37:00+00:00"
-  },
-  {
-   "id": "zvezda-filma-o-maykle-dzheksone-rasskazal-o-potere-golosa",
-   "title": "Звезда фильма о Майкле Джексоне рассказал о потере голоса",
-   "link": "https://lenta.ru/news/2026/11/21/zvezda-filma-o-maykle-dzheksone-rasskazal-o-potere-golosa/",
-   "category": "Культура",
-   "date": "2026-11-21T13:35:00+00:00"
-  },
-  {
-   "id": "fulhem-povel-v-matche-s-manchester-siti-v-apl",
-   "title": "«Фулхэм» повел в матче с «Манчестер Сити» в АПЛ",
-   "link": "https://lenta.ru/news/2026/11/21/fulhem-povel-v-matche-s-manchester-siti-v-apl/",
-   "category": "Спорт",
-   "date": "2026-11-21T13:31:01+00:00"
-  },
-  {
-   "id": "zhurnalist-bouz-napomnil-mertsu-o-trebovaniyah-nemtsev-otpravit-ego-v-otstavku",
-   "title": "Журналист Боуз напомнил Мерцу о требованиях немцев отправить его в отставку",
-   "link": "https://lenta.ru/news/2026/11/21/zhurnalist-bouz-napomnil-mertsu-o-trebovaniyah-nemtsev-otpravit-ego-v-otstavku/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-21T13:13:00+00:00"
-  },
-  {
-   "id": "zvezda-seriala-schastlivy-vmeste-rasskazala-o-perezhitom-predatelstve",
-   "title": "Звезда сериала «Счастливы вместе» рассказала о пережитом предательстве",
-   "link": "https://lenta.ru/news/2026/11/21/zvezda-seriala-schastlivy-vmeste-rasskazala-o-perezhitom-predatelstve/",
-   "category": "Культура",
-   "date": "2026-11-21T13:09:00+00:00"
-  },
-  {
-   "id": "veroyatnost-vyhoda-inoplanetyan-na-svyaz-s-zemley-otsenili",
-   "title": "Вероятность выхода инопланетян на связь с Землей оценили",
-   "link": "https://lenta.ru/news/2026/11/21/veroyatnost-vyhoda-inoplanetyan-na-svyaz-s-zemley-otsenili/",
-   "category": "Наука и техника",
-   "date": "2026-11-21T12:44:00+00:00"
   }
  ]
 }
