@@ -1,182 +1,182 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-21T08:06:58.471204+00:00",
+ "updated": "2026-11-21T16:40:29.667200+00:00",
  "count": 25,
  "items": [
   {
-   "id": "nazvany-opasnye-dlya-domashnih-pitomtsev-rasteniya",
-   "title": "Названы опасные для домашних питомцев растения",
-   "link": "https://lenta.ru/news/2026/11/21/nazvany-opasnye-dlya-domashnih-pitomtsev-rasteniya/",
-   "category": "Забота о себе",
-   "date": "2026-11-21T07:52:00+00:00"
-  },
-  {
-   "id": "na-ukraine-ispugalis-otsutstviya-boykota-rossii-so-storony-veduschey-hokkeynoy-strany",
-   "title": "На Украине испугались отсутствия бойкота России со стороны ведущей хоккейной страны",
-   "link": "https://lenta.ru/news/2026/11/21/na-ukraine-ispugalis-otsutstviya-boykota-rossii-so-storony-veduschey-hokkeynoy-strany/",
+   "id": "rubin-obygral-zenit-v-matche-15-go-tura-rpl",
+   "title": "«Рубин» обыграл «Зенит» в матче 15-го тура РПЛ",
+   "link": "https://lenta.ru/news/2026/11/21/rubin-obygral-zenit-v-matche-15-go-tura-rpl/",
    "category": "Спорт",
-   "date": "2026-11-21T07:48:00+00:00"
+   "date": "2026-11-21T16:34:57+00:00"
   },
   {
-   "id": "nazvan-samyy-populyarnyy-gorod-zolotogo-koltsa-na-novyy-god",
-   "title": "Назван самый популярный город Золотого кольца на Новый год",
-   "link": "https://lenta.ru/news/2026/11/21/nazvan-samyy-populyarnyy-gorod-zolotogo-koltsa-na-novyy-god/",
+   "id": "filatov-pereizbran-prezidentom-federatsii-shahmat-rossii",
+   "title": "Филатов переизбран президентом Федерации шахмат России",
+   "link": "https://lenta.ru/news/2026/11/21/filatov-pereizbran-prezidentom-federatsii-shahmat-rossii/",
+   "category": "Спорт",
+   "date": "2026-11-21T16:18:00+00:00"
+  },
+  {
+   "id": "guberniev-otsenil-veroyatnost-perenosa-chm-po-figurnomu-kataniyu-iz-finlyandii",
+   "title": "Губерниев оценил вероятность переноса ЧМ по фигурному катанию из Финляндии",
+   "link": "https://lenta.ru/news/2026/11/21/guberniev-otsenil-veroyatnost-perenosa-chm-po-figurnomu-kataniyu-iz-finlyandii/",
+   "category": "Спорт",
+   "date": "2026-11-21T16:15:04+00:00"
+  },
+  {
+   "id": "fakel-obygral-akron-v-bolshinstve",
+   "title": "«Факел» обыграл «Акрон» в большинстве",
+   "link": "https://lenta.ru/news/2026/11/21/fakel-obygral-akron-v-bolshinstve/",
+   "category": "Спорт",
+   "date": "2026-11-21T16:11:00+00:00"
+  },
+  {
+   "id": "byvshiy-glavnyy-trener-sbornoy-rossii-porazilsya-kolichestvu-podpischikov-batrakova-v-sotssetyah",
+   "title": "Бывший главный тренер сборной России поразился количеству подписчиков Батракова в соцсетях",
+   "link": "https://lenta.ru/news/2026/11/21/byvshiy-glavnyy-trener-sbornoy-rossii-porazilsya-kolichestvu-podpischikov-batrakova-v-sotssetyah/",
+   "category": "Спорт",
+   "date": "2026-11-21T15:46:47+00:00"
+  },
+  {
+   "id": "polsha-ne-dopustila-rossiyskih-figuristov-k-turniru",
+   "title": "Польша не допустила российских фигуристов к турниру",
+   "link": "https://lenta.ru/news/2026/11/21/polsha-ne-dopustila-rossiyskih-figuristov-k-turniru/",
+   "category": "Спорт",
+   "date": "2026-11-21T15:12:00+00:00"
+  },
+  {
+   "id": "shimada-vyigrala-etap-gran-pri-v-finlyandii",
+   "title": "Шимада выиграла этап Гран-при ISU в Финляндии",
+   "link": "https://lenta.ru/news/2026/11/21/shimada-vyigrala-etap-gran-pri-v-finlyandii/",
+   "category": "Спорт",
+   "date": "2026-11-21T15:10:00+00:00"
+  },
+  {
+   "id": "televizory-stali-lomatsya-posle-zapuska-gta-vi",
+   "title": "Телевизоры стали ломаться после запуска GTA VI",
+   "link": "https://lenta.ru/news/2026/11/21/televizory-stali-lomatsya-posle-zapuska-gta-vi/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T14:58:48+00:00"
+  },
+  {
+   "id": "ufc-ob-yavil-programmu-turnira-v-dohe",
+   "title": "UFC объявил программу турнира в Дохе",
+   "link": "https://lenta.ru/news/2026/11/21/ufc-ob-yavil-programmu-turnira-v-dohe/",
+   "category": "Спорт",
+   "date": "2026-11-21T14:58:14+00:00"
+  },
+  {
+   "id": "latsio-primet-lechche-v-dvenadtsatom-ture-serii-a",
+   "title": "«Лацио» примет «Лечче» в двенадцатом туре Серии А",
+   "link": "https://lenta.ru/news/2026/11/21/latsio-primet-lechche-v-dvenadtsatom-ture-serii-a/",
+   "category": "Спорт",
+   "date": "2026-11-21T14:56:00+00:00"
+  },
+  {
+   "id": "ignatova-popala-v-final-serii-turnirov-gran-pri",
+   "title": "Игнатова попала в финал серии турниров Гран-при",
+   "link": "https://lenta.ru/news/2026/11/21/ignatova-popala-v-final-serii-turnirov-gran-pri/",
+   "category": "Спорт",
+   "date": "2026-11-21T14:45:19+00:00"
+  },
+  {
+   "id": "evropu-ulichili-v-bezrazlichii-k-sudbe-ukrainy",
+   "title": "Европу уличили в безразличии к судьбе Украины",
+   "link": "https://lenta.ru/news/2026/11/21/evropu-ulichili-v-bezrazlichii-k-sudbe-ukrainy/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-21T14:44:00+00:00"
+  },
+  {
+   "id": "narkolog-opredelila-glavnyy-priznak-alkogolizma",
+   "title": "Нарколог определила главный признак алкоголизма",
+   "link": "https://lenta.ru/news/2026/11/21/narkolog-opredelila-glavnyy-priznak-alkogolizma/",
+   "category": "Забота о себе",
+   "date": "2026-11-21T14:31:00+00:00"
+  },
+  {
+   "id": "rossiyanin-opisal-poezdku-v-nepal-frazoy-k-vecheru-litso-hochetsya-sdat-v-himchistku",
+   "title": "Россиянин описал поездку в Непал фразой «к вечеру лицо хочется сдать в химчистку»",
+   "link": "https://lenta.ru/news/2026/11/21/rossiyanin-opisal-poezdku-v-nepal-frazoy-k-vecheru-litso-hochetsya-sdat-v-himchistku/",
    "category": "Путешествия",
-   "date": "2026-11-21T07:44:00+00:00"
+   "date": "2026-11-21T14:30:00+00:00"
   },
   {
-   "id": "opredelena-norma-nochnyh-pohodov-v-tualet",
-   "title": "Определена норма ночных походов в туалет",
-   "link": "https://lenta.ru/news/2026/11/21/opredelena-norma-nochnyh-pohodov-v-tualet/",
-   "category": "Забота о себе",
-   "date": "2026-11-21T07:30:00+00:00"
+   "id": "olimpiyskaya-chempionka-otsenila-obraschenie-finlyandii-k-stranam-es-iz-za-rossiyskih-atletov",
+   "title": "Олимпийская чемпионка оценила обращение Финляндии к странам ЕС из-за российских атлетов",
+   "link": "https://lenta.ru/news/2026/11/21/olimpiyskaya-chempionka-otsenila-obraschenie-finlyandii-k-stranam-es-iz-za-rossiyskih-atletov/",
+   "category": "Спорт",
+   "date": "2026-11-21T14:08:00+00:00"
   },
   {
-   "id": "kosmonavtov-nazvali-perenoschikami-inoplanetnyh-virusov",
-   "title": "Космонавтов назвали переносчиками инопланетных вирусов",
-   "link": "https://lenta.ru/news/2026/11/21/kosmonavtov-nazvali-perenoschikami-inoplanetnyh-virusov/",
-   "category": "Наука и техника",
-   "date": "2026-11-21T07:00:00+00:00"
+   "id": "denver-obygral-hyuston-v-matche-regulyarnogo-sezona-nba",
+   "title": "«Денвер» обыграл «Хьюстон» в матче регулярного сезона НБА",
+   "link": "https://lenta.ru/news/2026/11/21/denver-obygral-hyuston-v-matche-regulyarnogo-sezona-nba/",
+   "category": "Спорт",
+   "date": "2026-11-21T14:07:00+00:00"
   },
   {
-   "id": "hakery-vzlomali-fbr",
-   "title": "Хакеры взломали ФБР",
-   "link": "https://lenta.ru/news/2026/11/21/hakery-vzlomali-fbr/",
+   "id": "ronaldu-ne-realizoval-penalti-v-matche-s-al-ahli",
+   "title": "Роналду не реализовал пенальти в матче с «Аль-Ахли»",
+   "link": "https://lenta.ru/news/2026/11/21/ronaldu-ne-realizoval-penalti-v-matche-s-al-ahli/",
+   "category": "Спорт",
+   "date": "2026-11-21T13:58:00+00:00"
+  },
+  {
+   "id": "v-rossii-dopustili-blokirovku-esche-odnogo-populyarnogo-inostrannogo-servisa",
+   "title": "В России допустили блокировку еще одного популярного иностранного сервиса",
+   "link": "https://lenta.ru/news/2026/11/21/v-rossii-dopustili-blokirovku-esche-odnogo-populyarnogo-inostrannogo-servisa/",
    "category": "Интернет и СМИ",
-   "date": "2026-11-21T06:51:51+00:00"
+   "date": "2026-11-21T13:54:00+00:00"
   },
   {
-   "id": "esche-odna-mezhdunarodnaya-federatsiya-dopustila-rossiyan-do-turnirov-s-flagom-i-gimnom",
-   "title": "Еще одна международная федерация допустила россиян до турниров с флагом и гимном",
-   "link": "https://lenta.ru/news/2026/11/21/esche-odna-mezhdunarodnaya-federatsiya-dopustila-rossiyan-do-turnirov-s-flagom-i-gimnom/",
+   "id": "v-shveytsarii-otkryli-ugolovnoe-delo-protiv-hokkeista-za-draku-vo-vremya-matcha",
+   "title": "В Швейцарии открыли уголовное дело против хоккеиста за драку во время матча",
+   "link": "https://lenta.ru/news/2026/11/21/v-shveytsarii-otkryli-ugolovnoe-delo-protiv-hokkeista-za-draku-vo-vremya-matcha/",
    "category": "Спорт",
-   "date": "2026-11-21T06:46:01+00:00"
+   "date": "2026-11-21T13:41:00+00:00"
   },
   {
-   "id": "desyatki-priehavshih-na-kurort-rossiyan-ostalis-bez-bagazha",
-   "title": "Десятки приехавших на курорт россиян остались без багажа",
-   "link": "https://lenta.ru/news/2026/11/21/desyatki-priehavshih-na-kurort-rossiyan-ostalis-bez-bagazha/",
-   "category": "Путешествия",
-   "date": "2026-11-21T06:41:13+00:00"
-  },
-  {
-   "id": "varlamov-nashel-udivitelnyy-tualet-v-norvegii",
-   "title": "Варламов нашел удивительный туалет в Норвегии",
-   "link": "https://lenta.ru/news/2026/11/21/varlamov-nashel-udivitelnyy-tualet-v-norvegii/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-21T06:30:56+00:00"
-  },
-  {
-   "id": "nazvan-prostoy-sposob-zamedlit-starenie-mozga",
-   "title": "Назван простой способ замедлить старение мозга",
-   "link": "https://lenta.ru/news/2026/11/21/nazvan-prostoy-sposob-zamedlit-starenie-mozga/",
-   "category": "Спорт",
-   "date": "2026-11-21T05:03:58+00:00"
-  },
-  {
-   "id": "evropeyskih-liderov-na-vstreche-koalitsii-zhelayuschih-opisali-slovami-kak-deti",
-   "title": "Европейских лидеров на встрече «коалиции желающих» описали словами «как дети»",
-   "link": "https://lenta.ru/news/2026/11/21/evropeyskih-liderov-na-vstreche-koalitsii-zhelayuschih-opisali-slovami-kak-deti/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-21T04:32:45+00:00"
-  },
-  {
-   "id": "opasnost-resheniya-ne-ubirat-na-noch-goryachiy-sup-s-plity-v-holodilnik-otsenili",
-   "title": "Опасность решения не убирать на ночь горячий суп с плиты в холодильник оценили",
-   "link": "https://lenta.ru/news/2026/11/21/opasnost-resheniya-ne-ubirat-na-noch-goryachiy-sup-s-plity-v-holodilnik-otsenili/",
-   "category": "Забота о себе",
-   "date": "2026-11-21T04:07:28+00:00"
-  },
-  {
-   "id": "vrach-rasskazal-o-samyh-rasprostranennyh-mifah-ob-alkogole",
-   "title": "Врач рассказал о самых распространенных мифах об алкоголе",
-   "link": "https://lenta.ru/news/2026/11/21/vrach-rasskazal-o-samyh-rasprostranennyh-mifah-ob-alkogole/",
-   "category": "Забота о себе",
-   "date": "2026-11-21T03:50:25+00:00"
-  },
-  {
-   "id": "long-gta",
-   "title": "Ревность, опоздания и рекорды. Чем запомнились первые сутки продаж GTA VI?",
-   "link": "https://lenta.ru/news/2026/11/21/long-gta/",
+   "id": "rossiyskie-uchenye-pobedili-opasnuyu-evropeyskuyu-bakteriyu",
+   "title": "Российские ученые победили опасную европейскую бактерию",
+   "link": "https://lenta.ru/news/2026/11/21/rossiyskie-uchenye-pobedili-opasnuyu-evropeyskuyu-bakteriyu/",
    "category": "Наука и техника",
-   "date": "2026-11-21T03:39:00+00:00"
+   "date": "2026-11-21T13:37:00+00:00"
   },
   {
-   "id": "chehol",
-   "title": "Раскрыта причина быстрой разрядки смартфона на холоде",
-   "link": "https://lenta.ru/news/2026/11/21/chehol/",
-   "category": "Наука и техника",
-   "date": "2026-11-21T00:34:00+00:00"
-  },
-  {
-   "id": "vrach-predupredil-o-problemah-s-podzheludochnoy-iz-za-zameny-priemov-pischi-odnim-produktom",
-   "title": "Врач предупредил о проблемах с поджелудочной из-за замены приемов пищи одним напитком",
-   "link": "https://lenta.ru/news/2026/11/21/vrach-predupredil-o-problemah-s-podzheludochnoy-iz-za-zameny-priemov-pischi-odnim-produktom/",
-   "category": "Забота о себе",
-   "date": "2026-11-20T23:56:00+00:00"
-  },
-  {
-   "id": "rossiyanam-nazvali-vyzyvayuschiy-narusheniya-serdechnogo-ritma-produkt",
-   "title": "Назван вызывающий нарушения сердечного ритма продукт",
-   "link": "https://lenta.ru/news/2026/11/21/rossiyanam-nazvali-vyzyvayuschiy-narusheniya-serdechnogo-ritma-produkt/",
-   "category": "Забота о себе",
-   "date": "2026-11-20T23:42:51+00:00"
-  },
-  {
-   "id": "kardiohirurg-rasskazal-o-neochevidnyh-priznakah-bolezney-serdtsa",
-   "title": "Кардиохирург рассказал о неочевидных признаках болезней сердца",
-   "link": "https://lenta.ru/news/2026/11/21/kardiohirurg-rasskazal-o-neochevidnyh-priznakah-bolezney-serdtsa/",
-   "category": "Забота о себе",
-   "date": "2026-11-20T21:59:00+00:00"
-  },
-  {
-   "id": "medvedev-snova-vyshel-v-polufinal-itogovogo-turnira-atr",
-   "title": "Медведев снова вышел в полуфинал Итогового турнира АТР",
-   "link": "https://lenta.ru/news/2026/11/21/medvedev-snova-vyshel-v-polufinal-itogovogo-turnira-atr/",
-   "category": "Спорт",
-   "date": "2026-11-20T21:43:36+00:00"
-  },
-  {
-   "id": "vashington-proigral-baffalo-v-matche-nhl",
-   "title": "«Вашингтон» проиграл «Баффало» в матче НХЛ",
-   "link": "https://lenta.ru/news/2026/11/20/vashington-proigral-baffalo-v-matche-nhl/",
-   "category": "Спорт",
-   "date": "2026-11-20T20:56:00+00:00"
-  },
-  {
-   "id": "melnichenko-vyigral-hibinskuyu-gonku-bolshunov-stal-vtorym",
-   "title": "Мельниченко выиграл «Хибинскую гонку»",
-   "link": "https://lenta.ru/news/2026/11/20/melnichenko-vyigral-hibinskuyu-gonku-bolshunov-stal-vtorym/",
-   "category": "Спорт",
-   "date": "2026-11-20T20:50:00+00:00"
-  },
-  {
-   "id": "nazvana-prichina-smerti-zasluzhennogo-artista-rossii-ustinova",
-   "title": "Названа причина смерти заслуженного артиста России Устинова",
-   "link": "https://lenta.ru/news/2026/11/20/nazvana-prichina-smerti-zasluzhennogo-artista-rossii-ustinova/",
+   "id": "zvezda-filma-o-maykle-dzheksone-rasskazal-o-potere-golosa",
+   "title": "Звезда фильма о Майкле Джексоне рассказал о потере голоса",
+   "link": "https://lenta.ru/news/2026/11/21/zvezda-filma-o-maykle-dzheksone-rasskazal-o-potere-golosa/",
    "category": "Культура",
-   "date": "2026-11-20T20:26:00+00:00"
+   "date": "2026-11-21T13:35:00+00:00"
   },
   {
-   "id": "komanda-rossiyskogo-futbolista-spertsyana-pobedila-komandu-ronaldu",
-   "title": "Команда российского футболиста Сперцяна победила команду Роналду",
-   "link": "https://lenta.ru/news/2026/11/20/komanda-rossiyskogo-futbolista-spertsyana-pobedila-komandu-ronaldu/",
+   "id": "fulhem-povel-v-matche-s-manchester-siti-v-apl",
+   "title": "«Фулхэм» повел в матче с «Манчестер Сити» в АПЛ",
+   "link": "https://lenta.ru/news/2026/11/21/fulhem-povel-v-matche-s-manchester-siti-v-apl/",
    "category": "Спорт",
-   "date": "2026-11-20T20:00:01+00:00"
+   "date": "2026-11-21T13:31:01+00:00"
   },
   {
-   "id": "makoley-kalkin-vernetsya-v-novuyu-chast-odin-doma",
-   "title": "Маколей Калкин вернется в новую часть «Один дома»",
-   "link": "https://lenta.ru/news/2026/11/21/makoley-kalkin-vernetsya-v-novuyu-chast-odin-doma/",
-   "category": "Культура",
-   "date": "2026-11-20T19:41:00+00:00"
-  },
-  {
-   "id": "zapreshali",
-   "title": "Вышедший на свободу российский треш-блогер рассказал о запрете есть с другими заключенными",
-   "link": "https://lenta.ru/news/2026/11/20/zapreshali/",
+   "id": "zhurnalist-bouz-napomnil-mertsu-o-trebovaniyah-nemtsev-otpravit-ego-v-otstavku",
+   "title": "Журналист Боуз напомнил Мерцу о требованиях немцев отправить его в отставку",
+   "link": "https://lenta.ru/news/2026/11/21/zhurnalist-bouz-napomnil-mertsu-o-trebovaniyah-nemtsev-otpravit-ego-v-otstavku/",
    "category": "Интернет и СМИ",
-   "date": "2026-11-20T19:15:00+00:00"
+   "date": "2026-11-21T13:13:00+00:00"
+  },
+  {
+   "id": "zvezda-seriala-schastlivy-vmeste-rasskazala-o-perezhitom-predatelstve",
+   "title": "Звезда сериала «Счастливы вместе» рассказала о пережитом предательстве",
+   "link": "https://lenta.ru/news/2026/11/21/zvezda-seriala-schastlivy-vmeste-rasskazala-o-perezhitom-predatelstve/",
+   "category": "Культура",
+   "date": "2026-11-21T13:09:00+00:00"
+  },
+  {
+   "id": "veroyatnost-vyhoda-inoplanetyan-na-svyaz-s-zemley-otsenili",
+   "title": "Вероятность выхода инопланетян на связь с Землей оценили",
+   "link": "https://lenta.ru/news/2026/11/21/veroyatnost-vyhoda-inoplanetyan-na-svyaz-s-zemley-otsenili/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T12:44:00+00:00"
   }
  ]
 }
