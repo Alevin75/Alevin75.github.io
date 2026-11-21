@@ -1,8 +1,106 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-21T00:41:54.396535+00:00",
+ "updated": "2026-11-21T08:06:58.471204+00:00",
  "count": 25,
  "items": [
+  {
+   "id": "nazvany-opasnye-dlya-domashnih-pitomtsev-rasteniya",
+   "title": "Названы опасные для домашних питомцев растения",
+   "link": "https://lenta.ru/news/2026/11/21/nazvany-opasnye-dlya-domashnih-pitomtsev-rasteniya/",
+   "category": "Забота о себе",
+   "date": "2026-11-21T07:52:00+00:00"
+  },
+  {
+   "id": "na-ukraine-ispugalis-otsutstviya-boykota-rossii-so-storony-veduschey-hokkeynoy-strany",
+   "title": "На Украине испугались отсутствия бойкота России со стороны ведущей хоккейной страны",
+   "link": "https://lenta.ru/news/2026/11/21/na-ukraine-ispugalis-otsutstviya-boykota-rossii-so-storony-veduschey-hokkeynoy-strany/",
+   "category": "Спорт",
+   "date": "2026-11-21T07:48:00+00:00"
+  },
+  {
+   "id": "nazvan-samyy-populyarnyy-gorod-zolotogo-koltsa-na-novyy-god",
+   "title": "Назван самый популярный город Золотого кольца на Новый год",
+   "link": "https://lenta.ru/news/2026/11/21/nazvan-samyy-populyarnyy-gorod-zolotogo-koltsa-na-novyy-god/",
+   "category": "Путешествия",
+   "date": "2026-11-21T07:44:00+00:00"
+  },
+  {
+   "id": "opredelena-norma-nochnyh-pohodov-v-tualet",
+   "title": "Определена норма ночных походов в туалет",
+   "link": "https://lenta.ru/news/2026/11/21/opredelena-norma-nochnyh-pohodov-v-tualet/",
+   "category": "Забота о себе",
+   "date": "2026-11-21T07:30:00+00:00"
+  },
+  {
+   "id": "kosmonavtov-nazvali-perenoschikami-inoplanetnyh-virusov",
+   "title": "Космонавтов назвали переносчиками инопланетных вирусов",
+   "link": "https://lenta.ru/news/2026/11/21/kosmonavtov-nazvali-perenoschikami-inoplanetnyh-virusov/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T07:00:00+00:00"
+  },
+  {
+   "id": "hakery-vzlomali-fbr",
+   "title": "Хакеры взломали ФБР",
+   "link": "https://lenta.ru/news/2026/11/21/hakery-vzlomali-fbr/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-21T06:51:51+00:00"
+  },
+  {
+   "id": "esche-odna-mezhdunarodnaya-federatsiya-dopustila-rossiyan-do-turnirov-s-flagom-i-gimnom",
+   "title": "Еще одна международная федерация допустила россиян до турниров с флагом и гимном",
+   "link": "https://lenta.ru/news/2026/11/21/esche-odna-mezhdunarodnaya-federatsiya-dopustila-rossiyan-do-turnirov-s-flagom-i-gimnom/",
+   "category": "Спорт",
+   "date": "2026-11-21T06:46:01+00:00"
+  },
+  {
+   "id": "desyatki-priehavshih-na-kurort-rossiyan-ostalis-bez-bagazha",
+   "title": "Десятки приехавших на курорт россиян остались без багажа",
+   "link": "https://lenta.ru/news/2026/11/21/desyatki-priehavshih-na-kurort-rossiyan-ostalis-bez-bagazha/",
+   "category": "Путешествия",
+   "date": "2026-11-21T06:41:13+00:00"
+  },
+  {
+   "id": "varlamov-nashel-udivitelnyy-tualet-v-norvegii",
+   "title": "Варламов нашел удивительный туалет в Норвегии",
+   "link": "https://lenta.ru/news/2026/11/21/varlamov-nashel-udivitelnyy-tualet-v-norvegii/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-21T06:30:56+00:00"
+  },
+  {
+   "id": "nazvan-prostoy-sposob-zamedlit-starenie-mozga",
+   "title": "Назван простой способ замедлить старение мозга",
+   "link": "https://lenta.ru/news/2026/11/21/nazvan-prostoy-sposob-zamedlit-starenie-mozga/",
+   "category": "Спорт",
+   "date": "2026-11-21T05:03:58+00:00"
+  },
+  {
+   "id": "evropeyskih-liderov-na-vstreche-koalitsii-zhelayuschih-opisali-slovami-kak-deti",
+   "title": "Европейских лидеров на встрече «коалиции желающих» описали словами «как дети»",
+   "link": "https://lenta.ru/news/2026/11/21/evropeyskih-liderov-na-vstreche-koalitsii-zhelayuschih-opisali-slovami-kak-deti/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-21T04:32:45+00:00"
+  },
+  {
+   "id": "opasnost-resheniya-ne-ubirat-na-noch-goryachiy-sup-s-plity-v-holodilnik-otsenili",
+   "title": "Опасность решения не убирать на ночь горячий суп с плиты в холодильник оценили",
+   "link": "https://lenta.ru/news/2026/11/21/opasnost-resheniya-ne-ubirat-na-noch-goryachiy-sup-s-plity-v-holodilnik-otsenili/",
+   "category": "Забота о себе",
+   "date": "2026-11-21T04:07:28+00:00"
+  },
+  {
+   "id": "vrach-rasskazal-o-samyh-rasprostranennyh-mifah-ob-alkogole",
+   "title": "Врач рассказал о самых распространенных мифах об алкоголе",
+   "link": "https://lenta.ru/news/2026/11/21/vrach-rasskazal-o-samyh-rasprostranennyh-mifah-ob-alkogole/",
+   "category": "Забота о себе",
+   "date": "2026-11-21T03:50:25+00:00"
+  },
+  {
+   "id": "long-gta",
+   "title": "Ревность, опоздания и рекорды. Чем запомнились первые сутки продаж GTA VI?",
+   "link": "https://lenta.ru/news/2026/11/21/long-gta/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T03:39:00+00:00"
+  },
   {
    "id": "chehol",
    "title": "Раскрыта причина быстрой разрядки смартфона на холоде",
@@ -79,104 +177,6 @@
    "link": "https://lenta.ru/news/2026/11/20/zapreshali/",
    "category": "Интернет и СМИ",
    "date": "2026-11-20T19:15:00+00:00"
-  },
-  {
-   "id": "umer-zasluzhennyy-artist-rossii",
-   "title": "Умер заслуженный артист России",
-   "link": "https://lenta.ru/news/2026/11/21/umer-zasluzhennyy-artist-rossii/",
-   "category": "Культура",
-   "date": "2026-11-20T19:05:00+00:00"
-  },
-  {
-   "id": "rossiyskih-figuristov-ne-pustyat-v-polshu",
-   "title": "Российских фигуристов не пустят в Польшу",
-   "link": "https://lenta.ru/news/2026/11/20/rossiyskih-figuristov-ne-pustyat-v-polshu/",
-   "category": "Спорт",
-   "date": "2026-11-20T18:41:00+00:00"
-  },
-  {
-   "id": "zvezda-kvn-vspomnila-o-nepriyatnyh-i-trudnyh-momentah-teleigry",
-   "title": "Звезда КВН вспомнила о неприятных и трудных моментах телеигры",
-   "link": "https://lenta.ru/news/2026/11/20/zvezda-kvn-vspomnila-o-nepriyatnyh-i-trudnyh-momentah-teleigry/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-20T18:15:00+00:00"
-  },
-  {
-   "id": "zaharova-odnoy-frazoy-otsenila-evropeyskie-sanktsii-v-otnoshenii-rossiyskih-sportsmenov",
-   "title": "Захарова одной фразой оценила европейские санкции в отношении российских спортсменов",
-   "link": "https://lenta.ru/news/2026/11/20/zaharova-odnoy-frazoy-otsenila-evropeyskie-sanktsii-v-otnoshenii-rossiyskih-sportsmenov/",
-   "category": "Спорт",
-   "date": "2026-11-20T18:05:00+00:00"
-  },
-  {
-   "id": "nazvany-neochevidnye-priznaki-bolezney-serdtsa",
-   "title": "Названы неочевидные признаки болезней сердца",
-   "link": "https://lenta.ru/news/2026/11/20/nazvany-neochevidnye-priznaki-bolezney-serdtsa/",
-   "category": "Забота о себе",
-   "date": "2026-11-20T18:02:29+00:00"
-  },
-  {
-   "id": "water-heater",
-   "title": "Раскрыт важный параметр домашнего водонагревателя",
-   "link": "https://lenta.ru/news/2026/11/20/water-heater/",
-   "category": "Наука и техника",
-   "date": "2026-11-20T17:56:00+00:00"
-  },
-  {
-   "id": "alkaras-prodolzhit-vystuplenie-na-itogovom-turnire-atp",
-   "title": "Алькарас продолжит выступление на Итоговом турнире ATP",
-   "link": "https://lenta.ru/news/2026/11/20/alkaras-prodolzhit-vystuplenie-na-itogovom-turnire-atp/",
-   "category": "Спорт",
-   "date": "2026-11-20T17:47:00+00:00"
-  },
-  {
-   "id": "sibir-obygrala-avtomobilist-v-matche-khl",
-   "title": "«Сибирь» обыграла «Автомобилист» в матче КХЛ",
-   "link": "https://lenta.ru/news/2026/11/20/sibir-obygrala-avtomobilist-v-matche-khl/",
-   "category": "Спорт",
-   "date": "2026-11-20T17:45:00+00:00"
-  },
-  {
-   "id": "shnayder-nominirovana-na-premiyu-proryv-goda-ot-wta",
-   "title": "Шнайдер номинирована на премию «Прорыв года» от WTA",
-   "link": "https://lenta.ru/news/2026/11/20/shnayder-nominirovana-na-premiyu-proryv-goda-ot-wta/",
-   "category": "Спорт",
-   "date": "2026-11-20T17:38:00+00:00"
-  },
-  {
-   "id": "stalo-izvestno-sostoyanie-zdorovya-batrakova",
-   "title": "Стало известно состояние здоровья Батракова",
-   "link": "https://lenta.ru/news/2026/11/20/stalo-izvestno-sostoyanie-zdorovya-batrakova/",
-   "category": "Спорт",
-   "date": "2026-11-20T17:36:32+00:00"
-  },
-  {
-   "id": "muzhchinam-nazvali-neochevidnye-priznaki-nizkogo-urovnya-testosterona",
-   "title": "Мужчинам назвали неочевидные признаки низкого уровня тестостерона",
-   "link": "https://lenta.ru/news/2026/11/20/muzhchinam-nazvali-neochevidnye-priznaki-nizkogo-urovnya-testosterona/",
-   "category": "Забота о себе",
-   "date": "2026-11-20T17:33:00+00:00"
-  },
-  {
-   "id": "zvezda-comedy-woman-vyskazalas-o-vozrozhdenii-proekta",
-   "title": "Звезда Comedy Woman высказалась о возрождении проекта",
-   "link": "https://lenta.ru/news/2026/11/20/zvezda-comedy-woman-vyskazalas-o-vozrozhdenii-proekta/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-20T17:32:00+00:00"
-  },
-  {
-   "id": "obnaruzhen-sposob-zamedlit-opasnoe-povrezhdenie-pecheni",
-   "title": "Обнаружен способ замедлить опасное повреждение печени",
-   "link": "https://lenta.ru/news/2026/11/20/obnaruzhen-sposob-zamedlit-opasnoe-povrezhdenie-pecheni/",
-   "category": "Наука и техника",
-   "date": "2026-11-20T17:31:51+00:00"
-  },
-  {
-   "id": "dzhennifer-lourens-nazvala-hudshego-po-potseluyam-aktera",
-   "title": "Дженнифер Лоуренс назвала худшего по поцелуям актера",
-   "link": "https://lenta.ru/news/2026/11/20/dzhennifer-lourens-nazvala-hudshego-po-potseluyam-aktera/",
-   "category": "Культура",
-   "date": "2026-11-20T17:21:00+00:00"
   }
  ]
 }
