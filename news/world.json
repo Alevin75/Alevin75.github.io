@@ -1,14 +1,105 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-20T18:25:47.417521+00:00",
+ "updated": "2026-11-21T00:41:54.396535+00:00",
  "count": 25,
  "items": [
+  {
+   "id": "chehol",
+   "title": "Раскрыта причина быстрой разрядки смартфона на холоде",
+   "link": "https://lenta.ru/news/2026/11/21/chehol/",
+   "category": "Наука и техника",
+   "date": "2026-11-21T00:34:00+00:00"
+  },
+  {
+   "id": "vrach-predupredil-o-problemah-s-podzheludochnoy-iz-za-zameny-priemov-pischi-odnim-produktom",
+   "title": "Врач предупредил о проблемах с поджелудочной из-за замены приемов пищи одним напитком",
+   "link": "https://lenta.ru/news/2026/11/21/vrach-predupredil-o-problemah-s-podzheludochnoy-iz-za-zameny-priemov-pischi-odnim-produktom/",
+   "category": "Забота о себе",
+   "date": "2026-11-20T23:56:00+00:00"
+  },
+  {
+   "id": "rossiyanam-nazvali-vyzyvayuschiy-narusheniya-serdechnogo-ritma-produkt",
+   "title": "Назван вызывающий нарушения сердечного ритма продукт",
+   "link": "https://lenta.ru/news/2026/11/21/rossiyanam-nazvali-vyzyvayuschiy-narusheniya-serdechnogo-ritma-produkt/",
+   "category": "Забота о себе",
+   "date": "2026-11-20T23:42:51+00:00"
+  },
+  {
+   "id": "kardiohirurg-rasskazal-o-neochevidnyh-priznakah-bolezney-serdtsa",
+   "title": "Кардиохирург рассказал о неочевидных признаках болезней сердца",
+   "link": "https://lenta.ru/news/2026/11/21/kardiohirurg-rasskazal-o-neochevidnyh-priznakah-bolezney-serdtsa/",
+   "category": "Забота о себе",
+   "date": "2026-11-20T21:59:00+00:00"
+  },
+  {
+   "id": "medvedev-snova-vyshel-v-polufinal-itogovogo-turnira-atr",
+   "title": "Медведев снова вышел в полуфинал Итогового турнира АТР",
+   "link": "https://lenta.ru/news/2026/11/21/medvedev-snova-vyshel-v-polufinal-itogovogo-turnira-atr/",
+   "category": "Спорт",
+   "date": "2026-11-20T21:43:36+00:00"
+  },
+  {
+   "id": "vashington-proigral-baffalo-v-matche-nhl",
+   "title": "«Вашингтон» проиграл «Баффало» в матче НХЛ",
+   "link": "https://lenta.ru/news/2026/11/20/vashington-proigral-baffalo-v-matche-nhl/",
+   "category": "Спорт",
+   "date": "2026-11-20T20:56:00+00:00"
+  },
+  {
+   "id": "melnichenko-vyigral-hibinskuyu-gonku-bolshunov-stal-vtorym",
+   "title": "Мельниченко выиграл «Хибинскую гонку»",
+   "link": "https://lenta.ru/news/2026/11/20/melnichenko-vyigral-hibinskuyu-gonku-bolshunov-stal-vtorym/",
+   "category": "Спорт",
+   "date": "2026-11-20T20:50:00+00:00"
+  },
+  {
+   "id": "nazvana-prichina-smerti-zasluzhennogo-artista-rossii-ustinova",
+   "title": "Названа причина смерти заслуженного артиста России Устинова",
+   "link": "https://lenta.ru/news/2026/11/20/nazvana-prichina-smerti-zasluzhennogo-artista-rossii-ustinova/",
+   "category": "Культура",
+   "date": "2026-11-20T20:26:00+00:00"
+  },
+  {
+   "id": "komanda-rossiyskogo-futbolista-spertsyana-pobedila-komandu-ronaldu",
+   "title": "Команда российского футболиста Сперцяна победила команду Роналду",
+   "link": "https://lenta.ru/news/2026/11/20/komanda-rossiyskogo-futbolista-spertsyana-pobedila-komandu-ronaldu/",
+   "category": "Спорт",
+   "date": "2026-11-20T20:00:01+00:00"
+  },
+  {
+   "id": "makoley-kalkin-vernetsya-v-novuyu-chast-odin-doma",
+   "title": "Маколей Калкин вернется в новую часть «Один дома»",
+   "link": "https://lenta.ru/news/2026/11/21/makoley-kalkin-vernetsya-v-novuyu-chast-odin-doma/",
+   "category": "Культура",
+   "date": "2026-11-20T19:41:00+00:00"
+  },
+  {
+   "id": "zapreshali",
+   "title": "Вышедший на свободу российский треш-блогер рассказал о запрете есть с другими заключенными",
+   "link": "https://lenta.ru/news/2026/11/20/zapreshali/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-20T19:15:00+00:00"
+  },
+  {
+   "id": "umer-zasluzhennyy-artist-rossii",
+   "title": "Умер заслуженный артист России",
+   "link": "https://lenta.ru/news/2026/11/21/umer-zasluzhennyy-artist-rossii/",
+   "category": "Культура",
+   "date": "2026-11-20T19:05:00+00:00"
+  },
+  {
+   "id": "rossiyskih-figuristov-ne-pustyat-v-polshu",
+   "title": "Российских фигуристов не пустят в Польшу",
+   "link": "https://lenta.ru/news/2026/11/20/rossiyskih-figuristov-ne-pustyat-v-polshu/",
+   "category": "Спорт",
+   "date": "2026-11-20T18:41:00+00:00"
+  },
   {
    "id": "zvezda-kvn-vspomnila-o-nepriyatnyh-i-trudnyh-momentah-teleigry",
    "title": "Звезда КВН вспомнила о неприятных и трудных моментах телеигры",
    "link": "https://lenta.ru/news/2026/11/20/zvezda-kvn-vspomnila-o-nepriyatnyh-i-trudnyh-momentah-teleigry/",
    "category": "Интернет и СМИ",
-   "date": "2026-11-20T18:15:16+00:00"
+   "date": "2026-11-20T18:15:00+00:00"
   },
   {
    "id": "zaharova-odnoy-frazoy-otsenila-evropeyskie-sanktsii-v-otnoshenii-rossiyskih-sportsmenov",
@@ -86,97 +177,6 @@
    "link": "https://lenta.ru/news/2026/11/20/dzhennifer-lourens-nazvala-hudshego-po-potseluyam-aktera/",
    "category": "Культура",
    "date": "2026-11-20T17:21:00+00:00"
-  },
-  {
-   "id": "disappear-explain",
-   "title": "Исчезновение файлов в Windows объяснили",
-   "link": "https://lenta.ru/news/2026/11/20/disappear-explain/",
-   "category": "Наука и техника",
-   "date": "2026-11-20T17:04:00+00:00"
-  },
-  {
-   "id": "deep-purple-perenesli-tur-iz-za-srochnoy-gospitalizatsii-iena-gillana",
-   "title": "Deep Purple перенесли тур из-за срочной госпитализации Иэна Гиллана",
-   "link": "https://lenta.ru/news/2026/11/20/deep-purple-perenesli-tur-iz-za-srochnoy-gospitalizatsii-iena-gillana/",
-   "category": "Культура",
-   "date": "2026-11-20T17:03:00+00:00"
-  },
-  {
-   "id": "pyat-passazhirov-samoleta-poluchili-travmy-vo-vremya-poleta-v-ssha",
-   "title": "Пять пассажиров самолета получили травмы во время полета в США",
-   "link": "https://lenta.ru/news/2026/11/20/pyat-passazhirov-samoleta-poluchili-travmy-vo-vremya-poleta-v-ssha/",
-   "category": "Путешествия",
-   "date": "2026-11-20T17:02:39+00:00"
-  },
-  {
-   "id": "rostov-sygral-s-krylyami-sovetov-v-15-m-ture-rpl",
-   "title": "«Ростов» сыграл с «Крыльями Советов» в 15-м туре РПЛ",
-   "link": "https://lenta.ru/news/2026/11/20/rostov-sygral-s-krylyami-sovetov-v-15-m-ture-rpl/",
-   "category": "Спорт",
-   "date": "2026-11-20T17:00:00+00:00"
-  },
-  {
-   "id": "lamborghini-predstavila-otkrytuyu-versiyu-superkara-temerario",
-   "title": "Lamborghini представила открытую версию суперкара Temerario",
-   "link": "https://lenta.ru/news/2026/11/20/lamborghini-predstavila-otkrytuyu-versiyu-superkara-temerario/",
-   "category": "Авто",
-   "date": "2026-11-20T16:48:00+00:00"
-  },
-  {
-   "id": "volkswagen-predstavil-zaryazhennyy-krossover-t-roc-r",
-   "title": "Volkswagen представил заряженный кроссовер T-Roc R",
-   "link": "https://lenta.ru/news/2026/11/20/volkswagen-predstavil-zaryazhennyy-krossover-t-roc-r/",
-   "category": "Авто",
-   "date": "2026-11-20T16:41:00+00:00"
-  },
-  {
-   "id": "razveyan-populyarnyy-mif-o-glavnyh-faktorah-dolgoletiya",
-   "title": "Развеян популярный миф о главных факторах долголетия",
-   "link": "https://lenta.ru/news/2026/11/20/razveyan-populyarnyy-mif-o-glavnyh-faktorah-dolgoletiya/",
-   "category": "Наука и техника",
-   "date": "2026-11-20T16:37:00+00:00"
-  },
-  {
-   "id": "v-rossii-vpervye-za-polgoda-snizilis-prodazhi-odnogo-tipa-mashin",
-   "title": "В России впервые за полгода снизились продажи одного типа машин",
-   "link": "https://lenta.ru/news/2026/11/20/v-rossii-vpervye-za-polgoda-snizilis-prodazhi-odnogo-tipa-mashin/",
-   "category": "Авто",
-   "date": "2026-11-20T16:31:30+00:00"
-  },
-  {
-   "id": "zvezda-kvn-obvenchalsya-s-zhenoy",
-   "title": "Звезда КВН обвенчался с женой",
-   "link": "https://lenta.ru/news/2026/11/20/zvezda-kvn-obvenchalsya-s-zhenoy/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-20T16:31:00+00:00"
-  },
-  {
-   "id": "nazvano-samoe-opasnoe-dlya-pecheni-lekarstvo",
-   "title": "Названо самое опасное для печени лекарство",
-   "link": "https://lenta.ru/news/2026/11/20/nazvano-samoe-opasnoe-dlya-pecheni-lekarstvo/",
-   "category": "Забота о себе",
-   "date": "2026-11-20T16:27:30+00:00"
-  },
-  {
-   "id": "rossiyskie-lyzhniki-ne-vystupyat-na-etape-kubka-mira-v-finlyandii",
-   "title": "Российские лыжники не выступят на этапе Кубка мира в Финляндии",
-   "link": "https://lenta.ru/news/2026/11/20/rossiyskie-lyzhniki-ne-vystupyat-na-etape-kubka-mira-v-finlyandii/",
-   "category": "Спорт",
-   "date": "2026-11-20T16:24:25+00:00"
-  },
-  {
-   "id": "tesla-anonsirovala-polnostyu-avtonomnuyu-versiyu-populyarnogo-krossovera",
-   "title": "Tesla анонсировала полностью автономную версию популярного кроссовера",
-   "link": "https://lenta.ru/news/2026/11/20/tesla-anonsirovala-polnostyu-avtonomnuyu-versiyu-populyarnogo-krossovera/",
-   "category": "Авто",
-   "date": "2026-11-20T16:06:39+00:00"
-  },
-  {
-   "id": "rodnina-zayavila-ob-obestsenivanii-etapov-gran-pri-bez-rossiyskih-figuristov",
-   "title": "Роднина заявила об обесценивании этапов Гран-при без российских фигуристов",
-   "link": "https://lenta.ru/news/2026/11/20/rodnina-zayavila-ob-obestsenivanii-etapov-gran-pri-bez-rossiyskih-figuristov/",
-   "category": "Спорт",
-   "date": "2026-11-20T16:04:00+00:00"
   }
  ]
 }
