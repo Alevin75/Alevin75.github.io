@@ -133,13 +133,20 @@
     </div>
 
     <div class="card">
-      <h2 id="asks-title">Две просьбы</h2>
+      <h2 id="asks-title">Просьбы</h2>
       <p class="muted">Это нужно, чтобы всё было готово к вашему приезду.</p>
       <div class="row">
-        <div id="fire-block">
-          <label for="fire">Во сколько натопить баню, чан или купель?</label>
-          <input id="fire" type="time" min="08:00" max="22:00" step="1800" />
-          <p class="muted" style="font-size:12.5px;margin-top:6px">Самое позднее 22:00.</p>
+        <div id="bath-block">
+          <label for="bath">Во сколько натопить баню?</label>
+          <input id="bath" type="time" min="08:00" max="22:00" step="1800" />
+        </div>
+        <div id="chan-block">
+          <label for="chan">Во сколько натопить чан?</label>
+          <input id="chan" type="time" min="08:00" max="22:00" step="1800" />
+        </div>
+        <div id="kupel-block">
+          <label for="kupel">Во сколько натопить купель?</label>
+          <input id="kupel" type="time" min="08:00" max="22:00" step="1800" />
         </div>
         <div>
           <label for="car">Номер машины или такси</label>
@@ -243,14 +250,26 @@
     var first = String(b.guest_name || '').split(' ')[0];
     $('hi').textContent = 'Здравствуйте, ' + (first || '') + '!';
 
-    // Баня, чан и купель есть не везде: спрашиваем про топку только там, где они есть.
+    // Баня, чан и купель есть не у всех: спрашиваем только про то, что есть у объекта.
+    // Джакузи не спрашиваем — оно электрическое.
     var hasBath = b.has_bath === true;
-    var fireBlock = $('fire-block');
-    if (fireBlock) { fireBlock.style.display = hasBath ? '' : 'none'; }
+    var hasChan = b.has_chan === true;
+    var hasKupel = b.has_kupel === true;
+    var shows = {'bath-block': hasBath, 'chan-block': hasChan, 'kupel-block': hasKupel};
+    Object.keys(shows).forEach(function(id){
+      var el = $(id);
+      if (el) { el.style.display = shows[id] ? '' : 'none'; }
+    });
+    // Просьб столько: сколько топок нужно плюс номер машины (он нужен всегда).
+    var asksCount = (hasBath ? 1 : 0) + (hasChan ? 1 : 0) + (hasKupel ? 1 : 0) + 1;
     var asks = $('asks-title');
-    if (asks) { asks.textContent = hasBath ? 'Две просьбы' : 'Одна просьба'; }
+    if (asks) {
+      asks.textContent = asksCount === 1 ? 'Одна просьба' : (asksCount + ' просьбы');
+    }
     var bathBullet = $('bath-bullet');
-    if (bathBullet) { bathBullet.style.display = hasBath ? '' : 'none'; }
+    if (bathBullet) {
+      bathBullet.style.display = (hasBath || hasChan || hasKupel) ? '' : 'none';
+    }
 
     // Завтраки. Правило то же, что в OstrovControl (database.py, has_breakfast):
     // «с завтраком» или «+ завтрак» и при этом НЕ «без завтрака».
@@ -292,7 +311,9 @@
   function loadAnswers(){
     rpc('oc_guest_answers_get', {p_token: token()}).then(function(rows){
       if (rows && rows.length) {
-        if (rows[0].fire_time) { $('fire').value = rows[0].fire_time; }
+        if (rows[0].fire_time) { $('bath').value = rows[0].fire_time; }
+        if (rows[0].chan_time) { $('chan').value = rows[0].chan_time; }
+        if (rows[0].kupel_time) { $('kupel').value = rows[0].kupel_time; }
         if (rows[0].car_number) { $('car').value = rows[0].car_number; }
       }
     }).catch(function(){});
@@ -385,11 +406,17 @@
 
   // --- ответы
   $('btn-save').addEventListener('click', function(){
-    var fire = $('fire').value;
+    var bath = $('bath') ? $('bath').value : '';
+    var chan = $('chan') ? $('chan').value : '';
+    var kupel = $('kupel') ? $('kupel').value : '';
     var car = $('car').value.trim();
-    if (!fire && !car) { say($('save-status'), 'Заполните хотя бы одно поле.', true); return; }
+    if (!bath && !chan && !kupel && !car) {
+      say($('save-status'), 'Заполните хотя бы одно поле.', true);
+      return;
+    }
     say($('save-status'), 'Сохраняю…');
-    rpc('oc_guest_booking_answer', {p_token: token(), p_fire: fire, p_car: car}).then(function(rows){
+    rpc('oc_guest_booking_answer', {p_token: token(), p_bath: bath, p_chan: chan,
+                                   p_kupel: kupel, p_car: car}).then(function(rows){
       var ok = rows && rows.length && rows[0].ok;
       say($('save-status'), ok ? 'Спасибо! Мы всё увидели.' : 'Не сохранилось, попробуйте ещё раз.', !ok);
     }).catch(function(){ say($('save-status'), 'Нет связи. Попробуйте позже.', true); });
