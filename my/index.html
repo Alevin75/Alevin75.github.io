@@ -121,7 +121,7 @@
         <li>Заезд с <b>15:00</b>, выезд до <b>12:00</b></li>
         <li>Ключи будут в замке; при выезде оставьте их в замке</li>
         <li>Завтраки: <b>09:00–11:00</b>, ресторан «Трапезная»</li>
-        <li>Топка бани, чана и купели — 1 раз в день включена в проживание, дополнительная 1500 ₽, самое позднее <b>22:00</b></li>
+        <li id="bath-bullet">Топка бани, чана и купели — 1 раз в день включена в проживание, дополнительная 1500 ₽, самое позднее <b>22:00</b></li>
         <li>Заселение — по паспортам всех гостей</li>
       </ul>
       <p class="muted" style="margin-top:12px">Адрес: Московская область, Ленинский г.о., село Остров, улица Царскосельская, дом 1Б</p>
@@ -133,13 +133,13 @@
     </div>
 
     <div class="card">
-      <h2>Две просьбы</h2>
+      <h2 id="asks-title">Две просьбы</h2>
       <p class="muted">Это нужно, чтобы всё было готово к вашему приезду.</p>
       <div class="row">
-        <div>
+        <div id="fire-block">
           <label for="fire">Во сколько натопить баню, чан или купель?</label>
           <input id="fire" type="time" min="08:00" max="22:00" step="1800" />
-          <p class="muted" style="font-size:12.5px;margin-top:6px">Если бани нет — оставьте пустым. Самое позднее 22:00.</p>
+          <p class="muted" style="font-size:12.5px;margin-top:6px">Самое позднее 22:00.</p>
         </div>
         <div>
           <label for="car">Номер машины или такси</label>
@@ -242,6 +242,15 @@
   function renderBooking(b){
     var first = String(b.guest_name || '').split(' ')[0];
     $('hi').textContent = 'Здравствуйте, ' + (first || '') + '!';
+
+    // Баня, чан и купель есть не везде: спрашиваем про топку только там, где они есть.
+    var hasBath = b.has_bath === true;
+    var fireBlock = $('fire-block');
+    if (fireBlock) { fireBlock.style.display = hasBath ? '' : 'none'; }
+    var asks = $('asks-title');
+    if (asks) { asks.textContent = hasBath ? 'Две просьбы' : 'Одна просьба'; }
+    var bathBullet = $('bath-bullet');
+    if (bathBullet) { bathBullet.style.display = hasBath ? '' : 'none'; }
     var dl = $('booking-dl');
     dl.innerHTML = '';
     var room = String(b.room || '');
