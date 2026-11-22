@@ -126,7 +126,7 @@
       </ul>
       <p class="muted" style="margin-top:12px">Адрес: Московская область, Ленинский г.о., село Остров, улица Царскосельская, дом 1Б</p>
       <div class="links">
-        <a href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D1%81%D0%B5%D0%BB%D0%BE%20%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A6%D0%B0%D1%80%D1%81%D0%BA%D0%BE%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F%201" target="_blank" rel="noopener">Маршрут на карте</a>
+        <a href="https://yandex.ru/maps/?rtext=~55.594596%2C37.862884&rtt=auto&z=16&l=map" target="_blank" rel="noopener">Маршрут на карте</a>
         <a href="tel:+79250270015">Ресепшен: +7 (925) 027-00-15</a>
         <a href="https://suite.ostrovglamping.ru/app" target="_blank" rel="noopener">Приложение: карта, услуги, газета</a>
       </div>
@@ -138,20 +138,20 @@
       <div class="row">
         <div id="bath-block">
           <label for="bath">Во сколько натопить баню?</label>
-          <input id="bath" type="time" min="08:00" max="22:00" step="1800" />
+          <input id="bath" type="time" min="09:00" max="22:00" step="1800" />
         </div>
         <div id="chan-block">
           <label for="chan">Во сколько натопить чан?</label>
-          <input id="chan" type="time" min="08:00" max="22:00" step="1800" />
+          <input id="chan" type="time" min="09:00" max="22:00" step="1800" />
         </div>
         <div id="kupel-block">
           <label for="kupel">Во сколько натопить купель?</label>
-          <input id="kupel" type="time" min="08:00" max="22:00" step="1800" />
+          <input id="kupel" type="time" min="09:00" max="22:00" step="1800" />
         </div>
         <div>
           <label for="car">Номер машины или такси</label>
-          <input id="car" placeholder="А123ВС77" autocomplete="off" />
-          <p class="muted" style="font-size:12.5px;margin-top:6px">Нужен для проезда через ворота усадьбы.</p>
+          <input id="car" placeholder="123" autocomplete="off" inputmode="numeric" maxlength="3" pattern="[0-9]{3}" />
+          <p class="muted" style="font-size:12.5px;margin-top:6px">Только 3 цифры номера — этого достаточно для проезда через ворота усадьбы.</p>
         </div>
       </div>
       <button id="btn-save" type="button">Сохранить</button>
@@ -340,16 +340,23 @@
     chat.scrollTop = chat.scrollHeight;
   }
 
+  // Защита от повторов: сообщение могло прийти и по таймеру, и после отправки.
+  var loading = false;
+  var seen = {};
   function loadMessages(){
+    if (loading) { return Promise.resolve(); }
+    loading = true;
     return rpc('oc_guest_chat_list', {p_token: token(), p_since: lastId}).then(function(rows){
       if (rows && rows.length) {
         rows.forEach(function(m){
           var id = parseInt(m.id, 10);
+          if (seen[id]) { return; }
+          seen[id] = true;
           if (id > lastId) { lastId = id; }
           addMessage(m);
         });
       }
-    });
+    }).then(function(){ loading = false; }, function(e){ loading = false; throw e; });
   }
 
   function enter(booking){
@@ -414,6 +421,21 @@
   });
 
   // --- ответы
+  // Номер машины: только цифры, максимум 3.
+  var carInput = $('car');
+  if (carInput) {
+    carInput.addEventListener('input', function(){
+      var v = this.value.replace(/[^0-9]/g, '').slice(0, 3);
+      if (this.value !== v) this.value = v;
+    });
+  }
+
+  // Время топки: 09:00 - 22:00.
+  function timeOk(v){
+    if (!v) return true;
+    return v >= '09:00' && v <= '22:00';
+  }
+
   $('btn-save').addEventListener('click', function(){
     var bath = $('bath') ? $('bath').value : '';
     var chan = $('chan') ? $('chan').value : '';
@@ -421,6 +443,14 @@
     var car = $('car').value.trim();
     if (!bath && !chan && !kupel && !car) {
       say($('save-status'), 'Заполните хотя бы одно поле.', true);
+      return;
+    }
+    if (!timeOk(bath) || !timeOk(chan) || !timeOk(kupel)) {
+      say($('save-status'), 'Время топки — с 09:00 до 22:00. Поправьте, пожалуйста.', true);
+      return;
+    }
+    if (car && !/^[0-9]{3}$/.test(car)) {
+      say($('save-status'), 'В номере машины нужны ровно 3 цифры, например 123.', true);
       return;
     }
     say($('save-status'), 'Сохраняю…');
@@ -449,6 +479,7 @@
   $('btn-logout').addEventListener('click', function(){
     clearToken();
     lastId = 0;
+    seen = {};
     $('chat').innerHTML = '';
     $('letter').value = '';
     $('surname').value = '';
