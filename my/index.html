@@ -120,7 +120,7 @@
       <ul class="notes">
         <li>Заезд с <b>15:00</b>, выезд до <b>12:00</b></li>
         <li>Ключи будут в замке; при выезде оставьте их в замке</li>
-        <li>Завтраки: <b>09:00–11:00</b>, ресторан «Трапезная»</li>
+        <li id="breakfast-bullet">Завтраки: <b>09:00–11:00</b>, ресторан «Трапезная»</li>
         <li id="bath-bullet">Топка бани, чана и купели — 1 раз в день включена в проживание, дополнительная 1500 ₽, самое позднее <b>22:00</b></li>
         <li>Заселение — по паспортам всех гостей</li>
       </ul>
@@ -251,6 +251,21 @@
     if (asks) { asks.textContent = hasBath ? 'Две просьбы' : 'Одна просьба'; }
     var bathBullet = $('bath-bullet');
     if (bathBullet) { bathBullet.style.display = hasBath ? '' : 'none'; }
+
+    // Завтраки. Правило то же, что в OstrovControl (database.py, has_breakfast):
+    // «с завтраком» или «+ завтрак» и при этом НЕ «без завтрака».
+    // Если завтраки не входят — вместо строки про «Трапезную» пишем про ресторан по меню,
+    // чтобы гость не ждал завтрака, которого в тарифе нет.
+    var tr = String(b.tariff || '').toLowerCase();
+    var byTariff = (tr.indexOf('с завтраком') >= 0 || tr.indexOf('+ завтрак') >= 0)
+                   && tr.indexOf('без завтрака') < 0;
+    var hasBreakfast = byTariff || (parseInt(b.breakfasts, 10) > 0);
+    var bfBullet = $('breakfast-bullet');
+    if (bfBullet) {
+      bfBullet.innerHTML = hasBreakfast
+        ? 'Завтраки: <b>09:00–11:00</b>, ресторан «Трапезная»'
+        : 'На территории работает ресторан «Сыроварня» — по меню';
+    }
     var dl = $('booking-dl');
     dl.innerHTML = '';
     var room = String(b.room || '');
@@ -261,7 +276,7 @@
       ['Выезд', fmtDate(b.checkout_date) + ', до 12:00'],
       ['Гостей', b.guests_count ? String(b.guests_count) : '—'],
       ['Тариф', b.tariff || '—'],
-      ['Завтраки', b.breakfasts ? 'да' : 'нет (по тарифу)']
+      ['Завтраки', hasBreakfast ? 'включены в тариф' : 'не включены']
     ];
     rows.forEach(function(pair){
       var d = document.createElement('div');
