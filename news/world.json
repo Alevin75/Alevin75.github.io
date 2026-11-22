@@ -1,8 +1,50 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-21T22:05:26.643869+00:00",
+ "updated": "2026-11-22T02:54:47.973734+00:00",
  "count": 25,
  "items": [
+  {
+   "id": "rossiyan-predupredili-o-riske-infarkta-i-insulta-ot-populyarnogo-napitka",
+   "title": "Россиян предупредили о риске инфаркта и инсульта от популярного напитка",
+   "link": "https://lenta.ru/news/2026/11/22/rossiyan-predupredili-o-riske-infarkta-i-insulta-ot-populyarnogo-napitka/",
+   "category": "Забота о себе",
+   "date": "2026-11-22T02:32:52+00:00"
+  },
+  {
+   "id": "rossiyan-predupredili-o-riskah-ispolzovaniya-domashnih-massazherov",
+   "title": "Россиян предупредили о рисках использования домашних массажеров",
+   "link": "https://lenta.ru/news/2026/11/22/rossiyan-predupredili-o-riskah-ispolzovaniya-domashnih-massazherov/",
+   "category": "Забота о себе",
+   "date": "2026-11-22T01:30:46+00:00"
+  },
+  {
+   "id": "raskryta-novaya-shema-moshennikov-ko-dnyu-materi",
+   "title": "Раскрыта новая схема мошенников ко Дню матери",
+   "link": "https://lenta.ru/news/2026/11/22/raskryta-novaya-shema-moshennikov-ko-dnyu-materi/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-22T01:10:00+00:00"
+  },
+  {
+   "id": "kosmicheskiy-korabl-maska-privodnilsya-u-kalifornii",
+   "title": "Космический корабль Маска приводнился у берегов Калифорнии",
+   "link": "https://lenta.ru/news/2026/11/22/kosmicheskiy-korabl-maska-privodnilsya-u-kalifornii/",
+   "category": "Наука и техника",
+   "date": "2026-11-22T00:56:00+00:00"
+  },
+  {
+   "id": "komanda-laynera-s-beskonechnym-kruizom-pozhalovalas-na-adskie-usloviya-zhizni-na-bortu",
+   "title": "Команда лайнера с бесконечным круизом пожаловалась на адские условия жизни на борту",
+   "link": "https://lenta.ru/news/2026/11/22/komanda-laynera-s-beskonechnym-kruizom-pozhalovalas-na-adskie-usloviya-zhizni-na-bortu/",
+   "category": "Путешествия",
+   "date": "2026-11-22T00:11:19+00:00"
+  },
+  {
+   "id": "v-germanii-udivilis-slovam-mertsa-o-vstreche-putina-trampa-i-si-tszinpina",
+   "title": "В Германии удивились заявлению Мерца о встрече Путина, Трампа и Си Цзиньпина",
+   "link": "https://lenta.ru/news/2026/11/22/v-germanii-udivilis-slovam-mertsa-o-vstreche-putina-trampa-i-si-tszinpina/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-21T22:34:00+00:00"
+  },
   {
    "id": "manchester-siti-ne-smog-obygrat-fulhem-doma",
    "title": "«Манчестер Сити» не смог обыграть «Фулхэм» дома",
@@ -43,7 +85,7 @@
    "title": "Финляндия объявила опасным для полетов участок над Финским заливом",
    "link": "https://lenta.ru/news/2026/11/22/finlyandiya-ob-yavila-opasnym-dlya-poletov-uchastok-nad-finskim-zalivom/",
    "category": "Путешествия",
-   "date": "2026-11-21T21:02:51+00:00"
+   "date": "2026-11-21T21:02:00+00:00"
   },
   {
    "id": "long-kndr",
@@ -135,48 +177,6 @@
    "link": "https://lenta.ru/news/2026/11/21/zenit-obygral-mba-v-edinoy-lige-vtb/",
    "category": "Спорт",
    "date": "2026-11-21T17:15:00+00:00"
-  },
-  {
-   "id": "v-rossiyskom-futbolnom-klube-rasskazali-o-hode-dela-po-snyatiyu-transfernogo-bana",
-   "title": "В российском футбольном клубе рассказали о ходе дела по снятию трансферного бана",
-   "link": "https://lenta.ru/news/2026/11/21/v-rossiyskom-futbolnom-klube-rasskazali-o-hode-dela-po-snyatiyu-transfernogo-bana/",
-   "category": "Спорт",
-   "date": "2026-11-21T17:13:57+00:00"
-  },
-  {
-   "id": "fil-dopustila-desyat-rossiyskih-sanochnikov-v-neytralnom-statuse",
-   "title": "FIL допустила десять российских саночников в нейтральном статусе",
-   "link": "https://lenta.ru/news/2026/11/21/fil-dopustila-desyat-rossiyskih-sanochnikov-v-neytralnom-statuse/",
-   "category": "Спорт",
-   "date": "2026-11-21T16:41:00+00:00"
-  },
-  {
-   "id": "rubin-obygral-zenit-v-matche-15-go-tura-rpl",
-   "title": "«Рубин» обыграл «Зенит» в матче 15-го тура РПЛ",
-   "link": "https://lenta.ru/news/2026/11/21/rubin-obygral-zenit-v-matche-15-go-tura-rpl/",
-   "category": "Спорт",
-   "date": "2026-11-21T16:34:00+00:00"
-  },
-  {
-   "id": "filatov-pereizbran-prezidentom-federatsii-shahmat-rossii",
-   "title": "Филатов переизбран президентом Федерации шахмат России",
-   "link": "https://lenta.ru/news/2026/11/21/filatov-pereizbran-prezidentom-federatsii-shahmat-rossii/",
-   "category": "Спорт",
-   "date": "2026-11-21T16:18:00+00:00"
-  },
-  {
-   "id": "guberniev-otsenil-veroyatnost-perenosa-chm-po-figurnomu-kataniyu-iz-finlyandii",
-   "title": "Губерниев оценил вероятность переноса ЧМ по фигурному катанию из Финляндии",
-   "link": "https://lenta.ru/news/2026/11/21/guberniev-otsenil-veroyatnost-perenosa-chm-po-figurnomu-kataniyu-iz-finlyandii/",
-   "category": "Спорт",
-   "date": "2026-11-21T16:15:04+00:00"
-  },
-  {
-   "id": "fakel-obygral-akron-v-bolshinstve",
-   "title": "«Факел» обыграл «Акрон» в большинстве",
-   "link": "https://lenta.ru/news/2026/11/21/fakel-obygral-akron-v-bolshinstve/",
-   "category": "Спорт",
-   "date": "2026-11-21T16:11:00+00:00"
   }
  ]
 }
