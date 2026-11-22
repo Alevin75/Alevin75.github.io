@@ -287,8 +287,17 @@
     }
     var dl = $('booking-dl');
     dl.innerHTML = '';
+    // Название объекта в TravelLine часто уже содержит номер («Домик №7 с баней и джакузи»).
+    // Тогда второй номер («№ 4») только путает гостя. Правило то же, что в программе
+    // (database.py, full_room_label): объекты с баней, чаном, джакузи, купелью или бочкой
+    // показываем без добавочного номера.
     var room = String(b.room || '');
-    if (b.room_number) { room = room + ' № ' + b.room_number; }
+    var low = room.toLowerCase();
+    var markers = ['с баней', 'с чаном', 'с джакузи', 'с купелью', 'с бочкой',
+                   'пати', 'кемпинг', 'костров'];
+    var keep = markers.some(function(m){ return low.indexOf(m) >= 0; });
+    if (b.room_number && !keep) { room = room + ' № ' + b.room_number; }
+    if (!room && b.room_number) { room = '№ ' + b.room_number; }
     var rows = [
       ['Объект', room || '—'],
       ['Заезд', fmtDate(b.checkin_date) + ', с 15:00'],
