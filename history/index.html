@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>История Острова</title>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  
+<style id="ostrov-shell">
+  html, body, #root {
+    font-family: 'Inter-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #f6f5f1;
+  }
+  html { -webkit-text-size-adjust: 100%; }
+</style>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114334832', 'ym');
+
+    ym(114334832, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114334832" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Переходы между экранами приложения: адрес страницы не перезагружается, поэтому
+     сообщаем о смене экрана вручную — иначе в отчётах будет только один «просмотр». -->
+<script type="text/javascript">
+    (function () {
+        function send() {
+            try {
+                if (window.ym) { window.ym(114334832, 'hit', location.pathname || '/'); }
+            } catch (e) {}
+        }
+        function wrap(name) {
+            var original = history[name];
+            if (typeof original !== 'function') { return; }
+            history[name] = function () {
+                var result = original.apply(this, arguments);
+                setTimeout(send, 60);
+                return result;
+            };
+        }
+        wrap('pushState');
+        wrap('replaceState');
+        window.addEventListener('popstate', function () { setTimeout(send, 60); });
+    })();
+</script>
+</head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+  <script src="/_expo/static/js/web/entry-d5b5b270ebeb384002a202a51d798bc3.js" defer></script>
+</body>
+</html>
