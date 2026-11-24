@@ -1,182 +1,182 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-23T20:59:59.320822+00:00",
+ "updated": "2026-11-24T05:16:56.226427+00:00",
  "count": 25,
  "items": [
+  {
+   "id": "nazvan-lenivyy-sposob-privesti-sebya-v-formu",
+   "title": "Назван ленивый способ привести себя в форму",
+   "link": "https://lenta.ru/news/2026/11/24/nazvan-lenivyy-sposob-privesti-sebya-v-formu/",
+   "category": "Спорт",
+   "date": "2026-11-24T04:51:38+00:00"
+  },
+  {
+   "id": "rossiyskaya-trevel-blogersha-perechislila-neobhodimye-dlya-pereleta-na-samolete-veschi",
+   "title": "Российская тревел-блогерша перечислила необходимые для перелета на самолете вещи",
+   "link": "https://lenta.ru/news/2026/11/24/rossiyskaya-trevel-blogersha-perechislila-neobhodimye-dlya-pereleta-na-samolete-veschi/",
+   "category": "Путешествия",
+   "date": "2026-11-24T04:46:57+00:00"
+  },
+  {
+   "id": "legendarnyy-snegobolotohod-vosstanovili-i-peredali-v-muzey",
+   "title": "Легендарный снегоболотоход восстановили и передали в музей",
+   "link": "https://lenta.ru/news/2026/11/24/legendarnyy-snegobolotohod-vosstanovili-i-peredali-v-muzey/",
+   "category": "Авто",
+   "date": "2026-11-24T04:30:34+00:00"
+  },
+  {
+   "id": "sheila",
+   "title": "Звезды реалити-шоу не стало в 35 лет",
+   "link": "https://lenta.ru/news/2026/11/24/sheila/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-24T04:30:32+00:00"
+  },
+  {
+   "id": "vyyavlena-skrytaya-prichina-uskorennogo-razrusheniya-pozvonochnika",
+   "title": "Выявлена скрытая причина ускоренного разрушения позвоночника",
+   "link": "https://lenta.ru/news/2026/11/24/vyyavlena-skrytaya-prichina-uskorennogo-razrusheniya-pozvonochnika/",
+   "category": "Наука и техника",
+   "date": "2026-11-24T04:30:31+00:00"
+  },
+  {
+   "id": "seks-kolumnistka-preobrazila-skuchnuyu-intimnuyu-zhizn-blagodarya-odnoy-hitrosti",
+   "title": "Секс-колумнистка преобразила скучную интимную жизнь благодаря одной хитрости",
+   "link": "https://lenta.ru/news/2026/11/24/seks-kolumnistka-preobrazila-skuchnuyu-intimnuyu-zhizn-blagodarya-odnoy-hitrosti/",
+   "category": "Забота о себе",
+   "date": "2026-11-24T04:00:54+00:00"
+  },
+  {
+   "id": "aviakollaps-zastavil-zhenschinu-prinyat-spontannoe-reshenie-o-pokupke-mashiny",
+   "title": "Авиаколлапс заставил женщину принять спонтанное решение о покупке машины",
+   "link": "https://lenta.ru/news/2026/11/24/aviakollaps-zastavil-zhenschinu-prinyat-spontannoe-reshenie-o-pokupke-mashiny/",
+   "category": "Авто",
+   "date": "2026-11-24T03:00:30+00:00"
+  },
+  {
+   "id": "strictly",
+   "title": "Прямой эфир канала «Би-би-си» прервали звуки секса",
+   "link": "https://lenta.ru/news/2026/11/24/strictly/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-24T03:00:28+00:00"
+  },
+  {
+   "id": "protect-glass",
+   "title": "Названы признаки износа защитного стекла смартфона",
+   "link": "https://lenta.ru/news/2026/11/24/protect-glass/",
+   "category": "Наука и техника",
+   "date": "2026-11-24T03:00:27+00:00"
+  },
+  {
+   "id": "vrach-nazvala-bespoleznye-metody-profilaktiki-grippa",
+   "title": "Врач назвала бесполезные методы профилактики гриппа",
+   "link": "https://lenta.ru/news/2026/11/24/vrach-nazvala-bespoleznye-metody-profilaktiki-grippa/",
+   "category": "Забота о себе",
+   "date": "2026-11-24T03:00:25+00:00"
+  },
+  {
+   "id": "rossiyskiy-bloger-opisal-poezdku-po-transsibu-frazoy-dlya-inostrantsev-mechta-vsey-zhizni",
+   "title": "Российский блогер описал поездку по Транссибу фразой «для иностранцев — мечта всей жизни»",
+   "link": "https://lenta.ru/news/2026/11/24/rossiyskiy-bloger-opisal-poezdku-po-transsibu-frazoy-dlya-inostrantsev-mechta-vsey-zhizni/",
+   "category": "Путешествия",
+   "date": "2026-11-24T02:47:24+00:00"
+  },
+  {
+   "id": "v-osobnyake-gollivudskoy-zvezdy-proizoshel-pozhar",
+   "title": "В особняке голливудской звезды произошел пожар",
+   "link": "https://lenta.ru/news/2026/11/24/v-osobnyake-gollivudskoy-zvezdy-proizoshel-pozhar/",
+   "category": "Культура",
+   "date": "2026-11-24T02:37:00+00:00"
+  },
+  {
+   "id": "vrach-nazval-luchshie-produkty-dlya-zaschity-mozga-ot-insulta",
+   "title": "Врач назвал лучшие продукты для защиты мозга от инсульта",
+   "link": "https://lenta.ru/news/2026/11/23/vrach-nazval-luchshie-produkty-dlya-zaschity-mozga-ot-insulta/",
+   "category": "Забота о себе",
+   "date": "2026-11-24T02:31:51+00:00"
+  },
+  {
+   "id": "nazvan-pomogayuschih-vozrodit-strast-posle-20-let-braka-neozhidannyy-faktor",
+   "title": "Назван помогающий возродить страсть после 20 лет брака неожиданный фактор",
+   "link": "https://lenta.ru/news/2026/11/24/nazvan-pomogayuschih-vozrodit-strast-posle-20-let-braka-neozhidannyy-faktor/",
+   "category": "Забота о себе",
+   "date": "2026-11-24T02:00:00+00:00"
+  },
+  {
+   "id": "sosud",
+   "title": "Найден простой способ укрепления сосудов и костей",
+   "link": "https://lenta.ru/news/2026/11/24/sosud/",
+   "category": "Наука и техника",
+   "date": "2026-11-24T01:30:00+00:00"
+  },
+  {
+   "id": "doktor-myasnikov-vyskazalsya-o-sposobe-navsegda-otkazatsya-ot-alkogolya",
+   "title": "Доктор Мясников высказался о способе навсегда отказаться от алкоголя",
+   "link": "https://lenta.ru/news/2026/11/24/doktor-myasnikov-vyskazalsya-o-sposobe-navsegda-otkazatsya-ot-alkogolya/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-24T01:01:19+00:00"
+  },
+  {
+   "id": "moshenniki-pridumali-novuyu-shemu-s-podarkom-ot-taynogo-poklonnika",
+   "title": "Мошенники придумали новую схему с подарком от тайного поклонника",
+   "link": "https://lenta.ru/news/2026/11/24/moshenniki-pridumali-novuyu-shemu-s-podarkom-ot-taynogo-poklonnika/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-24T00:25:50+00:00"
+  },
+  {
+   "id": "nazvany-prichiny-poyavleniya-trevozhnogo-simptoma-posle-seksa",
+   "title": "Названы причины появления тревожного симптома после секса",
+   "link": "https://lenta.ru/news/2026/11/24/nazvany-prichiny-poyavleniya-trevozhnogo-simptoma-posle-seksa/",
+   "category": "Забота о себе",
+   "date": "2026-11-24T00:00:16+00:00"
+  },
+  {
+   "id": "slepakovu-sdelali-obrezanie",
+   "title": "Слепакову сделали обрезание",
+   "link": "https://lenta.ru/news/2026/11/24/slepakovu-sdelali-obrezanie/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-23T23:30:03+00:00"
+  },
+  {
+   "id": "bliki",
+   "title": "Раскрыта причина бликов на экране дорогого телевизора",
+   "link": "https://lenta.ru/news/2026/11/24/bliki/",
+   "category": "Наука и техника",
+   "date": "2026-11-23T23:30:01+00:00"
+  },
+  {
+   "id": "psiholog-raskryla-chetyre-tehniki-dlya-bystrogo-zasypaniya",
+   "title": "Психолог раскрыла четыре техники для быстрого засыпания",
+   "link": "https://lenta.ru/news/2026/11/24/psiholog-raskryla-chetyre-tehniki-dlya-bystrogo-zasypaniya/",
+   "category": "Забота о себе",
+   "date": "2026-11-23T22:00:07+00:00"
+  },
+  {
+   "id": "samoylova-vyskazalas-o-vozvraschenii-dzhigana-posle-semeynogo-skandala",
+   "title": "Самойлова высказалась о возвращении Джигана после семейного скандала",
+   "link": "https://lenta.ru/news/2026/11/24/samoylova-vyskazalas-o-vozvraschenii-dzhigana-posle-semeynogo-skandala/",
+   "category": "Культура",
+   "date": "2026-11-23T21:52:48+00:00"
+  },
+  {
+   "id": "populyarnyy-zamenitel-sahara-svyazali-s-povyshennym-riskom-insulta",
+   "title": "Популярный заменитель сахара связали с повышенным риском инсульта",
+   "link": "https://lenta.ru/news/2026/11/24/populyarnyy-zamenitel-sahara-svyazali-s-povyshennym-riskom-insulta/",
+   "category": "Наука и техника",
+   "date": "2026-11-23T21:30:48+00:00"
+  },
+  {
+   "id": "allergolog-predupredil-ob-opasnosti-rasprostraneniya-virusov-vnutri-semi",
+   "title": "Аллерголог предупредил об опасности распространения вирусов внутри семьи",
+   "link": "https://lenta.ru/news/2026/11/24/allergolog-predupredil-ob-opasnosti-rasprostraneniya-virusov-vnutri-semi/",
+   "category": "Забота о себе",
+   "date": "2026-11-23T21:24:25+00:00"
+  },
   {
    "id": "ibragimovich-sygraet-zlodeya",
    "title": "Ибрагимович сыграет злодея",
    "link": "https://lenta.ru/news/2026/11/23/ibragimovich-sygraet-zlodeya/",
    "category": "Спорт",
    "date": "2026-11-23T20:48:00+00:00"
-  },
-  {
-   "id": "slepakov-raskryl-prozvische-maslyakova",
-   "title": "Слепаков раскрыл прозвище Маслякова",
-   "link": "https://lenta.ru/news/2026/11/23/slepakov-raskryl-prozvische-maslyakova/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-23T20:16:00+00:00"
-  },
-  {
-   "id": "organizatory-tur-de-ski-otsenili-veroyatnost-vystupleniya-rossiyskih-lyzhnikov",
-   "title": "Организаторы «Тур де Ски» оценили вероятность выступления российских лыжников",
-   "link": "https://lenta.ru/news/2026/11/23/organizatory-tur-de-ski-otsenili-veroyatnost-vystupleniya-rossiyskih-lyzhnikov/",
-   "category": "Спорт",
-   "date": "2026-11-23T19:48:00+00:00"
-  },
-  {
-   "id": "stalo-izvestno-o-problemah-u-byvshego-muzykalnogo-menedzhera-buzovoy-nezadolgo-do-smerti",
-   "title": "Стало известно о проблемах у бывшего музыкального менеджера Бузовой незадолго до смерти",
-   "link": "https://lenta.ru/news/2026/11/23/stalo-izvestno-o-problemah-u-byvshego-muzykalnogo-menedzhera-buzovoy-nezadolgo-do-smerti/",
-   "category": "Культура",
-   "date": "2026-11-23T19:46:00+00:00"
-  },
-  {
-   "id": "trubenkova",
-   "title": "Популярной блогерше потребовалась помощь врачей на съемках шоу на СТС",
-   "link": "https://lenta.ru/news/2026/11/23/trubenkova/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-23T19:15:32+00:00"
-  },
-  {
-   "id": "kalinskaya-propustit-turnir-v-peterburge-iz-za-travmy",
-   "title": "Калинская пропустит турнир в Петербурге из-за травмы",
-   "link": "https://lenta.ru/news/2026/11/23/kalinskaya-propustit-turnir-v-peterburge-iz-za-travmy/",
-   "category": "Спорт",
-   "date": "2026-11-23T19:10:56+00:00"
-  },
-  {
-   "id": "rossiyanin-za-rulem-inomarki-sbil-dvuh-detey",
-   "title": "Россиянин за рулем иномарки сбил двух детей",
-   "link": "https://lenta.ru/news/2026/11/24/rossiyanin-za-rulem-inomarki-sbil-dvuh-detey/",
-   "category": "Авто",
-   "date": "2026-11-23T18:52:00+00:00"
-  },
-  {
-   "id": "usov-stal-pervym-uchastnikom-matcha-zvezd-khl",
-   "title": "Усов стал первым участником Матча звезд КХЛ",
-   "link": "https://lenta.ru/news/2026/11/23/usov-stal-pervym-uchastnikom-matcha-zvezd-khl/",
-   "category": "Спорт",
-   "date": "2026-11-23T18:49:42+00:00"
-  },
-  {
-   "id": "trusova-vosstanovila-chetvernoy-flip-na-trenirovke",
-   "title": "Трусова восстановила четверной флип на тренировке",
-   "link": "https://lenta.ru/news/2026/11/23/trusova-vosstanovila-chetvernoy-flip-na-trenirovke/",
-   "category": "Спорт",
-   "date": "2026-11-23T18:48:24+00:00"
-  },
-  {
-   "id": "stala-izvestna-reaktsiya-norvezhtsev-na-uchastie-rossiyskogo-lyzhnika-v-mestnom-turnire",
-   "title": "Стала известна реакция норвежцев на участие российского лыжника в местном турнире",
-   "link": "https://lenta.ru/news/2026/11/23/stala-izvestna-reaktsiya-norvezhtsev-na-uchastie-rossiyskogo-lyzhnika-v-mestnom-turnire/",
-   "category": "Спорт",
-   "date": "2026-11-23T18:47:45+00:00"
-  },
-  {
-   "id": "porazil",
-   "title": "Симоньян рассказала о поразившем ее ответе Путина на вопрос журналиста",
-   "link": "https://lenta.ru/news/2026/11/23/porazil/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-23T18:15:00+00:00"
-  },
-  {
-   "id": "na-zelenskogo-obrushilis-s-kritikoy-iz-za-proishodyaschego-v-odesse",
-   "title": "На Зеленского обрушились с критикой из-за происходящего в Одессе",
-   "link": "https://lenta.ru/news/2026/11/23/na-zelenskogo-obrushilis-s-kritikoy-iz-za-proishodyaschego-v-odesse/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-23T18:10:00+00:00"
-  },
-  {
-   "id": "muzhchinam-nazvali-veskuyu-prichinu-mochitsya-sidya",
-   "title": "Мужчинам назвали вескую причину мочиться сидя",
-   "link": "https://lenta.ru/news/2026/11/23/muzhchinam-nazvali-veskuyu-prichinu-mochitsya-sidya/",
-   "category": "Забота о себе",
-   "date": "2026-11-23T18:02:04+00:00"
-  },
-  {
-   "id": "skabeeva",
-   "title": "Скабеева оценила заявление Мерца об Украине фразой «окончательно лишился здравого смысла»",
-   "link": "https://lenta.ru/news/2026/11/23/skabeeva/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-23T17:52:27+00:00"
-  },
-  {
-   "id": "frantsuzskiy-lyzhnik-ob-yasnil-zhelanie-sorevnovatsya-s-rossiyanami",
-   "title": "Французский лыжник объяснил желание соревноваться с россиянами",
-   "link": "https://lenta.ru/news/2026/11/23/frantsuzskiy-lyzhnik-ob-yasnil-zhelanie-sorevnovatsya-s-rossiyanami/",
-   "category": "Спорт",
-   "date": "2026-11-23T17:47:29+00:00"
-  },
-  {
-   "id": "alkaras-poluchil-rekordnye-dengi-za-pobedu-na-itogovom-turnire-atp",
-   "title": "Алькарас получил рекордные деньги за победу на Итоговом турнире ATP",
-   "link": "https://lenta.ru/news/2026/11/23/alkaras-poluchil-rekordnye-dengi-za-pobedu-na-itogovom-turnire-atp/",
-   "category": "Спорт",
-   "date": "2026-11-23T17:44:00+00:00"
-  },
-  {
-   "id": "chelyabinsk-obygral-leningradets-v-pervoy-lige",
-   "title": "«Челябинск» обыграл «Ленинградец» в Первой лиге",
-   "link": "https://lenta.ru/news/2026/11/23/chelyabinsk-obygral-leningradets-v-pervoy-lige/",
-   "category": "Спорт",
-   "date": "2026-11-23T17:42:59+00:00"
-  },
-  {
-   "id": "passazhiry-zanyalis-seksom-na-glazah-u-poputchikov-v-poezde-v-evrope",
-   "title": "Пассажиры занялись сексом на глазах у попутчиков в поезде в Европе",
-   "link": "https://lenta.ru/news/2026/11/23/passazhiry-zanyalis-seksom-na-glazah-u-poputchikov-v-poezde-v-evrope/",
-   "category": "Путешествия",
-   "date": "2026-11-23T17:33:10+00:00"
-  },
-  {
-   "id": "terapevt-raskryla-neochevidnye-priznaki-opasnogo-sguscheniya-krovi",
-   "title": "Терапевт раскрыла неочевидные признаки опасного сгущения крови",
-   "link": "https://lenta.ru/news/2026/11/23/terapevt-raskryla-neochevidnye-priznaki-opasnogo-sguscheniya-krovi/",
-   "category": "Забота о себе",
-   "date": "2026-11-23T17:30:17+00:00"
-  },
-  {
-   "id": "izvestnyy-rossiyskiy-zhurnalist-umer-na-79-m-godu-zhizni",
-   "title": "Известный российский журналист умер на 79-м году жизни",
-   "link": "https://lenta.ru/news/2026/11/23/izvestnyy-rossiyskiy-zhurnalist-umer-na-79-m-godu-zhizni/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-23T17:28:00+00:00"
-  },
-  {
-   "id": "savicheva-zayavila-o-zhelanii-pisat-nyu-metal-iz-za-boli",
-   "title": "Савичева заявила о желании писать ню-метал из-за боли",
-   "link": "https://lenta.ru/news/2026/11/23/savicheva-zayavila-o-zhelanii-pisat-nyu-metal-iz-za-boli/",
-   "category": "Культура",
-   "date": "2026-11-23T17:26:12+00:00"
-  },
-  {
-   "id": "ffkkr-uvedomili-ob-otchislenii-kostylevoy-iz-akademii-plyuschenko",
-   "title": "ФФККР уведомили об отчислении Костылевой из академии Плющенко",
-   "link": "https://lenta.ru/news/2026/11/23/ffkkr-uvedomili-ob-otchislenii-kostylevoy-iz-akademii-plyuschenko/",
-   "category": "Спорт",
-   "date": "2026-11-23T17:05:00+00:00"
-  },
-  {
-   "id": "40-passazhirov-samoletov-zarazilis-norovirusom-posle-otdyha-v-dominikane",
-   "title": "40 пассажиров самолетов заразились норовирусом после отдыха в Доминикане",
-   "link": "https://lenta.ru/news/2026/11/23/40-passazhirov-samoletov-zarazilis-norovirusom-posle-otdyha-v-dominikane/",
-   "category": "Путешествия",
-   "date": "2026-11-23T17:05:00+00:00"
-  },
-  {
-   "id": "obnaruzhena-svyaz-obmena-veschestv-s-boleznyu-altsgeymera",
-   "title": "Обнаружена связь обмена веществ с болезнью Альцгеймера",
-   "link": "https://lenta.ru/news/2026/11/23/obnaruzhena-svyaz-obmena-veschestv-s-boleznyu-altsgeymera/",
-   "category": "Наука и техника",
-   "date": "2026-11-23T17:01:00+00:00"
-  },
-  {
-   "id": "poyavilis-novye-detali-o-sostoyanii-postradavshey-pri-pozhare-chempionki-shurochkinoy",
-   "title": "Появились новые детали о состоянии пострадавшей при пожаре чемпионки Шурочкиной",
-   "link": "https://lenta.ru/news/2026/11/23/poyavilis-novye-detali-o-sostoyanii-postradavshey-pri-pozhare-chempionki-shurochkinoy/",
-   "category": "Спорт",
-   "date": "2026-11-23T17:01:00+00:00"
   }
  ]
 }
