@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#f7f3ed" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Гид по Глэмпингу Остров</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
@@ -27,21 +28,62 @@
 <style id="ostrov-shell">
   html, body, #root {
     font-family: 'Inter-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    background-color: #f6f5f1;
+    background-color: #f7f3ed;
   }
   html { -webkit-text-size-adjust: 100%; }
+
+  /* Экран загрузки: показывается сразу, ещё до скачивания приложения. */
+  #ostrov-splash {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; background: #f7f3ed; color: #1b2a24;
+    transition: opacity .45s ease;
+    font-family: 'Inter-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+  #ostrov-splash .sp-small {
+    font-size: 11px; letter-spacing: .32em; text-transform: uppercase; opacity: .55;
+  }
+  #ostrov-splash .sp-name {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 34px; letter-spacing: .18em; text-transform: uppercase; line-height: 1;
+  }
+  #ostrov-splash .sp-line {
+    width: 132px; height: 2px; background: rgba(27, 42, 36, .12); overflow: hidden; border-radius: 2px;
+  }
+  #ostrov-splash .sp-line i {
+    display: block; height: 100%; width: 40%; background: #13a275; border-radius: 2px;
+    animation: sp-run 1.15s ease-in-out infinite;
+  }
+  @keyframes sp-run {
+    0%   { transform: translateX(-110%); }
+    100% { transform: translateX(360%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #ostrov-splash .sp-line i { animation: none; width: 100%; }
+  }
 </style>
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114334832', 'ym');
 
-    ym(114334832, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+<!-- Yandex.Metrika counter — подключаем не сразу, а когда приложение уже показано:
+     64 КБ счётчика на медленном канале конкурируют с самим приложением. -->
+<script type="text/javascript">
+    (function () {
+        function start() {
+            (function(m,e,t,r,i,k,a){
+                m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+            })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114334832', 'ym');
+
+            ym(114334832, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+        }
+        if (window.requestIdleCallback) {
+            window.requestIdleCallback(function () { setTimeout(start, 1500); }, { timeout: 4000 });
+        } else {
+            setTimeout(start, 2500);
+        }
+    })();
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/114334832" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
@@ -68,7 +110,12 @@
         window.addEventListener('popstate', function () { setTimeout(send, 60); });
     })();
 </script>
-</head>
+
+
+    <link rel="preload" as="script" href="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/__common-e2d5e9ebed16c2991709cf04012434e8.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" />
+  </head>
 
   <body>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
@@ -77,6 +124,42 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/_expo/static/js/web/entry-d5b5b270ebeb384002a202a51d798bc3.js" defer></script>
+    <div id="ostrov-splash" aria-hidden="true">
+      <div class="sp-small">Парк-отель</div>
+      <div class="sp-name">Остров</div>
+      <div class="sp-small">Глэмпинг</div>
+      <div class="sp-line"><i></i></div>
+    </div>
+
+  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-e2d5e9ebed16c2991709cf04012434e8.js" defer></script><script src="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" defer></script>
+
+<script>
+/* Убираем экран загрузки, как только приложение отрисовало первый экран. */
+(function () {
+  var splash = document.getElementById('ostrov-splash');
+  var root = document.getElementById('root');
+  if (!splash || !root) return;
+
+  var done = false;
+  function hide() {
+    if (done) return;
+    done = true;
+    splash.style.opacity = '0';
+    setTimeout(function () { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 500);
+  }
+
+  if (root.children.length) { hide(); return; }
+
+  var observer = new MutationObserver(function () {
+    if (root.children.length) { observer.disconnect(); hide(); }
+  });
+  observer.observe(root, { childList: true, subtree: false });
+
+  /* Если приложение почему-то не поднялось — всё равно покажем пустую страницу,
+     а не вечную заставку. */
+  setTimeout(function () { observer.disconnect(); hide(); }, 25000);
+})();
+</script>
+
 </body>
 </html>
