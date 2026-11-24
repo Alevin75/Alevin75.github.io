@@ -51,12 +51,14 @@
     width: 132px; height: 2px; background: rgba(16, 18, 14, .14); overflow: hidden; border-radius: 2px;
   }
   #ostrov-splash .sp-line i {
-    display: block; height: 100%; width: 40%; background: #a34a32; border-radius: 2px;
-    animation: sp-run 1.15s ease-in-out infinite;
+    display: block; height: 100%; width: 100%; background: #a34a32; border-radius: 2px;
+    transform-origin: left center;
+    animation: sp-run 1.4s ease-in-out infinite;
   }
   @keyframes sp-run {
-    0%   { transform: translateX(-110%); }
-    100% { transform: translateX(360%); }
+    0%   { transform: scaleX(0); opacity: 1; }
+    70%  { transform: scaleX(1); opacity: 1; }
+    100% { transform: scaleX(1); opacity: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     #ostrov-splash .sp-line i { animation: none; width: 100%; }
