@@ -134,11 +134,11 @@
   <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-e2d5e9ebed16c2991709cf04012434e8.js" defer></script><script src="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" defer></script>
 
 <script>
-/* Убираем экран загрузки, как только приложение отрисовало первый экран. */
+/* Убираем экран загрузки, когда приложение сообщило, что первый экран готов.
+   Событие отправляет app/_layout.tsx, когда заканчивается живая заставка. */
 (function () {
   var splash = document.getElementById('ostrov-splash');
-  var root = document.getElementById('root');
-  if (!splash || !root) return;
+  if (!splash) return;
 
   var done = false;
   function hide() {
@@ -148,16 +148,11 @@
     setTimeout(function () { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 500);
   }
 
-  if (root.children.length) { hide(); return; }
+  window.addEventListener('ostrov-ready', hide);
 
-  var observer = new MutationObserver(function () {
-    if (root.children.length) { observer.disconnect(); hide(); }
-  });
-  observer.observe(root, { childList: true, subtree: false });
-
-  /* Если приложение почему-то не поднялось — всё равно покажем пустую страницу,
-     а не вечную заставку. */
-  setTimeout(function () { observer.disconnect(); hide(); }, 25000);
+  /* Страховка: если приложение почему-то не поднялось — всё равно покажем
+     страницу, а не вечную заставку. */
+  setTimeout(hide, 30000);
 })();
 </script>
 
