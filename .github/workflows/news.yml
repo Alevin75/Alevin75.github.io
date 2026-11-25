@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news/world.json
+          git add news/world.json news/our-feed.xml
           if git diff --staged --quiet; then
             echo "изменений нет — новости те же"
           else

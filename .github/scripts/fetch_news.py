@@ -15,6 +15,14 @@ import urllib.request
 from datetime import datetime, timezone
 
 FEED_URL = "https://lenta.ru/rss/news"
+
+# Лента новостей самого сайта глэмпинга (её делает Tilda). Приложение берёт её
+# через нашу копию в этом же репозитории: на iPhone Safari прямой запрос к
+# ostrovglamping.ru отдаёт отказ — сайт закрыт защитой DDoS-Guard.
+OUR_URL = "https://ostrovglamping.ru/rss-feed-798250658751.xml"
+OUR_OUT_PATH = os.path.join("news", "our-feed.xml")
+UA_SAFARI = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
+             "(KHTML, like Gecko) Version/17.5 Safari/605.1.15")
 UA = ("Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/124 Mobile Safari/537.36")
 LIMIT = 25
@@ -85,7 +93,33 @@ def build_items(xml: str):
     return items[:LIMIT]
 
 
+def mirror_own_news() -> None:
+    """Кладём ленту сайта глэмпинга к себе — приложение читает её с нашего домена."""
+    try:
+        req = urllib.request.Request(
+            OUR_URL,
+            headers={"User-Agent": UA_SAFARI, "Accept": "application/xml, text/xml, */*"},
+        )
+        with urllib.request.urlopen(req, timeout=40) as response:
+            xml = response.read().decode("utf-8", "replace")
+    except Exception as exc:                  # сайт не ответил — старая копия остаётся
+        print(f"лента сайта недоступна: {exc}", file=sys.stderr)
+        return
+
+    if "<rss" not in xml or xml.count("<item") == 0:
+        print("лента сайта пришла не той (похоже на защиту от роботов) — файл не меняем",
+              file=sys.stderr)
+        return
+
+    os.makedirs(os.path.dirname(OUR_OUT_PATH), exist_ok=True)
+    with open(OUR_OUT_PATH, "w", encoding="utf-8") as handle:
+        handle.write(xml)
+
+    print(f"{OUR_OUT_PATH}: {xml.count('<item')} материалов, {len(xml)} знаков")
+
+
 def main() -> int:
+    mirror_own_news()
     try:
         xml = fetch(FEED_URL)
     except Exception as exc:                     # сеть подвела — старый файл не портим
