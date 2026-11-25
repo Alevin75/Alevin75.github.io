@@ -32,36 +32,257 @@
   }
   html { -webkit-text-size-adjust: 100%; }
 
-  /* Экран загрузки: показывается сразу, ещё до скачивания приложения. */
+  /* ------------------------------------------------------------------
+     Экран загрузки: «прыжок с неба» до самой земли.
+     Все элементы сразу стоят в конечном положении — так заставка
+     корректно выглядит и при выключенных анимациях (система «меньше
+     движения» или повторный заход в той же сессии).
+     ------------------------------------------------------------------ */
   #ostrov-splash {
-    position: fixed; inset: 0; z-index: 9999;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 14px; background: #f6f5f1; color: #10120e;
-    transition: opacity .45s ease;
+    position: fixed; inset: 0; z-index: 9999; overflow: hidden;
+    background: #0d1418; color: #10120e;
+    transition: opacity .55s ease;
     font-family: 'Inter-Regular', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+  #ostrov-splash.sp-hide { opacity: 0; }
+
+  /* Камера: чуть дрожит на скорости. */
+  #ostrov-splash .sp-cam { position: absolute; inset: -2%; }
+
+  /* Небо над горизонтом: сверху холодная глубина, к земле светлеет. */
+  #ostrov-splash .sp-sky {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 80% at 50% 8%, #4d6b7a 0%, #2b414c 38%, #16222a 68%, #0d1418 100%);
+    opacity: 0;
+  }
+
+  /* Дальняя земля: район, река, поля. */
+  #ostrov-splash .sp-far,
+  #ostrov-splash .sp-near {
+    position: absolute; left: 50%; top: 56%;
+    width: 260%; height: 260%;
+    margin-left: -130%; margin-top: -130%;
+    background-position: 50% 50%;
+    background-size: cover;
+    will-change: transform, opacity;
+    /* Края снимка растворяются в дымке — иначе видно прямоугольник. */
+    -webkit-mask-image: radial-gradient(closest-side, #000 52%, rgba(0,0,0,.85) 70%, rgba(0,0,0,0) 96%);
+    mask-image: radial-gradient(closest-side, #000 52%, rgba(0,0,0,.85) 70%, rgba(0,0,0,0) 96%);
+  }
+  #ostrov-splash .sp-far {
+    background-image: url('./splash/ground-far.jpg');
+    transform: scale(1.34);
+    opacity: 1;
+  }
+  #ostrov-splash .sp-near {
+    background-image: url('./splash/ground-near.jpg');
+    transform: scale(1.22);
+    opacity: 1;
+  }
+
+  /* Облака: три слоя, летят мимо снизу вверх, ближние — крупнее и быстрее. */
+  #ostrov-splash .sp-cloud {
+    position: absolute; left: 50%;
+    width: 78vmin; height: 78vmin;
+    margin-left: -43vmin;
+    filter: blur(1px);
+    background-position: center; background-size: contain; background-repeat: no-repeat;
+    opacity: 0; will-change: transform, opacity;
+  }
+  #ostrov-splash .sp-cloud-1 {
+    top: -10vmin; background-image: url('./splash/cloud-1.png');
+    transform: translateY(-18vh) scale(2.35);
+  }
+  #ostrov-splash .sp-cloud-2 {
+    top: 0; background-image: url('./splash/cloud-2.png');
+    transform: translateY(-4vh) scale(2.9);
+  }
+  #ostrov-splash .sp-cloud-3 {
+    top: 6vmin; background-image: url('./splash/cloud-3.png');
+    transform: translateY(10vh) scale(3.3);
+  }
+
+  /* Полосы скорости: тонкие светлые штрихи, летящие вниз. */
+  #ostrov-splash .sp-streaks { position: absolute; inset: 0; opacity: 0; }
+  #ostrov-splash .sp-streaks i {
+    position: absolute; top: -20vh; width: 1.5px; height: 22vh;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.5));
+    transform: translateY(-30vh);
+  }
+
+  /* Руки по краям кадра: как у парашютиста в свободном падении. */
+  #ostrov-splash .sp-hand {
+    position: absolute; bottom: -10vh; width: 48vmin; max-width: 310px;
+    opacity: 1; will-change: transform, opacity;
+    /* Мягкость задаётся внутри SVG-фильтра: CSS-фильтр обрезал бы край. */
+  }
+  #ostrov-splash .sp-hand svg { width: 100%; height: auto; display: block; }
+  #ostrov-splash .sp-hand-left { left: -26vmin; transform: rotate(-32deg); }
+  #ostrov-splash .sp-hand-right { right: -26vmin; transform: rotate(32deg) scaleX(-1); }
+
+  /* Затемнение по краям: взгляд вниз, объектив «зажат». */
+  #ostrov-splash .sp-vignette {
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(120% 90% at 50% 42%, rgba(0,0,0,0) 42%, rgba(8,12,10,.42) 100%);
+  }
+
+  /* Вспышка на посадке. */
+  #ostrov-splash .sp-flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+
+  /* Надпись: конечное положение — по центру, на «высоте глаз». */
+  #ostrov-splash .sp-lockup {
+    position: absolute; left: 0; right: 0; top: 50%;
+    transform: translateY(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    text-align: center; padding: 0 24px;
+    opacity: 1;
   }
   #ostrov-splash .sp-small {
-    font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: #5c6058;
+    font-size: 11px; letter-spacing: .34em; text-transform: uppercase;
+    color: rgba(251,247,244,.82);
+    text-shadow: 0 1px 10px rgba(0,0,0,.55);
   }
   #ostrov-splash .sp-name {
     font-family: 'CormorantGaramond-Regular', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: 34px; letter-spacing: .18em; text-transform: uppercase; line-height: 1;
+    font-size: clamp(34px, 10.5vw, 52px);
+    letter-spacing: .15em; text-transform: uppercase; line-height: 1;
+    color: #fbf7f4;
+    text-shadow: 0 2px 24px rgba(0,0,0,.5), 0 1px 2px rgba(0,0,0,.35);
+    margin-left: .15em; /* компенсируем межбуквенный отступ справа */
   }
   #ostrov-splash .sp-line {
-    width: 132px; height: 2px; background: rgba(16, 18, 14, .14); overflow: hidden; border-radius: 2px;
+    width: 132px; height: 2px; background: rgba(251,247,244,.28);
+    overflow: hidden; border-radius: 2px; margin-top: 2px;
   }
   #ostrov-splash .sp-line i {
-    display: block; height: 100%; width: 100%; background: #a34a32; border-radius: 2px;
+    display: block; height: 100%; width: 100%; background: #c2603f; border-radius: 2px;
     transform-origin: left center;
-    animation: sp-run 1.4s ease-in-out infinite;
   }
-  @keyframes sp-run {
-    0%   { transform: scaleX(0); opacity: 1; }
-    70%  { transform: scaleX(1); opacity: 1; }
-    100% { transform: scaleX(1); opacity: 0; }
+
+  /* ------------------------------------------------------------------
+     Движение. У каждой группы своя длительность: земля живёт 4.2 с,
+     облака пролетают быстрее, полосы скорости мигают.
+     ------------------------------------------------------------------ */
+  @media (prefers-reduced-motion: no-preference) {
+    #ostrov-splash.sp-play .sp-sky { animation: sp-sky 5s ease-in forwards; }
+    #ostrov-splash.sp-play .sp-far { animation: sp-far 5s cubic-bezier(.42,0,.72,1) forwards; }
+    #ostrov-splash.sp-play .sp-near { animation: sp-near 5s cubic-bezier(.45,0,.6,1) forwards; }
+    #ostrov-splash.sp-play .sp-cloud-1 { animation: sp-cloud 1.7s ease-in .08s 2 forwards; }
+    #ostrov-splash.sp-play .sp-cloud-2 { animation: sp-cloud 1.5s ease-in .5s 2 forwards; }
+    #ostrov-splash.sp-play .sp-cloud-3 { animation: sp-cloud 1.25s ease-in .9s 3 forwards; }
+    #ostrov-splash.sp-play .sp-streaks { animation: sp-streaks 5s linear forwards; }
+    #ostrov-splash.sp-play .sp-streaks i { animation: sp-streak 0.62s linear infinite; }
+    #ostrov-splash.sp-play .sp-hand-left { animation: sp-hand-left 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-hand-right { animation: sp-hand-right 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-lockup { animation: sp-lockup 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-line i { animation: sp-line 5s linear forwards; }
+    #ostrov-splash.sp-play .sp-flash { animation: sp-flash 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-cam { animation: sp-cam 5s steps(24) forwards; }
   }
+
+  @keyframes sp-sky {
+    0%   { opacity: 1; }
+    62%  { opacity: .55; }
+    88%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* Земля: далёкая сначала маленькая и бледная, к финалу закрывает кадр. */
+  @keyframes sp-far {
+    0%   { transform: scale(.3); opacity: .45; }
+    30%  { transform: scale(.66); opacity: .8; }
+    62%  { transform: scale(.9); opacity: .95; }
+    86%  { transform: scale(1.14); opacity: 1; }
+    100% { transform: scale(1.32); opacity: 1; }
+  }
+
+  /* Ближний снимок включается на последних метрах: видно домики и воду. */
+  @keyframes sp-near {
+    0%   { transform: scale(1.05); opacity: 0; }
+    58%  { transform: scale(1.05); opacity: 0; }
+    80%  { transform: scale(1.1); opacity: .85; }
+    100% { transform: scale(1.22); opacity: 1; }
+  }
+
+  /* Облако пролетает мимо: снизу вверх, растёт и тает. */
+  @keyframes sp-cloud {
+    0%   { transform: translateY(92vh) scale(.5); opacity: 0; }
+    18%  { opacity: .62; }
+    55%  { opacity: .48; }
+    100% { transform: translateY(-56vh) scale(2.2); opacity: 0; }
+  }
+
+  @keyframes sp-streaks {
+    0%   { opacity: 0; }
+    8%   { opacity: .9; }
+    72%  { opacity: .55; }
+    86%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes sp-streak {
+    0%   { transform: translateY(-20vh); opacity: 0; }
+    20%  { opacity: .8; }
+    100% { transform: translateY(120vh); opacity: 0; }
+  }
+
+  /* Руки: появляются сразу, к концу чуть уходят вниз и в стороны. */
+  @keyframes sp-hand-left {
+    0%   { transform: rotate(-26deg) translateY(16vh); opacity: 0; }
+    14%  { opacity: .96; }
+    62%  { transform: rotate(-26deg) translateY(0); opacity: .96; }
+    100% { transform: rotate(-30deg) translateY(10vh) translateX(-4vw); opacity: .9; }
+  }
+  @keyframes sp-hand-right {
+    0%   { transform: rotate(26deg) scaleX(-1) translateY(16vh); opacity: 0; }
+    14%  { opacity: .96; }
+    62%  { transform: rotate(26deg) scaleX(-1) translateY(0); opacity: .96; }
+    100% { transform: rotate(30deg) scaleX(-1) translateY(10vh) translateX(-4vw); opacity: .9; }
+  }
+
+  /* Надпись выходит из глубины и встаёт в кадр. */
+  @keyframes sp-lockup {
+    0%   { opacity: 0; transform: translateY(-50%) scale(.72); }
+    46%  { opacity: 0; }
+    68%  { opacity: 1; transform: translateY(-50%) scale(.98); }
+    100% { opacity: 1; transform: translateY(-50%) scale(1); }
+  }
+
+  /* Полоска под надписью — «как идёт загрузка». */
+  @keyframes sp-line {
+    0%   { transform: scaleX(0); }
+    12%  { transform: scaleX(.08); }
+    70%  { transform: scaleX(.62); }
+    92%  { transform: scaleX(.95); }
+    100% { transform: scaleX(1); }
+  }
+
+  @keyframes sp-flash {
+    0%, 82% { opacity: 0; }
+    92%     { opacity: .5; }
+    100%    { opacity: 0; }
+  }
+
+  /* Дрожь камеры на скорости: ±2 px, к посадке успокаивается. */
+  @keyframes sp-cam {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(1px, -2px); }
+    40%  { transform: translate(-2px, 1px); }
+    60%  { transform: translate(2px, 2px); }
+    80%  { transform: translate(-1px, -1px); }
+    100% { transform: translate(0, 0); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    #ostrov-splash .sp-line i { animation: none; width: 100%; }
+    #ostrov-splash .sp-sky { opacity: 0; }
+    #ostrov-splash .sp-cloud { opacity: 0; }
+    #ostrov-splash .sp-streaks { opacity: 0; }
+    #ostrov-splash .sp-flash { opacity: 0; }
+    #ostrov-splash .sp-line i { transform: scaleX(.7); }
   }
 </style>
 
@@ -127,38 +348,159 @@
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
     <div id="ostrov-splash" aria-hidden="true">
-      <div class="sp-small">Парк-отель</div>
-      <div class="sp-name">Остров</div>
-      <div class="sp-small">Глэмпинг</div>
-      <div class="sp-line"><i></i></div>
+      <div class="sp-cam">
+        <div class="sp-sky"></div>
+        <div class="sp-far"></div>
+        <div class="sp-near"></div>
+        <div class="sp-cloud sp-cloud-1"></div>
+        <div class="sp-cloud sp-cloud-2"></div>
+        <div class="sp-cloud sp-cloud-3"></div>
+        <div class="sp-streaks">
+          <i style="left: 12%; animation-delay: 0s"></i>
+          <i style="left: 24%; animation-delay: .18s"></i>
+          <i style="left: 37%; animation-delay: .34s"></i>
+          <i style="left: 49%; animation-delay: .07s"></i>
+          <i style="left: 61%; animation-delay: .26s"></i>
+          <i style="left: 73%; animation-delay: .44s"></i>
+          <i style="left: 86%; animation-delay: .13s"></i>
+        </div>
+
+        <div class="sp-hand sp-hand-left">
+          <svg viewBox="0 0 300 400" fill="#191c15" aria-hidden="true">
+            <defs>
+              <filter id="spHandL" x="-45%" y="-45%" width="190%" height="190%">
+                <feGaussianBlur stdDeviation="7" result="soft" />
+                <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".55" />
+              </filter>
+            </defs>
+            <g filter="url(#spHandL)">
+            <!-- Предплечье уходит за нижний край кадра. -->
+            <path d="M44 400 L44 250 C44 222 58 200 84 190 L168 158 C196 148 224 162 232 190
+                     L256 276 C262 300 250 322 226 330 L96 386 C74 392 56 400 44 400 Z"/>
+            <!-- Ладонь. -->
+            <ellipse cx="210" cy="196" rx="74" ry="82" transform="rotate(16 210 196)"/>
+            <!-- Четыре пальца веером. -->
+            <rect x="228" y="52" width="42" height="140" rx="21" transform="rotate(20 249 122)"/>
+            <rect x="186" y="34" width="44" height="150" rx="22" transform="rotate(8 208 109)"/>
+            <rect x="142" y="42" width="44" height="142" rx="22" transform="rotate(-4 164 113)"/>
+            <rect x="102" y="66" width="40" height="124" rx="20" transform="rotate(-16 122 128)"/>
+            <!-- Большой палец. -->
+            <rect x="252" y="228" width="44" height="104" rx="22" transform="rotate(52 274 280)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="sp-hand sp-hand-right">
+          <svg viewBox="0 0 300 400" fill="#191c15" aria-hidden="true">
+            <defs>
+              <filter id="spHandR" x="-45%" y="-45%" width="190%" height="190%">
+                <feGaussianBlur stdDeviation="7" result="soft" />
+                <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".55" />
+              </filter>
+            </defs>
+            <g filter="url(#spHandR)">
+            <!-- Предплечье уходит за нижний край кадра. -->
+            <path d="M44 400 L44 250 C44 222 58 200 84 190 L168 158 C196 148 224 162 232 190
+                     L256 276 C262 300 250 322 226 330 L96 386 C74 392 56 400 44 400 Z"/>
+            <!-- Ладонь. -->
+            <ellipse cx="210" cy="196" rx="74" ry="82" transform="rotate(16 210 196)"/>
+            <!-- Четыре пальца веером. -->
+            <rect x="228" y="52" width="42" height="140" rx="21" transform="rotate(20 249 122)"/>
+            <rect x="186" y="34" width="44" height="150" rx="22" transform="rotate(8 208 109)"/>
+            <rect x="142" y="42" width="44" height="142" rx="22" transform="rotate(-4 164 113)"/>
+            <rect x="102" y="66" width="40" height="124" rx="20" transform="rotate(-16 122 128)"/>
+            <!-- Большой палец. -->
+            <rect x="252" y="228" width="44" height="104" rx="22" transform="rotate(52 274 280)"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="sp-vignette"></div>
+        <div class="sp-flash"></div>
+
+        <div class="sp-lockup">
+          <div class="sp-small">Парк-отель</div>
+          <div class="sp-name">Остров</div>
+          <div class="sp-small">Глэмпинг</div>
+          <div class="sp-line"><i></i></div>
+        </div>
+      </div>
     </div>
 
   <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-b4adc6aed3e825aa1546f22624d2e142.js" defer></script><script src="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" defer></script>
 
 <script>
-/* Убираем экран загрузки, когда приложение сообщило, что первый экран готов.
-   Событие отправляет app/_layout.tsx, когда заканчивается живая заставка. */
+/* Экран загрузки «прыжок с неба».
+   Что важно:
+     • анимация запускается один раз за сессию: повторный заход внутри той же
+       сессии показывает сразу конечный кадр с надписью (иначе 4 секунды
+       ожидания каждый раз);
+     • приложение тоже подаёт сигнал ostrov-ready — убираем заставку только
+       когда и анимация дошла до надписи, и первый экран готов;
+     • касание по экрану перематывает к надписи;
+     • если что-то пойдёт не так, страховка снимет заставку сама. */
 (function () {
   var splash = document.getElementById('ostrov-splash');
   if (!splash) return;
 
-  var done = false;
+  var DURATION = 5000;
+  var HOLD = 4200;          /* к этому моменту надпись уже стоит */
+  var started = Date.now();
+  var ready = false;
+  var hidden = false;
+  var holdTimer = 0;
+
+  /* ?splash=1 — показать заставку заново, даже если в этой сессии уже видели. */
+  var force = /[?&]splash=1/.test(location.search);
+  if (force) { try { sessionStorage.removeItem('ostrov-splash-seen'); } catch (e) {} }
+
+  var seen = false;
+  try { seen = !force && sessionStorage.getItem('ostrov-splash-seen') === '1'; } catch (e) {}
+
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var quick = seen || calm;
+
+  if (!quick) splash.classList.add('sp-play');
+
   function hide() {
-    if (done) return;
-    done = true;
-    splash.style.opacity = '0';
-    setTimeout(function () { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 500);
+    if (hidden) return;
+    hidden = true;
+    splash.classList.add('sp-hide');
+    try { sessionStorage.setItem('ostrov-splash-seen', '1'); } catch (e) {}
+    setTimeout(function () {
+      if (splash.parentNode) splash.parentNode.removeChild(splash);
+    }, 650);
   }
 
-  window.addEventListener('ostrov-ready', hide);
+  /* Надпись готова — можно открывать приложение, но только если оно само
+     сообщило, что первый экран отрисован. */
+  function maybeHide() {
+    if (!ready) return;
+    var left = Math.max(0, (quick ? 260 : HOLD) - (Date.now() - started));
+    clearTimeout(holdTimer);
+    holdTimer = setTimeout(hide, left);
+  }
 
-  /* Страховка на случай, если приложение не успело подать сигнал (медленная
-     сеть, старый браузер): убираем заставку, когда страница полностью
-     загрузилась, ещё через пять секунд. */
-  window.addEventListener('load', function () { setTimeout(hide, 5000); });
+  window.addEventListener('ostrov-ready', function () {
+    ready = true;
+    maybeHide();
+  });
 
-  /* И вторая страховка — чтобы заставка не осталась навсегда. */
-  setTimeout(hide, 30000);
+  /* Перемотка касанием: сразу к надписи. */
+  function skip() {
+    if (hidden || quick) return;
+    quick = true;
+    splash.classList.remove('sp-play');
+    maybeHide();
+  }
+  splash.addEventListener('click', skip);
+  splash.addEventListener('touchstart', skip, { passive: true });
+  window.addEventListener('keydown', skip);
+
+  /* Страховки: если приложение не подало сигнал — снимаем заставку сами. */
+  window.addEventListener('load', function () {
+    setTimeout(function () { ready = true; maybeHide(); }, 8000);
+  });
+  setTimeout(function () { ready = true; maybeHide(); }, 15000);
 })();
 </script>
 
