@@ -1,182 +1,182 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-26T14:50:23.099085+00:00",
+ "updated": "2026-11-26T23:35:37.489629+00:00",
  "count": 25,
  "items": [
   {
-   "id": "rossiyan-predosteregli-ot-odnoy-oshibki-s-dengami-v-turtsii",
-   "title": "Россиян предостерегли от одной ошибки с деньгами в Турции",
-   "link": "https://lenta.ru/news/2026/11/26/rossiyan-predosteregli-ot-odnoy-oshibki-s-dengami-v-turtsii/",
-   "category": "Путешествия",
-   "date": "2026-11-26T14:49:54+00:00"
-  },
-  {
-   "id": "populyarnost-schelkunchika-v-novogodnie-prazdniki-ob-yasnili",
-   "title": "Популярность «Щелкунчика» в новогодние праздники объяснили",
-   "link": "https://lenta.ru/news/2026/11/26/populyarnost-schelkunchika-v-novogodnie-prazdniki-ob-yasnili/",
-   "category": "Культура",
-   "date": "2026-11-26T14:43:02+00:00"
-  },
-  {
-   "id": "dolya-zadneprivodnyh-mashin-v-rossii-prakticheski-soshla-na-net",
-   "title": "Доля заднеприводных машин в России практически сошла на нет",
-   "link": "https://lenta.ru/news/2026/11/26/dolya-zadneprivodnyh-mashin-v-rossii-prakticheski-soshla-na-net/",
-   "category": "Авто",
-   "date": "2026-11-26T14:40:29+00:00"
-  },
-  {
-   "id": "geymeram-ob-yasnili-polzu-videoigr-dlya-psihicheskogo-zdorovya",
-   "title": "Геймерам объяснили пользу видеоигр для психического здоровья",
-   "link": "https://lenta.ru/news/2026/11/26/geymeram-ob-yasnili-polzu-videoigr-dlya-psihicheskogo-zdorovya/",
+   "id": "malo-spyaschih-lyudey-predupredili-o-sokraschenii-prodolzhitelnosti-zdorovoy-zhizni",
+   "title": "Мало спящих людей предупредили о сокращении продолжительности здоровой жизни",
+   "link": "https://lenta.ru/news/2026/11/27/malo-spyaschih-lyudey-predupredili-o-sokraschenii-prodolzhitelnosti-zdorovoy-zhizni/",
    "category": "Забота о себе",
-   "date": "2026-11-26T14:34:43+00:00"
+   "date": "2026-11-26T22:00:15+00:00"
   },
   {
-   "id": "uehavshaya-v-evropu-rossiyskaya-blogersha-pozhalovalas-na-nashestvie-kleschey",
-   "title": "Уехавшая в Европу российская блогерша пожаловалась на нашествие клещей",
-   "link": "https://lenta.ru/news/2026/11/26/uehavshaya-v-evropu-rossiyskaya-blogersha-pozhalovalas-na-nashestvie-kleschey/",
-   "category": "Интернет и СМИ",
-   "date": "2026-11-26T14:22:00+00:00"
-  },
-  {
-   "id": "krossover-lada-proshel-forsirovannye-ispytaniya-pered-startom-prodazh",
-   "title": "Кроссовер Lada прошел форсированные испытания перед стартом продаж",
-   "link": "https://lenta.ru/news/2026/11/26/krossover-lada-proshel-forsirovannye-ispytaniya-pered-startom-prodazh/",
-   "category": "Авто",
-   "date": "2026-11-26T14:20:14+00:00"
-  },
-  {
-   "id": "rossiyskie-turisty-chasche-drugih-inostrantsev-stali-pokupat-zoloto-v-dubae",
-   "title": "Российские туристы чаще других иностранцев стали покупать золото в Дубае",
-   "link": "https://lenta.ru/news/2026/11/26/rossiyskie-turisty-chasche-drugih-inostrantsev-stali-pokupat-zoloto-v-dubae/",
-   "category": "Путешествия",
-   "date": "2026-11-26T14:20:00+00:00"
-  },
-  {
-   "id": "rezhissera-sumerek-shokiroval-vybor-pattinsona-na-rol-bonda",
-   "title": "Режиссера «Сумерек» шокировал выбор Паттинсона на роль Бонда",
-   "link": "https://lenta.ru/news/2026/11/26/rezhissera-sumerek-shokiroval-vybor-pattinsona-na-rol-bonda/",
-   "category": "Культура",
-   "date": "2026-11-26T14:13:45+00:00"
-  },
-  {
-   "id": "zhulin-otsenil-sudeystvo-trusovoy-na-gran-pri-ssha",
-   "title": "Жулин оценил судейство Трусовой на Гран-при США",
-   "link": "https://lenta.ru/news/2026/11/26/zhulin-otsenil-sudeystvo-trusovoy-na-gran-pri-ssha/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:11:29+00:00"
-  },
-  {
-   "id": "fsbr-podala-protest-v-uww-na-travmirovavshuyu-smirnovu-amerikanku",
-   "title": "ФСБР подала протест в UWW на травмировавшую Смирнову американку",
-   "link": "https://lenta.ru/news/2026/11/26/fsbr-podala-protest-v-uww-na-travmirovavshuyu-smirnovu-amerikanku/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:10:34+00:00"
-  },
-  {
-   "id": "rossiyskaya-tsitadel-dokazala-effektivnost-protiv-dronov-i-raket",
-   "title": "Российская «Цитадель» доказала эффективность против дронов и ракет",
-   "link": "https://lenta.ru/news/2026/11/26/rossiyskaya-tsitadel-dokazala-effektivnost-protiv-dronov-i-raket/",
+   "id": "thin-laptop",
+   "title": "Перечислены недостатки одного вида ноутбуков",
+   "link": "https://lenta.ru/news/2026/11/27/thin-laptop/",
    "category": "Наука и техника",
-   "date": "2026-11-26T14:10:12+00:00"
+   "date": "2026-11-26T21:30:30+00:00"
   },
   {
-   "id": "nba-anonsirovala-masshtabnye-investitsii-v-basketbol-evropy",
-   "title": "НБА анонсировала масштабные инвестиции в баскетбол Европы",
-   "link": "https://lenta.ru/news/2026/11/26/nba-anonsirovala-masshtabnye-investitsii-v-basketbol-evropy/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:09:46+00:00"
+   "id": "perechisleny-opasnye-simptomy-posle-orvi",
+   "title": "Перечислены опасные симптомы после ОРВИ",
+   "link": "https://lenta.ru/news/2026/11/26/perechisleny-opasnye-simptomy-posle-orvi/",
+   "category": "Забота о себе",
+   "date": "2026-11-26T21:10:04+00:00"
   },
   {
-   "id": "fhr-raskritikovala-popytku-iihf-obzhalovat-reshenie-cas",
-   "title": "ФХР раскритиковала попытку IIHF обжаловать решение CAS",
-   "link": "https://lenta.ru/news/2026/11/26/fhr-raskritikovala-popytku-iihf-obzhalovat-reshenie-cas/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:09:03+00:00"
-  },
-  {
-   "id": "kvon-vpervye-obygral-tennisista-iz-top-10-mira",
-   "title": "Квон впервые обыграл теннисиста из топ-10 мира",
-   "link": "https://lenta.ru/news/2026/11/26/kvon-vpervye-obygral-tennisista-iz-top-10-mira/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:08:20+00:00"
-  },
-  {
-   "id": "uefa-nazval-pretendentov-na-zvanie-igroka-nedeli-lch",
-   "title": "УЕФА назвал претендентов на звание игрока недели ЛЧ",
-   "link": "https://lenta.ru/news/2026/11/26/uefa-nazval-pretendentov-na-zvanie-igroka-nedeli-lch/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:07:34+00:00"
-  },
-  {
-   "id": "italiya-obygrala-yuzhnuyu-koreyu-v-chetvertfinale-kubka-devisa",
-   "title": "Италия обыграла Южную Корею в четвертьфинале Кубка Дэвиса",
-   "link": "https://lenta.ru/news/2026/11/26/italiya-obygrala-yuzhnuyu-koreyu-v-chetvertfinale-kubka-devisa/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:06:28+00:00"
-  },
-  {
-   "id": "dzheyms-obnovil-veteranskiy-rekord-nba-po-tripl-dablam",
-   "title": "Джеймс обновил ветеранский рекорд НБА по трипл-даблам",
-   "link": "https://lenta.ru/news/2026/11/26/dzheyms-obnovil-veteranskiy-rekord-nba-po-tripl-dablam/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:05:17+00:00"
-  },
-  {
-   "id": "dinamo-sygraet-s-fakelom-v-kubke-rossii-1",
-   "title": "«Динамо» сыграет с «Факелом» в Кубке России",
-   "link": "https://lenta.ru/news/2026/11/26/dinamo-sygraet-s-fakelom-v-kubke-rossii-1/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:03:37+00:00"
-  },
-  {
-   "id": "britni-spirs-vossoedinilas-s-lishennym-opeki-nad-ney-ottsom",
-   "title": "Бритни Спирс воссоединилась с лишенным опеки над ней отцом",
-   "link": "https://lenta.ru/news/2026/11/26/britni-spirs-vossoedinilas-s-lishennym-opeki-nad-ney-ottsom/",
+   "id": "kim-chen-yn-shodil-na-kontsert-dolinoy-v-phenyane",
+   "title": "Ким Чен Ын сходил на концерт Долиной в Пхеньяне",
+   "link": "https://lenta.ru/news/2026/11/26/kim-chen-yn-shodil-na-kontsert-dolinoy-v-phenyane/",
    "category": "Культура",
-   "date": "2026-11-26T14:03:00+00:00"
+   "date": "2026-11-26T21:03:00+00:00"
   },
   {
-   "id": "osnovatel-unitree-predskazal-rost-proizvodstva-robotov-v-kitae",
-   "title": "Основатель Unitree предсказал рост производства роботов в Китае",
-   "link": "https://lenta.ru/news/2026/11/26/osnovatel-unitree-predskazal-rost-proizvodstva-robotov-v-kitae/",
-   "category": "Авто",
-   "date": "2026-11-26T14:02:49+00:00"
+   "id": "long-uktourists",
+   "title": "«Грубые, пьющие и не уважают никого». В Европе назвали нацию самых отвратительных туристов. Кто они и почему их так не любят?",
+   "link": "https://lenta.ru/news/2026/11/27/long-uktourists/",
+   "category": "Путешествия",
+   "date": "2026-11-26T21:01:06+00:00"
   },
   {
-   "id": "subhankulov-i-krus-pokazali-odinakovyy-ves-pered-boem-za-titul-ibf",
-   "title": "Субханкулов и Крус показали одинаковый вес перед боем за титул IBF",
-   "link": "https://lenta.ru/news/2026/11/26/subhankulov-i-krus-pokazali-odinakovyy-ves-pered-boem-za-titul-ibf/",
+   "id": "senat-evropeyskoy-strany-vynes-reshenie-po-provedeniyu-matchey-s-rossiey",
+   "title": "Сенат европейской страны вынес решение по проведению матчей с Россией",
+   "link": "https://lenta.ru/news/2026/11/26/senat-evropeyskoy-strany-vynes-reshenie-po-provedeniyu-matchey-s-rossiey/",
    "category": "Спорт",
-   "date": "2026-11-26T14:02:39+00:00"
+   "date": "2026-11-26T20:47:00+00:00"
   },
   {
-   "id": "malkin-podnyalsya-na-chistoe-19-e-mesto-bombardirov-nhl",
-   "title": "Малкин поднялся на чистое 19-е место бомбардиров НХЛ",
-   "link": "https://lenta.ru/news/2026/11/26/malkin-podnyalsya-na-chistoe-19-e-mesto-bombardirov-nhl/",
-   "category": "Спорт",
-   "date": "2026-11-26T14:01:56+00:00"
+   "id": "makarony",
+   "title": "Доктор Мясников назвал любимое блюдо на новогоднем столе",
+   "link": "https://lenta.ru/news/2026/11/26/makarony/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-26T20:19:00+00:00"
   },
   {
-   "id": "sinner-propustit-australian-open-iz-za-operatsii-na-kolene",
-   "title": "Синнер пропустит Australian Open из-за операции на колене",
-   "link": "https://lenta.ru/news/2026/11/26/sinner-propustit-australian-open-iz-za-operatsii-na-kolene/",
+   "id": "rayt-vpervye-vyigral-individualnuyu-gonku-kubka-mira",
+   "title": "Райт впервые выиграл индивидуальную гонку Кубка мира",
+   "link": "https://lenta.ru/news/2026/11/26/rayt-vpervye-vyigral-individualnuyu-gonku-kubka-mira/",
    "category": "Спорт",
-   "date": "2026-11-26T14:01:13+00:00"
+   "date": "2026-11-26T20:10:28+00:00"
   },
   {
-   "id": "ak-bars-obygral-amur-vtoroy-raz-podryad",
-   "title": "«Ак Барс» обыграл «Амур» второй раз подряд",
-   "link": "https://lenta.ru/news/2026/11/26/ak-bars-obygral-amur-vtoroy-raz-podryad/",
+   "id": "match-ligi-evropy-ostanovili-iz-za-besporyadkov",
+   "title": "Матч Лиги Европы остановили из-за беспорядков",
+   "link": "https://lenta.ru/news/2026/11/26/match-ligi-evropy-ostanovili-iz-za-besporyadkov/",
    "category": "Спорт",
-   "date": "2026-11-26T14:00:18+00:00"
+   "date": "2026-11-26T19:39:41+00:00"
   },
   {
-   "id": "avangard-obygral-admiral-po-bullitam-v-khl",
-   "title": "«Авангард» обыграл «Адмирал» по буллитам в КХЛ",
-   "link": "https://lenta.ru/news/2026/11/26/avangard-obygral-admiral-po-bullitam-v-khl/",
+   "id": "raskryto-otnoshenie-finskih-sportsmenov-k-ogranicheniyam-protiv-rossiyan",
+   "title": "Раскрыто отношение финских спортсменов к ограничениям против россиян",
+   "link": "https://lenta.ru/news/2026/11/26/raskryto-otnoshenie-finskih-sportsmenov-k-ogranicheniyam-protiv-rossiyan/",
    "category": "Спорт",
-   "date": "2026-11-26T13:59:22+00:00"
+   "date": "2026-11-26T19:20:00+00:00"
+  },
+  {
+   "id": "izuchayuschiy-russkiy-yazyk-evropeets-nazval-tri-slova-izdevatelstvom-nad-inostrantsami",
+   "title": "Изучающий русский язык европеец назвал три слова издевательством над иностранцами",
+   "link": "https://lenta.ru/news/2026/11/26/izuchayuschiy-russkiy-yazyk-evropeets-nazval-tri-slova-izdevatelstvom-nad-inostrantsami/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-26T19:16:00+00:00"
+  },
+  {
+   "id": "ispanskiy-futbolist-otsenil-uroven-bezopasnosti-v-moskve",
+   "title": "Испанский футболист оценил уровень безопасности в Москве",
+   "link": "https://lenta.ru/news/2026/11/26/ispanskiy-futbolist-otsenil-uroven-bezopasnosti-v-moskve/",
+   "category": "Спорт",
+   "date": "2026-11-26T18:45:58+00:00"
+  },
+  {
+   "id": "uehavshaya-v-evropu-blogersha-udivila-nemtsev-rasskazom-o-rossiyskih-muzhchinah",
+   "title": "Уехавшая в Европу блогерша удивила немцев рассказом о российских мужчинах",
+   "link": "https://lenta.ru/news/2026/11/26/uehavshaya-v-evropu-blogersha-udivila-nemtsev-rasskazom-o-rossiyskih-muzhchinah/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-26T18:15:00+00:00"
+  },
+  {
+   "id": "vrach-nazval-soprovozhdayuschiesya-chastym-mocheispuskaniem-zabolevaniya",
+   "title": "Врач назвал сопровождающиеся частым мочеиспусканием заболевания",
+   "link": "https://lenta.ru/news/2026/11/26/vrach-nazval-soprovozhdayuschiesya-chastym-mocheispuskaniem-zabolevaniya/",
+   "category": "Забота о себе",
+   "date": "2026-11-26T18:01:00+00:00"
+  },
+  {
+   "id": "tarpischev-rasskazal-o-popytkah-ubedit-sharapovu-vystupat-za-druguyu-stranu",
+   "title": "Тарпищев рассказал о попытках убедить Шарапову выступать за другую страну",
+   "link": "https://lenta.ru/news/2026/11/26/tarpischev-rasskazal-o-popytkah-ubedit-sharapovu-vystupat-za-druguyu-stranu/",
+   "category": "Спорт",
+   "date": "2026-11-26T17:46:00+00:00"
+  },
+  {
+   "id": "timur-rodrigez-proigral-sud-byvshey-zhene",
+   "title": "Тимур Родригез проиграл суд бывшей жене",
+   "link": "https://lenta.ru/news/2026/11/26/timur-rodrigez-proigral-sud-byvshey-zhene/",
+   "category": "Культура",
+   "date": "2026-11-26T17:39:25+00:00"
+  },
+  {
+   "id": "raskryt-luchshiy-napitok-dlya-snizheniya-davleniya",
+   "title": "Раскрыт лучший напиток для снижения давления",
+   "link": "https://lenta.ru/news/2026/11/26/raskryt-luchshiy-napitok-dlya-snizheniya-davleniya/",
+   "category": "Забота о себе",
+   "date": "2026-11-26T17:31:00+00:00"
+  },
+  {
+   "id": "sestra-dolli-parton-rasskazala-o-poslednih-dnyah-zhizni-legendy-kantri",
+   "title": "Сестра Долли Партон рассказала о последних днях жизни легенды кантри",
+   "link": "https://lenta.ru/news/2026/11/26/sestra-dolli-parton-rasskazala-o-poslednih-dnyah-zhizni-legendy-kantri/",
+   "category": "Культура",
+   "date": "2026-11-26T17:30:00+00:00"
+  },
+  {
+   "id": "dyu-plessi-rasskazal-o-sopernikah-gerri",
+   "title": "Дю Плесси рассказал о соперниках Гэрри",
+   "link": "https://lenta.ru/news/2026/11/26/dyu-plessi-rasskazal-o-sopernikah-gerri/",
+   "category": "Спорт",
+   "date": "2026-11-26T17:25:20+00:00"
+  },
+  {
+   "id": "ai",
+   "title": "Пользователям перечислили способы обезопасить себя после взлома 1Password",
+   "link": "https://lenta.ru/news/2026/11/26/ai/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-26T17:07:00+00:00"
+  },
+  {
+   "id": "izvestnyy-rossiyskiy-bloger-rasskazal-o-lechenii-v-psihiatricheskoy-bolnitse",
+   "title": "Известный российский блогер рассказал о лечении в психиатрической больнице",
+   "link": "https://lenta.ru/news/2026/11/26/izvestnyy-rossiyskiy-bloger-rasskazal-o-lechenii-v-psihiatricheskoy-bolnitse/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-26T17:06:00+00:00"
+  },
+  {
+   "id": "chetvero-rossiyskih-lyzhnikov-vystupyat-na-turnirah-v-norvegii-i-finlyandii",
+   "title": "Четверо российских лыжников выступят на турнирах в Норвегии и Финляндии",
+   "link": "https://lenta.ru/news/2026/11/26/chetvero-rossiyskih-lyzhnikov-vystupyat-na-turnirah-v-norvegii-i-finlyandii/",
+   "category": "Спорт",
+   "date": "2026-11-26T17:05:00+00:00"
+  },
+  {
+   "id": "evropa-pokazala-sdelannyy-ssha-krater-na-dimorfe",
+   "title": "Европа показала сделанный США кратер на Диморфе",
+   "link": "https://lenta.ru/news/2026/11/26/evropa-pokazala-sdelannyy-ssha-krater-na-dimorfe/",
+   "category": "Наука и техника",
+   "date": "2026-11-26T17:05:00+00:00"
+  },
+  {
+   "id": "bolee-230-passazhirov-zarazilis-norovirusom-na-kruiznom-laynere",
+   "title": "Более 230 пассажиров заразились норовирусом на круизном лайнере",
+   "link": "https://lenta.ru/news/2026/11/26/bolee-230-passazhirov-zarazilis-norovirusom-na-kruiznom-laynere/",
+   "category": "Путешествия",
+   "date": "2026-11-26T17:01:00+00:00"
+  },
+  {
+   "id": "dyurant-nabral-33-tysyachi-ochkov-v-kariere-v-nba",
+   "title": "Дюрант набрал 33 тысячи очков в карьере в НБА",
+   "link": "https://lenta.ru/news/2026/11/26/dyurant-nabral-33-tysyachi-ochkov-v-kariere-v-nba/",
+   "category": "Спорт",
+   "date": "2026-11-26T16:41:00+00:00"
   }
  ]
 }
