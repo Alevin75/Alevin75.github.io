@@ -33,242 +33,122 @@
   html { -webkit-text-size-adjust: 100%; }
 
   /* ------------------------------------------------------------------
-     ЭКРАН ЗАГРУЗКИ: падение с неба на глэмпинг за 5 секунд.
+     ЭКРАН ЗАГРУЗКИ: падение с неба на диораму острова за 5 секунд.
 
-     Слои снизу вверх: четыре снимка земли (6400 → 800 м, шаг ровно 2×),
-     настоящее фото облаков, белая пелена на входе в облако, дымка,
-     зерно, виньетка, вспышка на посадке и надпись.
+     Сцена рисуется в WebGL: горизонтальная плоскость с фирменной картой
+     и этажи облаков на разной высоте. Камера падает сверху вниз, проходит
+     сквозь облака (кадр белеет), облака проносятся мимо, внизу растёт
+     остров, камера садится, собирается надпись. Всё остальное — бумажное
+     зерно, виньетка и надпись — обычные слои поверх холста.
      ------------------------------------------------------------------ */
   #ostrov-splash {
     position: fixed; inset: 0; z-index: 9999; overflow: hidden;
-    background: #0d1a22; color: #10120e;
+    background: linear-gradient(180deg, #5f9dc7 0%, #7cb0cf 52%, #a6c8dc 100%);
     transition: opacity .5s ease;
     font-family: 'Inter-Regular', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
     touch-action: manipulation;
   }
   #ostrov-splash.sp-hide { opacity: 0; }
 
-  /* Камера: лёгкий крен на входе в падение, к земле выравнивается. */
-  #ostrov-splash .sp-cam {
+  #ostrov-splash .sp-gl {
+    position: absolute; inset: 0; display: block;
+    width: 100%; height: 100%;
+    opacity: 0; transition: opacity .6s ease;
+  }
+  #ostrov-splash.sp-live .sp-gl { opacity: 1; }
+
+  /* Если WebGL нет — тихий финальный кадр. */
+  #ostrov-splash .sp-still {
     position: absolute; inset: 0;
-    transform: scale(1.1);
-    transform-origin: 50% 48%;
+    background: #7cb0cf url('./splash/diorama.png') 50% 50% / 100% 100% no-repeat;
+    opacity: 0; transition: opacity .4s ease;
+  }
+  #ostrov-splash.sp-no-3d .sp-still { opacity: 1; }
+
+  /* Виньетка: взгляд вниз, по краям чуть темнее. */
+  #ostrov-splash .sp-vignette {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(118% 78% at 50% 46%, rgba(0,0,0,0) 42%, rgba(10,22,26,.30) 100%);
   }
 
-  /* Снимки земли. Кадр портретный и точно совпадает с окном просмотра,
-     поэтому cover ничего не режет и стыки этажей совпадают пиксель в пиксель. */
-  #ostrov-splash .sp-z {
-    position: absolute; inset: 0;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transform-origin: 50% 50%;
-    will-change: transform, opacity;
-  }
-  #ostrov-splash .sp-z64 { background-image: url('./splash/zoom-6400m.jpg'); }
-  #ostrov-splash .sp-z32 { background-image: url('./splash/zoom-3200m.jpg'); opacity: 0; }
-  #ostrov-splash .sp-z16 { background-image: url('./splash/zoom-1600m.jpg'); opacity: 0; }
-  #ostrov-splash .sp-z8  { background-image: url('./splash/zoom-800m.jpg');  opacity: 0; }
-
-  /* Облака — настоящее фото сверху. */
-  #ostrov-splash .sp-cloud {
-    position: absolute; inset: 0;
-    background: #223 url('./splash/cloud-field.jpg') 50% 30% / cover no-repeat;
-    transform-origin: 50% 50%;
-    will-change: transform, opacity;
-  }
-
-  /* Пелена: камера влетает в облако — кадр на мгновение становится белым. */
-  #ostrov-splash .sp-veil {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0;
-    background: radial-gradient(130% 100% at 50% 44%, #ffffff 0%, #f2f5f5 62%, #e7edee 100%);
-  }
-
-  /* Дымка: воздух между нами и землёй, тает по мере снижения. */
-  #ostrov-splash .sp-haze {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0;
-    background: linear-gradient(to bottom,
-      rgba(246,248,248,.92) 0%,
-      rgba(244,247,247,.55) 26%,
-      rgba(242,246,246,.18) 58%,
-      rgba(255,255,255,0) 84%);
-  }
-
-  /* Бумажная крупа — чтобы картинка не выглядела стерильным скриншотом. */
+  /* Бумажная крупа — чтобы картинка не выглядела стерильным рендером. */
   #ostrov-splash .sp-grain {
     position: absolute; inset: 0; pointer-events: none;
-    opacity: .075;
+    opacity: .07; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
   }
 
-  /* Виньетка: взгляд вниз, по краям темнее. */
-  #ostrov-splash .sp-vignette {
-    position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(112% 74% at 50% 46%, rgba(0,0,0,0) 34%, rgba(9,16,13,.58) 100%);
+  /* Пелена: камера проходит сквозь облако — кадр на миг белеет.
+     Управляется из JS по высоте камеры. */
+  #ostrov-splash .sp-veil {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0;
+    background: radial-gradient(120% 96% at 50% 46%, #ffffff 0%, #f4f7f8 58%, #e8eff1 100%);
   }
 
   /* Вспышка на посадке. */
   #ostrov-splash .sp-flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
 
-  /* Затемнение под надписью: садится вместе с камерой. */
-  #ostrov-splash .sp-scrim {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0;
-    background:
-      radial-gradient(74% 28% at 50% 58%, rgba(8,12,10,.40) 0%, rgba(8,12,10,.20) 52%, rgba(8,12,10,0) 82%),
-      linear-gradient(to bottom, rgba(8,12,10,.20) 0%, rgba(8,12,10,0) 24%, rgba(8,12,10,0) 76%, rgba(8,12,10,.24) 100%);
+  /* Светлое подножие: к посадке низ кадра уходит в облачную пелену,
+     на ней стоит надпись. */
+  #ostrov-splash .sp-floor {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
+    pointer-events: none; opacity: 0;
+    background: linear-gradient(180deg,
+      rgba(251,251,249,0) 0%, rgba(251,251,249,.55) 38%,
+      rgba(251,251,249,.94) 68%, #fbfbf9 100%);
   }
 
   /* Надпись: тонкая, разреженная, в две строки с волоском под ней. */
   #ostrov-splash .sp-lockup {
-    position: absolute; left: 0; right: 0; top: 60%;
+    position: absolute; left: 0; right: 0; top: 79.5%;
     transform: translateY(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
     text-align: center; padding: 0 24px;
     opacity: 0;
   }
   #ostrov-splash .sp-small {
     font-size: 10px; letter-spacing: .38em; text-transform: uppercase;
-    color: rgba(251,247,244,.9);
-    text-shadow: 0 1px 14px rgba(0,0,0,.75);
+    color: rgba(34,48,42,.78);
+    text-shadow: 0 1px 14px rgba(255,255,255,.9);
   }
   #ostrov-splash .sp-name {
     font-family: 'CormorantGaramond-Regular', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: clamp(36px, 11vw, 54px);
+    font-size: clamp(38px, 11.5vw, 56px);
     letter-spacing: .17em; text-transform: uppercase; line-height: 1;
-    color: #fbf7f4;
-    text-shadow: 0 2px 30px rgba(0,0,0,.7), 0 1px 2px rgba(0,0,0,.5);
+    color: #22302a;
+    text-shadow: 0 2px 26px rgba(255,255,255,.95), 0 1px 3px rgba(255,255,255,.95);
     margin-left: .17em;
   }
   #ostrov-splash .sp-line {
-    width: 124px; height: 2px; background: rgba(251,247,244,.26);
+    width: 124px; height: 2px; background: rgba(34,48,42,.16);
     overflow: hidden; border-radius: 2px; margin-top: 6px;
   }
   #ostrov-splash .sp-line i {
     display: block; height: 100%; width: 100%; background: #c2603f; border-radius: 2px;
-    transform-origin: left center;
+    transform-origin: left center; transform: scaleX(0);
   }
 
   /* ------------------------------------------------------------------
-     Тайминг: 0.00 облака → 0.95 пелена → 1.30 земля → 3.35 посадка.
+     Тайминг: 0.00 падение → 3.30 надпись → 4.20 посадка.
      ------------------------------------------------------------------ */
   @media (prefers-reduced-motion: no-preference) {
-    #ostrov-splash.sp-play .sp-cam    { animation: sp-cam 5s cubic-bezier(.3,.1,.3,1) forwards; }
-    #ostrov-splash.sp-play .sp-cloud  { animation: sp-cloud 5s cubic-bezier(.4,0,.75,1) forwards; }
-    #ostrov-splash.sp-play .sp-z64    { animation: sp-z64 5s linear forwards; }
-    #ostrov-splash.sp-play .sp-z32    { animation: sp-z32 5s linear forwards; }
-    #ostrov-splash.sp-play .sp-z16    { animation: sp-z16 5s linear forwards; }
-    #ostrov-splash.sp-play .sp-z8     { animation: sp-z8 5s linear forwards; }
-    #ostrov-splash.sp-play .sp-veil   { animation: sp-veil 5s ease-in-out forwards; }
-    #ostrov-splash.sp-play .sp-haze   { animation: sp-haze 5s ease-out forwards; }
-    #ostrov-splash.sp-play .sp-scrim  { animation: sp-scrim 5s ease-in-out forwards; }
     #ostrov-splash.sp-play .sp-lockup { animation: sp-lockup 5s cubic-bezier(.2,.8,.3,1) forwards; }
     #ostrov-splash.sp-play .sp-line i { animation: sp-line 5s linear forwards; }
     #ostrov-splash.sp-play .sp-flash  { animation: sp-flash 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-vignette { animation: sp-vig 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-floor { animation: sp-floor 5s ease-out forwards; }
   }
 
-  /* Крен: входим в падение с наклоном, у земли выравниваемся. */
-  @keyframes sp-cam {
-    0%   { transform: scale(1.12) rotate(-1.6deg); }
-    25%  { transform: scale(1.09) rotate(.8deg); }
-    45%  { transform: scale(1.06) rotate(-.4deg); }
-    70%  { transform: scale(1.03) rotate(.15deg); }
-    100% { transform: scale(1.02) rotate(0deg); }
-  }
-
-  /* Облака: летят навстречу и уходят за кадр. */
-  @keyframes sp-cloud {
-    0%   { opacity: 1; transform: scale(1.06) translateY(0); }
-    10%  { opacity: 1; transform: scale(1.19) translateY(.6%); }
-    14%  { opacity: 1; transform: scale(1.26) translateY(1.2%); }
-    18%  { opacity: 1; transform: scale(1.32) translateY(1.8%); }
-    22%  { opacity: 0; transform: scale(1.36) translateY(2.4%); }
-    100% { opacity: 0; transform: scale(1.36) translateY(2.4%); }
-  }
-
-  /* Пелена: влетаем в облако, всё белеет, кадр меняется в белизне. */
-  @keyframes sp-veil {
-    0%    { opacity: 0; }
-    13%   { opacity: 0; }
-    17.5% { opacity: 1; }
-    20%   { opacity: 1; }
-    26%   { opacity: 0; }
-    100%  { opacity: 0; }
-  }
-
-  /* Слой 6400 м: 0.95 → 1.75 с, ровно два раза. */
-  @keyframes sp-z64 {
-    0%, 19% { opacity: 1; transform: scale(1); }
-    23%     { transform: scale(1.19); }
-    27%     { transform: scale(1.41); }
-    31%     { transform: scale(1.68); }
-    35%     { opacity: 1; transform: scale(2); }
-    36.5%   { opacity: 0; transform: scale(2); }
-    100%    { opacity: 0; transform: scale(2); }
-  }
-
-  /* Слой 3200 м: 1.75 → 2.55 с. */
-  @keyframes sp-z32 {
-    0%, 35% { opacity: 0; transform: scale(1); }
-    36.5%   { opacity: 1; transform: scale(1); }
-    40%     { transform: scale(1.24); }
-    44%     { transform: scale(1.48); }
-    48%     { transform: scale(1.76); }
-    51%     { opacity: 1; transform: scale(2); }
-    52.5%   { opacity: 0; transform: scale(2); }
-    100%    { opacity: 0; transform: scale(2); }
-  }
-
-  /* Слой 1600 м: 2.55 → 3.35 с. */
-  @keyframes sp-z16 {
-    0%, 51% { opacity: 0; transform: scale(1); }
-    52.5%   { opacity: 1; transform: scale(1); }
-    56%     { transform: scale(1.24); }
-    60%     { transform: scale(1.48); }
-    64%     { transform: scale(1.76); }
-    67%     { opacity: 1; transform: scale(2); }
-    68.5%   { opacity: 0; transform: scale(2); }
-    100%    { opacity: 0; transform: scale(2); }
-  }
-
-  /* Слой 800 м: посадка — скорость гаснет, кадр мягко доезжает. */
-  @keyframes sp-z8 {
-    0%, 67% { opacity: 0; transform: scale(1); }
-    68.5%   { opacity: 1; transform: scale(1); }
-    72%     { transform: scale(1.14); }
-    76%     { transform: scale(1.28); }
-    80%     { transform: scale(1.37); }
-    84%     { opacity: 1; transform: scale(1.41); }
-    88%     { opacity: 1; transform: scale(1.42); }
-    100%    { opacity: 1; transform: scale(1.425); }
-  }
-
-  /* Дымка: держится на высоте, к земле рассеивается. */
-  @keyframes sp-haze {
-    0%   { opacity: 0; }
-    26%  { opacity: .62; }
-    35%  { opacity: .46; }
-    55%  { opacity: .26; }
-    75%  { opacity: .10; }
-    88%  { opacity: .05; }
-    100% { opacity: .03; }
-  }
-
-  @keyframes sp-scrim {
-    0%, 68% { opacity: 0; }
-    84%     { opacity: 1; }
-    100%    { opacity: 1; }
-  }
-
-  /* Надпись встаёт, когда земля уже на месте. */
+  /* Надпись встаёт, когда остров уже на месте. */
   @keyframes sp-lockup {
-    0%, 68% { opacity: 0; transform: translateY(-50%) scale(.97); }
-    80%     { opacity: 1; transform: translateY(-50%) scale(1); }
-    100%    { opacity: 1; transform: translateY(-50%) scale(1.005); }
+    0%, 66% { opacity: 0; transform: translateY(-46%) scale(.985); }
+    79%     { opacity: 1; transform: translateY(-50%) scale(1); }
+    100%    { opacity: 1; transform: translateY(-50%) scale(1.004); }
   }
 
   /* Волосок под надписью — «как идёт загрузка». */
   @keyframes sp-line {
-    0%, 74% { transform: scaleX(0); }
+    0%, 72% { transform: scaleX(0); }
     90%     { transform: scaleX(.62); }
     97%     { transform: scaleX(.92); }
     100%    { transform: scaleX(1); }
@@ -276,24 +156,35 @@
 
   /* Вспышка на посадке. */
   @keyframes sp-flash {
-    0%, 80% { opacity: 0; }
-    86%     { opacity: .14; }
-    92%     { opacity: 0; }
+    0%, 82% { opacity: 0; }
+    87%     { opacity: .12; }
+    93%     { opacity: 0; }
     100%    { opacity: 0; }
+  }
+
+  /* Пелена снизу поднимается к посадке. */
+  @keyframes sp-floor {
+    0%, 58% { opacity: 0; }
+    80%     { opacity: .92; }
+    100%    { opacity: 1; }
+  }
+
+  /* Виньетка на входе сильнее — падаем в облаке. */
+  @keyframes sp-vig {
+    0%   { opacity: .35; }
+    30%  { opacity: .55; }
+    70%  { opacity: .85; }
+    100% { opacity: 1; }
   }
 
   /* Меньше движения: сразу тихий финальный кадр с надписью. */
   @media (prefers-reduced-motion: reduce) {
-    #ostrov-splash .sp-cloud { display: none; }
-    #ostrov-splash .sp-z64 { display: none; }
-    #ostrov-splash .sp-z32 { display: none; }
-    #ostrov-splash .sp-z16 { display: none; }
-    #ostrov-splash .sp-z8 { opacity: 1; transform: scale(1.08); }
-    #ostrov-splash .sp-haze { opacity: .12; }
-    #ostrov-splash .sp-flash { opacity: 0; }
-    #ostrov-splash .sp-scrim { opacity: 1; }
-    #ostrov-splash .sp-lockup { opacity: 1; }
+    #ostrov-splash .sp-gl { display: none; }
+    #ostrov-splash .sp-still { opacity: 1; }
+    #ostrov-splash .sp-lockup { opacity: 1; transform: translateY(-50%); }
     #ostrov-splash .sp-line i { transform: scaleX(.7); }
+    #ostrov-splash .sp-flash { opacity: 0; }
+    #ostrov-splash .sp-floor { opacity: 1; }
   }
 </style>
 
@@ -347,7 +238,7 @@
 
 
     <link rel="preload" as="script" href="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" />
-    <link rel="preload" as="script" href="/_expo/static/js/web/__common-254aa13b193187f781eec6aee0707f6a.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/__common-865e96e18005818e7f8f4b2ad1a05369.js" />
     <link rel="preload" as="script" href="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" />
   </head>
 
@@ -359,79 +250,382 @@
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
     <div id="ostrov-splash" aria-hidden="true">
-      <div class="sp-cam">
-        <div class="sp-z sp-z64"></div>
-        <div class="sp-z sp-z32"></div>
-        <div class="sp-z sp-z16"></div>
-        <div class="sp-z sp-z8"></div>
-        <div class="sp-cloud"></div>
-        <div class="sp-haze"></div>
-        <div class="sp-grain"></div>
-        <div class="sp-vignette"></div>
-        <div class="sp-veil"></div>
-        <div class="sp-flash"></div>
-        <div class="sp-scrim"></div>
-
-        <div class="sp-lockup">
-          <div class="sp-small">парк-отель</div>
-          <div class="sp-name">Остров</div>
-          <div class="sp-small">глэмпинг</div>
-          <div class="sp-line"><i></i></div>
-        </div>
+      <div class="sp-still"></div>
+      <canvas class="sp-gl" id="sp-gl"></canvas>
+      <div class="sp-vignette"></div>
+      <div class="sp-grain"></div>
+      <div class="sp-veil"></div>
+      <div class="sp-floor"></div>
+      <div class="sp-flash"></div>
+      <div class="sp-lockup">
+        <div class="sp-small">парк-отель</div>
+        <div class="sp-name">Остров</div>
+        <div class="sp-small">глэмпинг</div>
+        <div class="sp-line"><i></i></div>
       </div>
     </div>
 
-  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-254aa13b193187f781eec6aee0707f6a.js" defer></script><script src="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" defer></script>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-865e96e18005818e7f8f4b2ad1a05369.js" defer></script><script src="/_expo/static/js/web/entry-47764227989c7faeba61ce08d85e4fb9.js" defer></script>
 
 <script>
-/* Экран загрузки «падение с неба» — ровно 5 секунд.
-     • анимация один раз за сессию; ?splash=1 — посмотреть ещё раз;
-     • убираем заставку, когда и анимация дошла до надписи, и первый экран
-       приложения готов;
-     • касание перематывает к надписи;
-     • страховки снимают заставку, если приложение не подало сигнал. */
 (function () {
   var splash = document.getElementById('ostrov-splash');
   if (!splash) return;
 
-  var HOLD = 4500;          /* кадр доезжает к 4.5 с, ещё 0.5 с — растворение */
+  var seen = false;
+  try { seen = sessionStorage.getItem('ostrov-splash-seen') === '1'; } catch (e) {}
+  var forced = /[?&]splash=1/.test(location.search);
+  if (seen && !forced) {
+    if (splash.parentNode) splash.parentNode.removeChild(splash);
+    return;
+  }
+  try { sessionStorage.setItem('ostrov-splash-seen', '1'); } catch (e) {}
+
+  var HOLD = 4550;
   var started = Date.now();
-  var ready = false;
-  var hidden = false;
+  var ready = false, hidden = false, quick = false;
   var holdTimer = 0;
 
-  /* ?splash=1 — показать заставку заново, даже если в этой сессии уже видели. */
-  var force = /[?&]splash=1/.test(location.search);
-  if (force) { try { sessionStorage.removeItem('ostrov-splash-seen'); } catch (e) {} }
+  /* ---- 3D-пролёт на чистом WebGL: ни библиотек, ни сети ---- */
+  var FREEZE = parseFloat((location.search.match(/[?&]t=([\d.]+)/) || [])[1]);
+  var still = !isFinite(FREEZE) && window.matchMedia &&
+              window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var seen = false;
-  try { seen = !force && sessionStorage.getItem('ostrov-splash-seen') === '1'; } catch (e) {}
+  function num(v) { return (v < 0 ? 0 : v > 1 ? 1 : v); }
 
-  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var quick = seen || calm;
+  function flight(canvas) {
+    var gl = null;
+    try {
+      var opt = { alpha: true, antialias: true, premultipliedAlpha: false,
+                  powerPreference: 'high-performance',
+                  preserveDrawingBuffer: isFinite(FREEZE) };
+      gl = canvas.getContext('webgl', opt) || canvas.getContext('experimental-webgl', opt);
+    } catch (e) { gl = null; }
+    if (!gl) return null;
 
-  if (!quick) splash.classList.add('sp-play');
+    var VS = 'attribute vec2 a_pos; attribute vec2 a_uv;' +
+      'uniform mat4 u_mvp; uniform vec3 u_center; uniform vec2 u_size;' +
+      'uniform vec3 u_right; uniform vec3 u_up;' +
+      'varying vec2 v_uv;' +
+      'void main(){ v_uv = a_uv;' +
+      ' vec3 p = u_center + u_right * (a_pos.x * u_size.x)' +
+      '                  + u_up * (a_pos.y * u_size.y);' +
+      ' gl_Position = u_mvp * vec4(p, 1.0); }';
 
-  /* Все пять кадров просим заранее: иначе поздние слои догружаются на глазах. */
-  ['cloud-field.jpg', 'zoom-6400m.jpg', 'zoom-3200m.jpg', 'zoom-1600m.jpg', 'zoom-800m.jpg']
-    .forEach(function (name) {
+    var FS = 'precision mediump float;' +
+      'uniform sampler2D u_tex; uniform float u_alpha; uniform float u_feather;' +
+      'uniform float u_fade; uniform float u_texAlpha; varying vec2 v_uv;' +
+      'void main(){ vec4 c = texture2D(u_tex, v_uv);' +
+      ' float e = min(min(v_uv.x, 1.0 - v_uv.x), min(v_uv.y, 1.0 - v_uv.y));' +
+      ' float fa = smoothstep(0.0, max(u_feather, 0.0005), e);' +
+      ' float a = mix(fa, c.a, u_texAlpha) * u_alpha;' +
+      ' if (u_fade > 0.0) a *= smoothstep(0.0, u_fade, min(min(v_uv.x, 1.0 - v_uv.x), 1.0 - v_uv.y));' +
+      ' if (a < 0.002) discard;' +
+      ' gl_FragColor = vec4(c.rgb, a); }';
+
+    function sh(type, src) {
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) return null;
+      return s;
+    }
+    var vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, FS);
+    if (!vs || !fs) return null;
+    var pr = gl.createProgram();
+    gl.attachShader(pr, vs); gl.attachShader(pr, fs); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) return null;
+    gl.useProgram(pr);
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+      -0.5, -0.5, 0, 0,   0.5, -0.5, 1, 0,
+      -0.5,  0.5, 0, 1,   0.5,  0.5, 1, 1
+    ]), gl.STATIC_DRAW);
+    var aPos = gl.getAttribLocation(pr, 'a_pos');
+    var aUv = gl.getAttribLocation(pr, 'a_uv');
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 16, 0);
+    gl.enableVertexAttribArray(aUv);
+    gl.vertexAttribPointer(aUv, 2, gl.FLOAT, false, 16, 8);
+
+    var uMvp = gl.getUniformLocation(pr, 'u_mvp');
+    var uCenter = gl.getUniformLocation(pr, 'u_center');
+    var uSize = gl.getUniformLocation(pr, 'u_size');
+    var uRight = gl.getUniformLocation(pr, 'u_right');
+    var uUp = gl.getUniformLocation(pr, 'u_up');
+    var uAlpha = gl.getUniformLocation(pr, 'u_alpha');
+    var uFeather = gl.getUniformLocation(pr, 'u_feather');
+    var uTexAlpha = gl.getUniformLocation(pr, 'u_texAlpha');
+    var uFade = gl.getUniformLocation(pr, 'u_fade');
+    var uTex = gl.getUniformLocation(pr, 'u_tex');
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    gl.disable(gl.DEPTH_TEST);
+    gl.clearColor(0, 0, 0, 0);
+
+    var texs = {}, left = 4, kick = null;
+    function tex(name, url) {
+      var t = gl.createTexture();
+      texs[name] = t;
+      gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE,
+                    new Uint8Array([0, 0, 0, 0]));
       var img = new Image();
-      img.src = './splash/' + name;
-    });
+      img.onload = function () {
+        gl.bindTexture(gl.TEXTURE_2D, t);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+        left--;
+        if (kick) kick();
+      };
+      img.onerror = function () { left--; };
+      img.src = url;
+    }
+    tex('dior', './splash/diorama.png');
+    tex('a', './splash/cloud-a.png');
+    tex('b', './splash/cloud-b.png');
+    tex('c', './splash/cloud-c.png');
+
+    /* ---- геометрия сцены ---- */
+    var IW = 1000;                            /* ширина карточки-диорамы */
+    var IH = IW * 1864 / 860;                 /* высота: как в макете 430x932 */
+    var FOV = 50 * Math.PI / 180;
+    var tanH = Math.tan(FOV / 2);
+    var CY = IH * 0.5;                        /* центр карточки по высоте */
+    var W = 0, H = 0, aspect = 1, camEnd = 2280, camStart = 9000;
+
+    function rnd(seed) {
+      return function () {
+        seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+    var R = rnd(20261125);
+    function tex3(i) { return ['a', 'b', 'c'][i % 3]; }
+
+    /* Облака — вертикальные билборды: так они читаются тучей, а не полосой. */
+    var sprites = [];
+    function cl(w, x, y, z, a, sp) {
+      sprites.push({ x: x, y: y, z: z, w: w, h: w * 0.52, a: a,
+                     tex: tex3((R() * 3) | 0), sp: sp });
+    }
+    /* коридор падения: эти облака проносятся мимо камеры */
+    for (var j = 0; j < 11; j++) {
+      cl(1300 + 1300 * R(), (R() * 2 - 1) * 1500,
+         CY - 900 + 2600 * R(), -2500 - 2600 * R(), .8 + .15 * R(), 6 + 9 * R());
+    }
+    /* вокруг острова — рамка финального кадра */
+    for (var i = 0; i < 7; i++) {
+      var sd = (i % 2) ? 1 : -1;
+      cl(760 + 560 * R(), sd * (900 + 460 * R()),
+         CY + (R() * 2 - 1) * 760, -420 - 900 * R(), .45 + .3 * R(), 3 + 4 * R());
+    }
+    /* прикрывает правый обрез карточки и днём, и в полёте */
+    cl(1500, 1000, CY + 120, -260, .92, 2.5);
+    cl(1500, -1460, CY - 220, -420, .7, 2.5);
+    sprites.sort(function (p, q) { return q.z - p.z; });
+
+    function persp(fovy, asp, near, far) {
+      var f = 1 / Math.tan(fovy / 2), nf = 1 / (near - far);
+      return new Float32Array([
+        f / asp, 0, 0, 0,
+        0, f, 0, 0,
+        0, 0, (far + near) * nf, -1,
+        0, 0, 2 * far * near * nf, 0]);
+    }
+    function lookAt2(ex, ey, ez, tx, ty, tz, up) {
+      var zx = ex - tx, zy = ey - ty, zz = ez - tz;
+      var zl = Math.sqrt(zx * zx + zy * zy + zz * zz) || 1;
+      zx /= zl; zy /= zl; zz /= zl;
+      var xx = up[1] * zz - up[2] * zy, xy = up[2] * zx - up[0] * zz, xz = up[0] * zy - up[1] * zx;
+      var xl = Math.sqrt(xx * xx + xy * xy + xz * xz) || 1;
+      xx /= xl; xy /= xl; xz /= xl;
+      var yx = zy * xz - zz * xy, yy = zz * xx - zx * xz, yz = zx * xy - zy * xx;
+      return new Float32Array([
+        xx, yx, zx, 0,
+        xy, yy, zy, 0,
+        xz, yz, zz, 0,
+        -(xx * ex + xy * ey + xz * ez),
+        -(yx * ex + yy * ey + yz * ez),
+        -(zx * ex + zy * ey + zz * ez), 1]);
+    }
+    function mul(a, b) {
+      var o = new Float32Array(16);
+      for (var i = 0; i < 4; i++) for (var j = 0; j < 4; j++) {
+        var s = 0;
+        for (var k2 = 0; k2 < 4; k2++) s += a[k2 * 4 + j] * b[i * 4 + k2];
+        o[i * 4 + j] = s;
+      }
+      return o;
+    }
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.max(1, Math.round(canvas.clientWidth * dpr));
+      H = Math.max(1, Math.round(canvas.clientHeight * dpr));
+      canvas.width = W; canvas.height = H;
+      aspect = W / H;
+      var fitH = IH / (2 * tanH);
+      var fitW = IW / (2 * tanH * aspect);
+      camEnd = Math.min(fitH, fitW) * 0.985;   /* карточка чуть больше кадра */
+      camStart = camEnd + 6400;
+      gl.viewport(0, 0, W, H);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var veilEl = splash.querySelector('.sp-veil');
+
+    function draw(texName, cx, cy, cz, sx, sz, alpha, feather, texAlpha, mvp, up, fade) {
+      var t = texs[texName];
+      if (!t) return;
+      var R2 = [-1, 0, 0], U2 = up || [-1, 0, 0];
+      gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.uniformMatrix4fv(uMvp, false, mvp);
+      gl.uniform3f(uCenter, cx, cy, cz);
+      gl.uniform2f(uSize, sx, sz);
+      gl.uniform3f(uRight, R2[0], R2[1], R2[2]);
+      gl.uniform3f(uUp, U2[0], U2[1], U2[2]);
+      gl.uniform1f(uAlpha, alpha);
+      gl.uniform1f(uFeather, feather);
+      gl.uniform1f(uTexAlpha, texAlpha);
+      gl.uniform1f(uFade, fade || 0.0);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    }
+
+    function render(t) {
+    if (window.__spPix) { window.__spPix = null; }
+      /* 0 → 4.2 с падение, дальше кадр держится и чуть доезжает */
+      var p = num(t / 4.2);
+      var e = 1 - Math.pow(1 - p, 3);
+      var k = 1 - e;                            /* 1 — в небе, 0 — сели */
+      var shake = k * k * 22;
+      var camY = CY + 1700 * k + Math.sin(t * 6.9 + 1.3) * shake * 0.6;
+      var camZ = -camEnd - 5200 * k;
+      if (t > 4.2) camZ += 22 * (t - 4.2);      /* мягкое доезжание вперёд */
+      var camX = -480 * k + Math.sin(t * 8.3) * shake;
+      var tY = CY + 420 * k;
+
+      var proj = persp(FOV, aspect, 40, 80000);
+      var view = lookAt2(camX, camY, camZ, 0, tY, 0, [0, 1, 0]);
+      var mvp = mul(proj, view);
+
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      window.spDebug = { t: t, camY: Math.round(camY), camX: Math.round(camX), camZ: Math.round(camZ), left: left, w: W, h: H, aspect: Math.round(aspect*100), camEnd: Math.round(camEnd), n: sprites.length };
+
+      /* карточка-диорама: вертикальное полотно, вырезанное по небу */
+      var cardA = num((t - 0.05) / 0.5);
+      var VUP = [0, -1, 0], HUP = [0, 0, 1];
+      var cardDrawn = false;
+      function card() {
+        if (cardDrawn) return;
+        cardDrawn = true;
+        draw('dior', 0, CY, 0, IW, IH, cardA, 0.0, 1.0, mvp, VUP, 0.10 * k);
+      }
+
+      /* облака: от дальних к ближним, карточка — на своём месте по глубине */
+      function spr(s, i) {
+        var ddx = camX - s.x, ddy = camY - s.y, ddz = camZ - s.z;
+        var dist = Math.sqrt(ddx * ddx + ddy * ddy + ddz * ddz);
+        var near = num((dist - 520) / 900);        /* не липнут к объективу */
+        if (near <= 0.002) return;
+        var drift = Math.sin(t * 0.6 + i) * s.sp;
+        draw(s.tex, s.x + drift, s.y, s.z, s.w, s.h,
+             s.a * near * num(t / 0.6), 0.0, 1.0, mvp, VUP);
+      }
+      /* дальние облака за карточкой, потом сама карточка, потом передние */
+      for (var i = 0; i < sprites.length; i++) if (sprites[i].z <= 0) spr(sprites[i], i);
+      card();
+      for (var i3 = sprites.length - 1; i3 >= 0; i3--) if (sprites[i3].z > 0) spr(sprites[i3], i3);
+
+      /* белая пелена на проходе сквозь этаж облаков */
+      if (isFinite(FREEZE)) {
+        var px = new Uint8Array(4);
+        gl.readPixels(Math.floor(W / 2), Math.floor(H / 2), 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
+        window.__spPix = [px[0], px[1], px[2], px[3]];
+      }
+      if (veilEl) {
+        var g1 = Math.exp(-Math.pow((t - 0.05) / 0.78, 2));
+        var g2 = Math.exp(-Math.pow((t - 2.30) / 0.50, 2));
+        var v = Math.max(0, 0.96 * g1 + 0.52 * g2 - 0.06);
+        veilEl.style.opacity = Math.min(0.94, v).toFixed(3);
+      }
+    }
+
+    kick = function () { if (isFinite(FREEZE)) render(FREEZE); };
+
+    var started = 0, raf = 0;
+    function loop(now) {
+      if (!started) started = now;
+      render((now - started) / 1000);
+      raf = window.requestAnimationFrame(loop);
+    }
+
+    if (isFinite(FREEZE)) {
+      render(FREEZE);
+    } else if (still) {
+      render(4.95);
+    } else {
+      raf = window.requestAnimationFrame(loop);
+    }
+
+    return {
+      stop: function () {
+        if (raf) window.cancelAnimationFrame(raf);
+        raf = 0;
+      }
+    };
+  }
+
+  var canvas = document.getElementById('sp-gl');
+  var fly = null;
+  if (canvas && !still) {
+    try {
+      fly = flight(canvas);
+    } catch (e) {
+      fly = null;
+    }
+  }
+  if (fly) {
+    splash.classList.add('sp-live');
+    splash.classList.add('sp-play');
+  } else {
+    splash.classList.add('sp-no-3d');
+  }
 
   function hide() {
     if (hidden) return;
     hidden = true;
+    if (fly) fly.stop();
     splash.classList.add('sp-hide');
-    try { sessionStorage.setItem('ostrov-splash-seen', '1'); } catch (e) {}
     setTimeout(function () {
       if (splash.parentNode) splash.parentNode.removeChild(splash);
-    }, 600);
+    }, 620);
   }
 
+  function skip() {
+    if (hidden || quick) return;
+    quick = true;
+    splash.classList.remove('sp-play');
+    splash.classList.add('sp-hide');
+    if (fly) fly.stop();
+    setTimeout(hide, 240);
+  }
+  splash.addEventListener('click', skip);
+  splash.addEventListener('touchstart', skip, { passive: true });
+  window.addEventListener('keydown', skip);
+
   function maybeHide() {
-    if (!ready) return;
-    var left = Math.max(0, (quick ? 240 : HOLD) - (Date.now() - started));
+    if (!ready || hidden) return;
+    var left = Math.max(0, HOLD - (Date.now() - started));
     clearTimeout(holdTimer);
     holdTimer = setTimeout(hide, left);
   }
@@ -440,16 +634,6 @@
     ready = true;
     maybeHide();
   });
-
-  function skip() {
-    if (hidden || quick) return;
-    quick = true;
-    splash.classList.remove('sp-play');
-    maybeHide();
-  }
-  splash.addEventListener('click', skip);
-  splash.addEventListener('touchstart', skip, { passive: true });
-  window.addEventListener('keydown', skip);
 
   window.addEventListener('load', function () {
     setTimeout(function () { ready = true; maybeHide(); }, 8000);
