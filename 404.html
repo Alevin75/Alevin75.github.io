@@ -248,7 +248,7 @@ html, body, #root {
 
 
     <link rel="preload" as="script" href="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" />
-    <link rel="preload" as="script" href="/_expo/static/js/web/__common-32d0e7f86a532e3870e31ab764fb00f0.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/__common-33968269050abcf01325279636ba1f84.js" />
     <link rel="preload" as="script" href="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" />
   </head>
 
@@ -275,7 +275,7 @@ html, body, #root {
       </div>
     </div>
 
-  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-32d0e7f86a532e3870e31ab764fb00f0.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-33968269050abcf01325279636ba1f84.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
 
 <script>
 (function () {
@@ -320,6 +320,10 @@ html, body, #root {
   if (guestCode) {
     FLIGHT = 1.2;   /* секунды: короткий подлёт вместо круга */
     HOLD = 3000;    /* дольше трёх секунд заставка не держится */
+    /* Код оставляем приложению: внутри страницы Tilda адрес уже без
+       параметра, а из sessionStorage приложение его достанет
+       (см. src/lib/guestLink.ts). */
+    try { sessionStorage.setItem('ostrov-guest-code', guestCode); } catch (e) {}
   }
 
   function num(v) { return (v < 0 ? 0 : v > 1 ? 1 : v); }
