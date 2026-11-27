@@ -24,7 +24,19 @@
         flex: 1;
       }
     </style>
-  
+  <style id="ostrov-web-fonts">
+  /* Шрифты сайта одним куском: woff2 вместо TTF.
+     Шесть гарнитур весили 1,8 МБ (0,9 МБ по сети) — стали 150 КБ.
+     Символы обрезаны до тех, что есть в приложении (см. make_woff2.py). */
+  @font-face { font-family: 'CormorantGaramond-Light'; font-weight: 300; font-style: normal; font-display: swap; src: url('./fonts-web/CormorantGaramond-Light.woff2') format('woff2'); }
+  @font-face { font-family: 'CormorantGaramond-Regular'; font-weight: 400; font-style: normal; font-display: swap; src: url('./fonts-web/CormorantGaramond-Regular.woff2') format('woff2'); }
+  @font-face { font-family: 'CormorantGaramond-SemiBold'; font-weight: 600; font-style: normal; font-display: swap; src: url('./fonts-web/CormorantGaramond-SemiBold.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter-Regular'; font-weight: 400; font-style: normal; font-display: swap; src: url('./fonts-web/Inter-Regular.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter-Medium'; font-weight: 500; font-style: normal; font-display: swap; src: url('./fonts-web/Inter-Medium.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter-SemiBold'; font-weight: 600; font-style: normal; font-display: swap; src: url('./fonts-web/Inter-SemiBold.woff2') format('woff2'); }
+</style>
+
+
 <style id="ostrov-shell">
 html, body, #root {
     font-family: 'Inter-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
@@ -236,7 +248,7 @@ html, body, #root {
 
 
     <link rel="preload" as="script" href="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" />
-    <link rel="preload" as="script" href="/_expo/static/js/web/__common-d3371109feaca47e1b33c65ea8e9d37b.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/__common-d3a4d1b17ec7e3b7a85f8aff25f27e35.js" />
     <link rel="preload" as="script" href="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" />
   </head>
 
@@ -263,7 +275,7 @@ html, body, #root {
       </div>
     </div>
 
-  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-d3371109feaca47e1b33c65ea8e9d37b.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-d3a4d1b17ec7e3b7a85f8aff25f27e35.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
 
 <script>
 (function () {
