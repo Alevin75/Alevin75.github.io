@@ -248,7 +248,7 @@ html, body, #root {
 
 
     <link rel="preload" as="script" href="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" />
-    <link rel="preload" as="script" href="/_expo/static/js/web/__common-1cecc4bbc29635e08d801f6e5a286542.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/__common-32d0e7f86a532e3870e31ab764fb00f0.js" />
     <link rel="preload" as="script" href="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" />
   </head>
 
@@ -275,7 +275,7 @@ html, body, #root {
       </div>
     </div>
 
-  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-1cecc4bbc29635e08d801f6e5a286542.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-32d0e7f86a532e3870e31ab764fb00f0.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
 
 <script>
 (function () {
@@ -297,10 +297,30 @@ html, body, #root {
   var ready = false, hidden = false, quick = false;
   var holdTimer = 0;
 
-  /* ?t=6.5 — застывший кадр для проверки, prefers-reduced-motion — статичная картинка. */
-  var FREEZE = parseFloat((location.search.match(/[?&]t=([\d.]+)/) || [])[1]);
+  /* ?t=6.5 — застывший кадр для проверки, prefers-reduced-motion — статичная картинка.
+
+     Внимание: тот же параметр t= носит код брони в ссылке из СМС.
+     Число — тестовый кадр, буквы с цифрами — код гостя, поэтому
+     застывший кадр включаем только если после t= стоит именно число. */
+  var TEST_FRAME = /^[0-9]+([.][0-9]+)?$/;
+  var FROM_LINK = /[?&]t=([^&#]+)/;
+  var inAddress = FROM_LINK.exec(location.search);
+  var inReferrer = FROM_LINK.exec(document.referrer || '');
+  var ownCode = inAddress ? inAddress[1] : '';
+  var FREEZE = ownCode && TEST_FRAME.test(ownCode) ? parseFloat(ownCode) : NaN;
   var still = !isFinite(FREEZE) && window.matchMedia &&
               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Гость по ссылке из СМС: полёт от Европы не нужен, ведём сразу
+     к делу. Внутри страницы Tilda адрес с параметром приходит
+     в referrer. */
+  var guestCode = ownCode && !TEST_FRAME.test(ownCode) ? ownCode
+    : (inReferrer && !TEST_FRAME.test(inReferrer[1])
+       ? inReferrer[1] : '');
+  if (guestCode) {
+    FLIGHT = 1.2;   /* секунды: короткий подлёт вместо круга */
+    HOLD = 3000;    /* дольше трёх секунд заставка не держится */
+  }
 
   function num(v) { return (v < 0 ? 0 : v > 1 ? 1 : v); }
   function ease(v) { return v * v * (3 - 2 * v); }
