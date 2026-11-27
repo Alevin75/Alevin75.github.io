@@ -26,24 +26,24 @@
     </style>
   
 <style id="ostrov-shell">
-  html, body, #root {
+html, body, #root {
     font-family: 'Inter-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
     background-color: #f6f5f1;
   }
   html { -webkit-text-size-adjust: 100%; }
 
   /* ------------------------------------------------------------------
-     ЭКРАН ЗАГРУЗКИ: падение с неба на диораму острова за 5 секунд.
+     ЭКРАН ЗАГРУЗКИ: полёт от Европы и Азии к озеру Копыто за 8 секунд.
 
-     Сцена рисуется в WebGL: горизонтальная плоскость с фирменной картой
-     и этажи облаков на разной высоте. Камера падает сверху вниз, проходит
-     сквозь облака (кадр белеет), облака проносятся мимо, внизу растёт
-     остров, камера садится, собирается надпись. Всё остальное — бумажное
-     зерно, виньетка и надпись — обычные слои поверх холста.
+     Девять спутниковых кадров вокруг острова. Каждый следующий в 3-5 раз
+     подробнее предыдущего; масштаб идёт по экспоненте, поэтому скорость
+     не «рвётся» — чем ближе, тем медленнее. Соседние кадры растворяются
+     друг в друге, край нового кадра мягкий, и стыка не видно.
+     Облаков нет: только карта, виньетка и надпись.
      ------------------------------------------------------------------ */
   #ostrov-splash {
     position: fixed; inset: 0; z-index: 9999; overflow: hidden;
-    background: linear-gradient(180deg, #5f9dc7 0%, #7cb0cf 52%, #a6c8dc 100%);
+    background: #0b1410;
     transition: opacity .5s ease;
     font-family: 'Inter-Regular', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
     touch-action: manipulation;
@@ -57,29 +57,28 @@
   }
   #ostrov-splash.sp-live .sp-gl { opacity: 1; }
 
-  /* Если WebGL нет — тихий финальный кадр. */
+  /* Если WebGL нет — тихий финальный кадр: озеро Копыто. */
   #ostrov-splash .sp-still {
     position: absolute; inset: 0;
-    background: #7cb0cf url('./splash/diorama.png') 50% 50% / 100% 100% no-repeat;
+    background: #0b1410 url('./splash/sat-still.webp') 50% 50% / cover no-repeat;
     opacity: 0; transition: opacity .4s ease;
   }
   #ostrov-splash.sp-no-3d .sp-still { opacity: 1; }
 
-  /* Виньетка: взгляд вниз, по краям чуть темнее. */
+  /* Виньетка: по краям темнее, взгляд собирается в центре. */
   #ostrov-splash .sp-vignette {
     position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(118% 78% at 50% 46%, rgba(0,0,0,0) 42%, rgba(10,22,26,.30) 100%);
+    background: radial-gradient(118% 78% at 50% 46%, rgba(0,0,0,0) 42%, rgba(4,10,8,.42) 100%);
   }
 
   /* Бумажная крупа — чтобы картинка не выглядела стерильным рендером. */
   #ostrov-splash .sp-grain {
     position: absolute; inset: 0; pointer-events: none;
-    opacity: .07; mix-blend-mode: multiply;
+    opacity: .06; mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
   }
 
-  /* Пелена: камера проходит сквозь облако — кадр на миг белеет.
-     Управляется из JS по высоте камеры. */
+  /* Пелена — больше не нужна (облаков нет), оставлена пустой на случай возврата. */
   #ostrov-splash .sp-veil {
     position: absolute; inset: 0; pointer-events: none; opacity: 0;
     background: radial-gradient(120% 96% at 50% 46%, #ffffff 0%, #f4f7f8 58%, #e8eff1 100%);
@@ -88,14 +87,13 @@
   /* Вспышка на посадке. */
   #ostrov-splash .sp-flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
 
-  /* Светлое подножие: к посадке низ кадра уходит в облачную пелену,
-     на ней стоит надпись. */
+  /* Низ кадра темнеет — на нём стоит надпись. */
   #ostrov-splash .sp-floor {
-    position: absolute; left: 0; right: 0; bottom: 0; height: 42%;
+    position: absolute; left: 0; right: 0; bottom: 0; height: 40%;
     pointer-events: none; opacity: 0;
     background: linear-gradient(180deg,
-      rgba(251,251,249,0) 0%, rgba(251,251,249,.55) 38%,
-      rgba(251,251,249,.94) 68%, #fbfbf9 100%);
+      rgba(8,16,12,0) 0%, rgba(8,16,12,.44) 38%,
+      rgba(8,16,12,.80) 70%, rgba(8,16,12,.93) 100%);
   }
 
   /* Надпись: тонкая, разреженная, в две строки с волоском под ней. */
@@ -108,19 +106,19 @@
   }
   #ostrov-splash .sp-small {
     font-size: 10px; letter-spacing: .38em; text-transform: uppercase;
-    color: rgba(34,48,42,.78);
-    text-shadow: 0 1px 14px rgba(255,255,255,.9);
+    color: rgba(255,255,255,.84);
+    text-shadow: 0 1px 16px rgba(0,0,0,.65);
   }
   #ostrov-splash .sp-name {
     font-family: 'CormorantGaramond-Regular', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(38px, 11.5vw, 56px);
     letter-spacing: .17em; text-transform: uppercase; line-height: 1;
-    color: #22302a;
-    text-shadow: 0 2px 26px rgba(255,255,255,.95), 0 1px 3px rgba(255,255,255,.95);
+    color: #ffffff;
+    text-shadow: 0 2px 30px rgba(0,0,0,.62), 0 1px 4px rgba(0,0,0,.4);
     margin-left: .17em;
   }
   #ostrov-splash .sp-line {
-    width: 124px; height: 2px; background: rgba(34,48,42,.16);
+    width: 124px; height: 2px; background: rgba(255,255,255,.26);
     overflow: hidden; border-radius: 2px; margin-top: 6px;
   }
   #ostrov-splash .sp-line i {
@@ -129,55 +127,54 @@
   }
 
   /* ------------------------------------------------------------------
-     Тайминг: 0.00 падение → 3.30 надпись → 4.20 посадка.
+     Тайминг: 0.0 старт над Европой → 8.2 озеро Копыто → 9.0 заставка уходит.
      ------------------------------------------------------------------ */
   @media (prefers-reduced-motion: no-preference) {
-    #ostrov-splash.sp-play .sp-lockup { animation: sp-lockup 5s cubic-bezier(.2,.8,.3,1) forwards; }
-    #ostrov-splash.sp-play .sp-line i { animation: sp-line 5s linear forwards; }
-    #ostrov-splash.sp-play .sp-flash  { animation: sp-flash 5s ease-out forwards; }
-    #ostrov-splash.sp-play .sp-vignette { animation: sp-vig 5s ease-out forwards; }
-    #ostrov-splash.sp-play .sp-floor { animation: sp-floor 5s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-lockup { animation: sp-lockup 8.6s cubic-bezier(.2,.8,.3,1) forwards; }
+    #ostrov-splash.sp-play .sp-line i { animation: sp-line 8.6s linear forwards; }
+    #ostrov-splash.sp-play .sp-flash  { animation: sp-flash 8.6s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-vignette { animation: sp-vig 8.6s ease-out forwards; }
+    #ostrov-splash.sp-play .sp-floor { animation: sp-floor 8.6s ease-out forwards; }
   }
 
-  /* Надпись встаёт, когда остров уже на месте. */
+  /* Надпись встаёт, когда озеро уже близко. */
   @keyframes sp-lockup {
-    0%, 66% { opacity: 0; transform: translateY(-46%) scale(.985); }
-    79%     { opacity: 1; transform: translateY(-50%) scale(1); }
+    0%, 74% { opacity: 0; transform: translateY(-46%) scale(.985); }
+    86%     { opacity: 1; transform: translateY(-50%) scale(1); }
     100%    { opacity: 1; transform: translateY(-50%) scale(1.004); }
   }
 
   /* Волосок под надписью — «как идёт загрузка». */
   @keyframes sp-line {
-    0%, 72% { transform: scaleX(0); }
-    90%     { transform: scaleX(.62); }
+    0%, 78% { transform: scaleX(0); }
+    92%     { transform: scaleX(.62); }
     97%     { transform: scaleX(.92); }
     100%    { transform: scaleX(1); }
   }
 
   /* Вспышка на посадке. */
   @keyframes sp-flash {
-    0%, 82% { opacity: 0; }
-    87%     { opacity: .12; }
-    93%     { opacity: 0; }
+    0%, 93% { opacity: 0; }
+    95%     { opacity: .10; }
+    98%     { opacity: 0; }
     100%    { opacity: 0; }
   }
 
-  /* Пелена снизу поднимается к посадке. */
+  /* Тёмный низ поднимается к финалу. */
   @keyframes sp-floor {
-    0%, 58% { opacity: 0; }
-    80%     { opacity: .92; }
+    0%, 70% { opacity: 0; }
+    88%     { opacity: .92; }
     100%    { opacity: 1; }
   }
 
-  /* Виньетка на входе сильнее — падаем в облаке. */
+  /* Виньетка по ходу полёта сгущается. */
   @keyframes sp-vig {
-    0%   { opacity: .35; }
-    30%  { opacity: .55; }
-    70%  { opacity: .85; }
+    0%   { opacity: .3; }
+    50%  { opacity: .6; }
     100% { opacity: 1; }
   }
 
-  /* Меньше движения: сразу тихий финальный кадр с надписью. */
+  /* Меньше движения: сразу финальный кадр с надписью. */
   @media (prefers-reduced-motion: reduce) {
     #ostrov-splash .sp-gl { display: none; }
     #ostrov-splash .sp-still { opacity: 1; }
@@ -185,6 +182,7 @@
     #ostrov-splash .sp-line i { transform: scaleX(.7); }
     #ostrov-splash .sp-flash { opacity: 0; }
     #ostrov-splash .sp-floor { opacity: 1; }
+    #ostrov-splash .sp-vignette { opacity: 1; }
   }
 </style>
 
@@ -238,7 +236,7 @@
 
 
     <link rel="preload" as="script" href="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" />
-    <link rel="preload" as="script" href="/_expo/static/js/web/__common-3222dd848d0db0367bec2d1d4ee723c2.js" />
+    <link rel="preload" as="script" href="/_expo/static/js/web/__common-d3371109feaca47e1b33c65ea8e9d37b.js" />
     <link rel="preload" as="script" href="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" />
   </head>
 
@@ -265,7 +263,7 @@
       </div>
     </div>
 
-  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-3222dd848d0db0367bec2d1d4ee723c2.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
+  <script src="/_expo/static/js/web/__expo-metro-runtime-37844bfe9405ed99797bdb43820a0459.js" defer></script><script src="/_expo/static/js/web/__common-d3371109feaca47e1b33c65ea8e9d37b.js" defer></script><script src="/_expo/static/js/web/entry-17e90ff9cf74dcf382a8ec0af48d7387.js" defer></script>
 
 <script>
 (function () {
@@ -281,46 +279,60 @@
   }
   try { sessionStorage.setItem('ostrov-splash-seen', '1'); } catch (e) {}
 
-  var HOLD = 4550;
+  var FLIGHT = 8.2;      /* секунды полёта: вся Европа -> озеро Копыто */
+  var HOLD = 9000;       /* сколько заставка живёт минимум, мс */
   var started = Date.now();
   var ready = false, hidden = false, quick = false;
   var holdTimer = 0;
 
-  /* ---- 3D-пролёт на чистом WebGL: ни библиотек, ни сети ---- */
+  /* ?t=6.5 — застывший кадр для проверки, prefers-reduced-motion — статичная картинка. */
   var FREEZE = parseFloat((location.search.match(/[?&]t=([\d.]+)/) || [])[1]);
   var still = !isFinite(FREEZE) && window.matchMedia &&
               window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function num(v) { return (v < 0 ? 0 : v > 1 ? 1 : v); }
+  function ease(v) { return v * v * (3 - 2 * v); }
+
+  /* Кадры заставки. g — сколько метров земли укладывается по стороне кадра,
+     поэтому масштаб считается честно и на любом экране. */
+  var FRAMES = [
+    { f: 'sat-03.webp', g: 11056908 },  /* Европа и Азия целиком */
+    { f: 'sat-04.webp', g: 5528454 },   /* Европа */
+    { f: 'sat-06.webp', g: 1520325 },
+    { f: 'sat-08.webp', g: 345528 },
+    { f: 'sat-10.webp', g: 86382 },
+    { f: 'sat-12.webp', g: 21596 },
+    { f: 'sat-14.webp', g: 5399 },
+    { f: 'sat-16.webp', g: 1485 },
+    { f: 'sat-17.webp', g: 945 }        /* озеро Копыто */
+  ];
+  /* Когда начинать качать: старт и финал — сразу, середина — по ходу полёта. */
+  var DELAY = [0, 0, 120, 440, 720, 1000, 1280, 1560, 240];
 
   function flight(canvas) {
     var gl = null;
     try {
-      var opt = { alpha: true, antialias: true, premultipliedAlpha: false,
+      var opt = { alpha: true, antialias: false, premultipliedAlpha: false,
                   powerPreference: 'high-performance',
                   preserveDrawingBuffer: isFinite(FREEZE) };
       gl = canvas.getContext('webgl', opt) || canvas.getContext('experimental-webgl', opt);
     } catch (e) { gl = null; }
     if (!gl) return null;
 
-    var VS = 'attribute vec2 a_pos; attribute vec2 a_uv;' +
-      'uniform mat4 u_mvp; uniform vec3 u_center; uniform vec2 u_size;' +
-      'uniform vec3 u_right; uniform vec3 u_up;' +
-      'varying vec2 v_uv;' +
-      'void main(){ v_uv = a_uv;' +
-      ' vec3 p = u_center + u_right * (a_pos.x * u_size.x)' +
-      '                  + u_up * (a_pos.y * u_size.y);' +
-      ' gl_Position = u_mvp * vec4(p, 1.0); }';
+    /* Кадры рисуем плоскими прямоугольниками в координатах экрана:
+       никакой сцены и камеры — только масштаб и растворение. */
+    var VS = 'attribute vec2 a_pos; uniform vec4 u_rect; varying vec2 v_uv;' +
+      'void main(){ v_uv = vec2(a_pos.x + 0.5, 0.5 - a_pos.y);' +
+      ' gl_Position = vec4(mix(u_rect.x, u_rect.z, a_pos.x + 0.5),' +
+      '                    mix(u_rect.y, u_rect.w, a_pos.y + 0.5), 0.0, 1.0); }';
 
     var FS = 'precision mediump float;' +
       'uniform sampler2D u_tex; uniform float u_alpha; uniform float u_feather;' +
-      'uniform float u_fade; uniform float u_texAlpha; varying vec2 v_uv;' +
+      'varying vec2 v_uv;' +
       'void main(){ vec4 c = texture2D(u_tex, v_uv);' +
       ' float e = min(min(v_uv.x, 1.0 - v_uv.x), min(v_uv.y, 1.0 - v_uv.y));' +
-      ' float fa = smoothstep(0.0, max(u_feather, 0.0005), e);' +
-      ' float a = mix(fa, c.a, u_texAlpha) * u_alpha;' +
-      ' if (u_fade > 0.0) a *= smoothstep(0.0, u_fade, min(min(v_uv.x, 1.0 - v_uv.x), 1.0 - v_uv.y));' +
-      ' if (a < 0.002) discard;' +
+      ' float a = u_alpha * smoothstep(0.0, max(u_feather, 0.0006), e);' +
+      ' if (a < 0.003) discard;' +
       ' gl_FragColor = vec4(c.rgb, a); }';
 
     function sh(type, src) {
@@ -340,239 +352,123 @@
     var buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-      -0.5, -0.5, 0, 0,   0.5, -0.5, 1, 0,
-      -0.5,  0.5, 0, 1,   0.5,  0.5, 1, 1
+      -0.5, -0.5,   0.5, -0.5,  -0.5, 0.5,   0.5, 0.5
     ]), gl.STATIC_DRAW);
     var aPos = gl.getAttribLocation(pr, 'a_pos');
-    var aUv = gl.getAttribLocation(pr, 'a_uv');
     gl.enableVertexAttribArray(aPos);
-    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 16, 0);
-    gl.enableVertexAttribArray(aUv);
-    gl.vertexAttribPointer(aUv, 2, gl.FLOAT, false, 16, 8);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 8, 0);
 
-    var uMvp = gl.getUniformLocation(pr, 'u_mvp');
-    var uCenter = gl.getUniformLocation(pr, 'u_center');
-    var uSize = gl.getUniformLocation(pr, 'u_size');
-    var uRight = gl.getUniformLocation(pr, 'u_right');
-    var uUp = gl.getUniformLocation(pr, 'u_up');
+    var uRect = gl.getUniformLocation(pr, 'u_rect');
     var uAlpha = gl.getUniformLocation(pr, 'u_alpha');
     var uFeather = gl.getUniformLocation(pr, 'u_feather');
-    var uTexAlpha = gl.getUniformLocation(pr, 'u_texAlpha');
-    var uFade = gl.getUniformLocation(pr, 'u_fade');
     var uTex = gl.getUniformLocation(pr, 'u_tex');
+    gl.uniform1i(uTex, 0);
 
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     gl.disable(gl.DEPTH_TEST);
     gl.clearColor(0, 0, 0, 0);
 
-    var texs = {}, left = 4, kick = null;
-    function tex(name, url) {
-      var t = gl.createTexture();
-      texs[name] = t;
-      gl.bindTexture(gl.TEXTURE_2D, t);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE,
-                    new Uint8Array([0, 0, 0, 0]));
-      var img = new Image();
-      img.onload = function () {
-        gl.bindTexture(gl.TEXTURE_2D, t);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-        left--;
-        if (kick) kick();
-      };
-      img.onerror = function () { left--; };
-      img.src = url;
+    /* ---- текстуры: грузим по очереди, середина полёта — не сразу ---- */
+    var texs = [];
+    for (var i = 0; i < FRAMES.length; i++) texs.push({ t: gl.createTexture(), ready: false });
+    for (var k = 0; k < FRAMES.length; k++) {
+      (function (idx) {
+        var tex = texs[idx].t;
+        gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE,
+                      new Uint8Array([0, 0, 0, 0]));
+        setTimeout(function () {
+          var img = new Image();
+          img.onload = function () {
+            gl.bindTexture(gl.TEXTURE_2D, tex);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+            texs[idx].ready = true;
+            if (isFinite(FREEZE)) render(FREEZE);
+          };
+          img.src = './splash/' + FRAMES[idx].f;
+        }, DELAY[idx]);
+      })(k);
     }
-    tex('dior', './splash/diorama.png');
-    tex('a', './splash/cloud-a.png');
-    tex('b', './splash/cloud-b.png');
-    tex('c', './splash/cloud-c.png');
 
-    /* ---- геометрия сцены ---- */
-    var IW = 1000;                            /* ширина карточки-диорамы */
-    var IH = IW * 1864 / 860;                 /* высота: как в макете 430x932 */
-    var FOV = 50 * Math.PI / 180;
-    var tanH = Math.tan(FOV / 2);
-    var CY = IH * 0.5;                        /* центр карточки по высоте */
-    var W = 0, H = 0, aspect = 1, camEnd = 2280, camStart = 9000;
-
-    function rnd(seed) {
-      return function () {
-        seed |= 0; seed = seed + 0x6D2B79F5 | 0;
-        var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
-        t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-        return ((t ^ t >>> 14) >>> 0) / 4294967296;
-      };
-    }
-    var R = rnd(20261125);
-    function tex3(i) { return ['a', 'b', 'c'][i % 3]; }
-
-    /* Облака — вертикальные билборды: так они читаются тучей, а не полосой. */
-    var sprites = [];
-    function cl(w, x, y, z, a, sp) {
-      sprites.push({ x: x, y: y, z: z, w: w, h: w * 0.52, a: a,
-                     tex: tex3((R() * 3) | 0), sp: sp });
-    }
-    /* коридор падения: эти облака проносятся мимо камеры */
-    for (var j = 0; j < 11; j++) {
-      cl(1300 + 1300 * R(), (R() * 2 - 1) * 1500,
-         CY - 900 + 2600 * R(), -2500 - 2600 * R(), .8 + .15 * R(), 6 + 9 * R());
-    }
-    /* вокруг острова — рамка финального кадра */
-    for (var i = 0; i < 7; i++) {
-      var sd = (i % 2) ? 1 : -1;
-      cl(760 + 560 * R(), sd * (900 + 460 * R()),
-         CY + (R() * 2 - 1) * 760, -420 - 900 * R(), .45 + .3 * R(), 3 + 4 * R());
-    }
-    /* прикрывает правый обрез карточки и днём, и в полёте */
-    cl(1500, 1000, CY + 120, -260, .92, 2.5);
-    cl(1500, -1460, CY - 220, -420, .7, 2.5);
-    sprites.sort(function (p, q) { return q.z - p.z; });
-
-    function persp(fovy, asp, near, far) {
-      var f = 1 / Math.tan(fovy / 2), nf = 1 / (near - far);
-      return new Float32Array([
-        f / asp, 0, 0, 0,
-        0, f, 0, 0,
-        0, 0, (far + near) * nf, -1,
-        0, 0, 2 * far * near * nf, 0]);
-    }
-    function lookAt2(ex, ey, ez, tx, ty, tz, up) {
-      var zx = ex - tx, zy = ey - ty, zz = ez - tz;
-      var zl = Math.sqrt(zx * zx + zy * zy + zz * zz) || 1;
-      zx /= zl; zy /= zl; zz /= zl;
-      var xx = up[1] * zz - up[2] * zy, xy = up[2] * zx - up[0] * zz, xz = up[0] * zy - up[1] * zx;
-      var xl = Math.sqrt(xx * xx + xy * xy + xz * xz) || 1;
-      xx /= xl; xy /= xl; xz /= xl;
-      var yx = zy * xz - zz * xy, yy = zz * xx - zx * xz, yz = zx * xy - zy * xx;
-      return new Float32Array([
-        xx, yx, zx, 0,
-        xy, yy, zy, 0,
-        xz, yz, zz, 0,
-        -(xx * ex + xy * ey + xz * ez),
-        -(yx * ex + yy * ey + yz * ez),
-        -(zx * ex + zy * ey + zz * ez), 1]);
-    }
-    function mul(a, b) {
-      var o = new Float32Array(16);
-      for (var i = 0; i < 4; i++) for (var j = 0; j < 4; j++) {
-        var s = 0;
-        for (var k2 = 0; k2 < 4; k2++) s += a[k2 * 4 + j] * b[i * 4 + k2];
-        o[i * 4 + j] = s;
-      }
-      return o;
-    }
+    var W = 0, H = 0;
 
     function resize() {
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
       W = Math.max(1, Math.round(canvas.clientWidth * dpr));
       H = Math.max(1, Math.round(canvas.clientHeight * dpr));
       canvas.width = W; canvas.height = H;
-      aspect = W / H;
-      var fitH = IH / (2 * tanH);
-      var fitW = IW / (2 * tanH * aspect);
-      camEnd = Math.min(fitH, fitW) * 0.985;   /* карточка чуть больше кадра */
-      camStart = camEnd + 6400;
       gl.viewport(0, 0, W, H);
     }
     resize();
     window.addEventListener('resize', resize);
 
-    var veilEl = splash.querySelector('.sp-veil');
+    /* Сколько экранов по высоте должно покрыть кадровое полотно,
+       чтобы не осталось полей: на широком экране — по ширине. */
+    function cover() { return Math.max(1, W / H); }
 
-    function draw(texName, cx, cy, cz, sx, sz, alpha, feather, texAlpha, mvp, up, fade) {
-      var t = texs[texName];
-      if (!t) return;
-      var R2 = [-1, 0, 0], U2 = up || [-1, 0, 0];
-      gl.bindTexture(gl.TEXTURE_2D, t);
-      gl.uniformMatrix4fv(uMvp, false, mvp);
-      gl.uniform3f(uCenter, cx, cy, cz);
-      gl.uniform2f(uSize, sx, sz);
-      gl.uniform3f(uRight, R2[0], R2[1], R2[2]);
-      gl.uniform3f(uUp, U2[0], U2[1], U2[2]);
+    /* Видимый кусок земли (метров по высоте экрана) в момент t. */
+    function ground(t) {
+      var cv = cover();
+      var g0 = FRAMES[0].g / (cv * 1.02);
+      var g1 = FRAMES[FRAMES.length - 1].g / (cv * 1.02);
+      var p = num(t / FLIGHT);
+      return g0 * Math.pow(g1 / g0, ease(p));
+    }
+
+    function draw(idx, g, alpha, feather) {
+      var size = (FRAMES[idx].g / g) * H;         /* сторона кадра на экране, px */
+      var hx = size / W, hy = size / H;           /* половина — в координатах клипа */
+      gl.bindTexture(gl.TEXTURE_2D, texs[idx].t);
+      gl.uniform4f(uRect, -hx, -hy, hx, hy);
       gl.uniform1f(uAlpha, alpha);
       gl.uniform1f(uFeather, feather);
-      gl.uniform1f(uTexAlpha, texAlpha);
-      gl.uniform1f(uFade, fade || 0.0);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     }
 
     function render(t) {
-    if (window.__spPix) { window.__spPix = null; }
-      /* 0 → 4.2 с падение, дальше кадр держится и чуть доезжает */
-      var p = num(t / 4.2);
-      var e = 1 - Math.pow(1 - p, 3);
-      var k = 1 - e;                            /* 1 — в небе, 0 — сели */
-      var shake = k * k * 22;
-      var camY = CY + 1700 * k + Math.sin(t * 6.9 + 1.3) * shake * 0.6;
-      var camZ = -camEnd - 5200 * k;
-      if (t > 4.2) camZ += 22 * (t - 4.2);      /* мягкое доезжание вперёд */
-      var camX = -480 * k + Math.sin(t * 8.3) * shake;
-      var tY = CY + 420 * k;
-
-      var proj = persp(FOV, aspect, 40, 80000);
-      var view = lookAt2(camX, camY, camZ, 0, tY, 0, [0, 1, 0]);
-      var mvp = mul(proj, view);
-
       gl.clear(gl.COLOR_BUFFER_BIT);
-      window.spDebug = { t: t, camY: Math.round(camY), camX: Math.round(camX), camZ: Math.round(camZ), left: left, w: W, h: H, aspect: Math.round(aspect*100), camEnd: Math.round(camEnd), n: sprites.length };
+      var g = ground(t);
+      var cv = cover();
 
-      /* карточка-диорама: вертикальное полотно, вырезанное по небу */
-      var cardA = num((t - 0.05) / 0.5);
-      var VUP = [0, -1, 0], HUP = [0, 0, 1];
-      var cardDrawn = false;
-      function card() {
-        if (cardDrawn) return;
-        cardDrawn = true;
-        draw('dior', 0, CY, 0, IW, IH, cardA, 0.0, 1.0, mvp, VUP, 0.10 * k);
+      /* Опорный кадр — самый подробный из тех, что ещё закрывают весь экран. */
+      var base = -1;
+      for (var i = 0; i < FRAMES.length; i++) {
+        if (texs[i].ready && FRAMES[i].g / g >= cv * 0.998) base = i;
       }
+      window.spDebug = { t: Math.round(t * 100) / 100, g: Math.round(g),
+                         base: base, w: W, h: H };
 
-      /* облака: от дальних к ближним, карточка — на своём месте по глубине */
-      function spr(s, i) {
-        var ddx = camX - s.x, ddy = camY - s.y, ddz = camZ - s.z;
-        var dist = Math.sqrt(ddx * ddx + ddy * ddy + ddz * ddz);
-        var near = num((dist - 520) / 900);        /* не липнут к объективу */
-        if (near <= 0.002) return;
-        var drift = Math.sin(t * 0.6 + i) * s.sp;
-        draw(s.tex, s.x + drift, s.y, s.z, s.w, s.h,
-             s.a * near * num(t / 0.6), 0.0, 1.0, mvp, VUP);
-      }
-      /* дальние облака за карточкой, потом сама карточка, потом передние */
-      for (var i = 0; i < sprites.length; i++) if (sprites[i].z <= 0) spr(sprites[i], i);
-      card();
-      for (var i3 = sprites.length - 1; i3 >= 0; i3--) if (sprites[i3].z > 0) spr(sprites[i3], i3);
+      if (base < 0) return;
+      draw(base, g, 1.0, 0.0);
 
-      /* белая пелена на проходе сквозь этаж облаков */
-      if (isFinite(FREEZE)) {
-        var px = new Uint8Array(4);
-        gl.readPixels(Math.floor(W / 2), Math.floor(H / 2), 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
-        window.__spPix = [px[0], px[1], px[2], px[3]];
-      }
-      if (veilEl) {
-        var g1 = Math.exp(-Math.pow((t - 0.05) / 0.78, 2));
-        var g2 = Math.exp(-Math.pow((t - 2.30) / 0.50, 2));
-        var v = Math.max(0, 0.96 * g1 + 0.52 * g2 - 0.06);
-        veilEl.style.opacity = Math.min(0.94, v).toFixed(3);
+      /* Следующий кадр подробнее: он всегда меньше экрана, поэтому въезжает
+         мягким пятном с растворением — стыка не видно, картинка одна и та же.
+         Растворение заканчивается ровно в тот миг, когда кадр закрывает экран
+         и становится опорным. */
+      var top = base + 1;
+      if (top < FRAMES.length && texs[top].ready) {
+        var rel = FRAMES[top].g / g;
+        var a = ease(num((rel / cv - 0.30) / 0.55));
+        if (a > 0.004) draw(top, g, a, 0.14);
       }
     }
 
-    kick = function () { if (isFinite(FREEZE)) render(FREEZE); };
-
-    var started = 0, raf = 0;
+    var startedAt = 0, raf = 0;
     function loop(now) {
-      if (!started) started = now;
-      render((now - started) / 1000);
+      if (!startedAt) startedAt = now;
+      render((now - startedAt) / 1000);
       raf = window.requestAnimationFrame(loop);
     }
 
     if (isFinite(FREEZE)) {
       render(FREEZE);
     } else if (still) {
-      render(4.95);
+      render(FLIGHT);
     } else {
       raf = window.requestAnimationFrame(loop);
     }
