@@ -1,182 +1,182 @@
 {
  "source": "Lenta.ru",
- "updated": "2026-11-27T17:57:29.424756+00:00",
+ "updated": "2026-11-28T01:20:51.312873+00:00",
  "count": 25,
  "items": [
   {
-   "id": "izvestnyy-zhurnalist-inoagent-obradovalsya-chasovomu-razgovoru-s-sobchak",
-   "title": "Известный журналист-иноагент обрадовался часовому разговору с Собчак",
-   "link": "https://lenta.ru/news/2026/11/27/izvestnyy-zhurnalist-inoagent-obradovalsya-chasovomu-razgovoru-s-sobchak/",
+   "id": "v-moskvu-priletel-izvestnyy-amerikanskiy-reper",
+   "title": "В Москву прилетел известный американский рэпер",
+   "link": "https://lenta.ru/news/2026/11/28/v-moskvu-priletel-izvestnyy-amerikanskiy-reper/",
+   "category": "Культура",
+   "date": "2026-11-28T01:18:10+00:00"
+  },
+  {
+   "id": "rossiyan-predupredili-o-fishingovyh-otkrytkah-ko-dnyu-materi",
+   "title": "Россиян предупредили о фишинговых открытках ко Дню матери",
+   "link": "https://lenta.ru/news/2026/11/28/rossiyan-predupredili-o-fishingovyh-otkrytkah-ko-dnyu-materi/",
    "category": "Интернет и СМИ",
-   "date": "2026-11-27T17:37:00+00:00"
+   "date": "2026-11-27T22:44:22+00:00"
   },
   {
-   "id": "vrachi-raskryli-posledstviya-upotrebleniya-polnogo-bokala-vina",
-   "title": "Врачи раскрыли последствия употребления полного бокала вина",
-   "link": "https://lenta.ru/news/2026/11/27/vrachi-raskryli-posledstviya-upotrebleniya-polnogo-bokala-vina/",
-   "category": "Забота о себе",
-   "date": "2026-11-27T17:28:00+00:00"
-  },
-  {
-   "id": "uefa-nachal-rassledovanie-besporyadkov-v-lige-evropy",
-   "title": "УЕФА начал расследование беспорядков в Лиге Европы",
-   "link": "https://lenta.ru/news/2026/11/27/uefa-nachal-rassledovanie-besporyadkov-v-lige-evropy/",
+   "id": "ska-ustupil-barysu-doma-v-matche-khl",
+   "title": "СКА уступил «Барысу» дома в матче КХЛ",
+   "link": "https://lenta.ru/news/2026/11/28/ska-ustupil-barysu-doma-v-matche-khl/",
    "category": "Спорт",
-   "date": "2026-11-27T17:26:00+00:00"
+   "date": "2026-11-27T21:16:00+00:00"
   },
   {
-   "id": "vratar-moskovskogo-dinamo-raskritikoval-sistemu-fan-id",
-   "title": "Вратарь московского «Динамо» раскритиковал систему Fan ID",
-   "link": "https://lenta.ru/news/2026/11/27/vratar-moskovskogo-dinamo-raskritikoval-sistemu-fan-id/",
-   "category": "Спорт",
-   "date": "2026-11-27T17:24:00+00:00"
-  },
-  {
-   "id": "nazvan-favorit-matcha-nottingem-forest-chelsi",
-   "title": "Назван фаворит матча «Ноттингем Форест» — «Челси»",
-   "link": "https://lenta.ru/news/2026/11/27/nazvan-favorit-matcha-nottingem-forest-chelsi/",
-   "category": "Спорт",
-   "date": "2026-11-27T17:23:00+00:00"
-  },
-  {
-   "id": "dzhennifer-lopes-opravdalas-za-otkrovennye-obrazy-pered-synom",
-   "title": "Дженнифер Лопес оправдалась за откровенные образы перед сыном",
-   "link": "https://lenta.ru/news/2026/11/27/dzhennifer-lopes-opravdalas-za-otkrovennye-obrazy-pered-synom/",
-   "category": "Культура",
-   "date": "2026-11-27T17:23:00+00:00"
-  },
-  {
-   "id": "rossiyanam-raskryli-stoimost-otdyha-v-plyazhnyh-stranah-pered-novym-godom",
-   "title": "Россиянам раскрыли стоимость отдыха в пляжных странах перед Новым годом",
-   "link": "https://lenta.ru/news/2026/11/27/rossiyanam-raskryli-stoimost-otdyha-v-plyazhnyh-stranah-pered-novym-godom/",
-   "category": "Путешествия",
-   "date": "2026-11-27T17:17:00+00:00"
-  },
-  {
-   "id": "prigozhin-nazval-prichinu-problem-so-zdoroviem-u-valerii",
-   "title": "Пригожин назвал причину проблем со здоровьем у Валерии",
-   "link": "https://lenta.ru/news/2026/11/27/prigozhin-nazval-prichinu-problem-so-zdoroviem-u-valerii/",
-   "category": "Культура",
-   "date": "2026-11-27T17:04:00+00:00"
-  },
-  {
-   "id": "avangard-v-serii-bullitov-obygral-admiral",
-   "title": "«Авангард» в серии буллитов обыграл «Адмирал»",
-   "link": "https://lenta.ru/news/2026/11/27/avangard-v-serii-bullitov-obygral-admiral/",
-   "category": "Спорт",
-   "date": "2026-11-27T16:59:00+00:00"
-  },
-  {
-   "id": "amur-doma-ustupil-ak-barsu-v-matche-khl",
-   "title": "«Амур» дома уступил «Ак Барсу» в матче КХЛ",
-   "link": "https://lenta.ru/news/2026/11/27/amur-doma-ustupil-ak-barsu-v-matche-khl/",
-   "category": "Спорт",
-   "date": "2026-11-27T16:54:00+00:00"
-  },
-  {
-   "id": "bond-s-knopkoy-predstavil-svoy-pervyy-igrovoy-klip",
-   "title": "«Бонд с кнопкой» представил свой первый игровой клип",
-   "link": "https://lenta.ru/news/2026/11/27/bond-s-knopkoy-predstavil-svoy-pervyy-igrovoy-klip/",
-   "category": "Культура",
-   "date": "2026-11-27T16:50:00+00:00"
-  },
-  {
-   "id": "dikidzhi-prokommentiroval-neudachnyy-prokat-na-etape-gran-pri-v-tokio",
-   "title": "Дикиджи прокомментировал неудачный прокат на этапе Гран-при в Токио",
-   "link": "https://lenta.ru/news/2026/11/27/dikidzhi-prokommentiroval-neudachnyy-prokat-na-etape-gran-pri-v-tokio/",
-   "category": "Спорт",
-   "date": "2026-11-27T16:48:28+00:00"
-  },
-  {
-   "id": "v-severodvinske-na-atomnoy-podlodke-perm-podnyali-flag",
-   "title": "В Северодвинске на атомной подлодке «Пермь» подняли флаг",
-   "link": "https://lenta.ru/news/2026/11/27/v-severodvinske-na-atomnoy-podlodke-perm-podnyali-flag/",
-   "category": "Наука и техника",
-   "date": "2026-11-27T16:47:00+00:00"
-  },
-  {
-   "id": "markes-ob-yavil-o-zavershenii-kariery-v-motogp",
-   "title": "Маркес объявил о завершении карьеры в MotoGP",
-   "link": "https://lenta.ru/news/2026/11/27/markes-ob-yavil-o-zavershenii-kariery-v-motogp/",
-   "category": "Спорт",
-   "date": "2026-11-27T16:36:00+00:00"
-  },
-  {
-   "id": "vrach-predupredila-o-pervom-signale-gipertonii",
-   "title": "Врач предупредила о первом сигнале гипертонии",
-   "link": "https://lenta.ru/news/2026/11/27/vrach-predupredila-o-pervom-signale-gipertonii/",
-   "category": "Забота о себе",
-   "date": "2026-11-27T16:32:00+00:00"
-  },
-  {
-   "id": "tanasheva-naznachili-sudit-match-tsska-zenit",
-   "title": "Танашева назначили судить матч ЦСКА — «Зенит»",
-   "link": "https://lenta.ru/news/2026/11/27/tanasheva-naznachili-sudit-match-tsska-zenit/",
-   "category": "Спорт",
-   "date": "2026-11-27T16:29:00+00:00"
-  },
-  {
-   "id": "trizhdy-poteryavshiy-soznanie-za-poslednie-polgoda-futbolist-bavarii-poluchil-novuyu-travmu",
-   "title": "Трижды потерявший сознание за последние полгода футболист «Баварии» получил новую травму",
-   "link": "https://lenta.ru/news/2026/11/27/trizhdy-poteryavshiy-soznanie-za-poslednie-polgoda-futbolist-bavarii-poluchil-novuyu-travmu/",
-   "category": "Спорт",
-   "date": "2026-11-27T16:25:00+00:00"
-  },
-  {
-   "id": "yurist-nazval-prichinu-otsutstviya-ugolovnogo-dela-po-delu-o-strelbe-dzhigana",
-   "title": "Юрист назвал причину отсутствия уголовного дела после стрельбы в доме Джигана",
-   "link": "https://lenta.ru/news/2026/11/27/yurist-nazval-prichinu-otsutstviya-ugolovnogo-dela-po-delu-o-strelbe-dzhigana/",
-   "category": "Культура",
-   "date": "2026-11-27T16:24:00+00:00"
-  },
-  {
-   "id": "uehavshiy-iz-rossii-v-ssha-strimer-ispugalsya-govorit-o-problemah-ameriki",
-   "title": "Уехавший из России в США стример испугался говорить о проблемах Америки",
-   "link": "https://lenta.ru/news/2026/11/27/uehavshiy-iz-rossii-v-ssha-strimer-ispugalsya-govorit-o-problemah-ameriki/",
+   "id": "hakery-vzlomali-oblachnuyu-vychislitelnuyu-sistemu-voenno-vozdushnyh-sil-ssha",
+   "title": "Хакеры взломали облачную вычислительную систему Военно-воздушных сил США",
+   "link": "https://lenta.ru/news/2026/11/28/hakery-vzlomali-oblachnuyu-vychislitelnuyu-sistemu-voenno-vozdushnyh-sil-ssha/",
    "category": "Интернет и СМИ",
-   "date": "2026-11-27T16:23:00+00:00"
+   "date": "2026-11-27T21:12:00+00:00"
   },
   {
-   "id": "volkswagen-reshil-vystavit-sebya-zhertvoy-nespravedlivosti-v-sudebnoy-tyazhbe",
-   "title": "Volkswagen решил выставить себя жертвой несправедливости в судебной тяжбе",
-   "link": "https://lenta.ru/news/2026/11/27/volkswagen-reshil-vystavit-sebya-zhertvoy-nespravedlivosti-v-sudebnoy-tyazhbe/",
-   "category": "Авто",
-   "date": "2026-11-27T16:19:00+00:00"
-  },
-  {
-   "id": "dvigatel-passazhirskogo-samoleta-otkazal-srazu-posle-vzleta-v-ssha",
-   "title": "Двигатель пассажирского самолета отказал сразу после взлета в США",
-   "link": "https://lenta.ru/news/2026/11/27/dvigatel-passazhirskogo-samoleta-otkazal-srazu-posle-vzleta-v-ssha/",
-   "category": "Путешествия",
-   "date": "2026-11-27T16:04:00+00:00"
-  },
-  {
-   "id": "kitay-predstavit-tyazhelyy-voenno-transportnyy-samolet-y-20b",
-   "title": "Китай представит тяжелый военно-транспортный самолет Y-20B",
-   "link": "https://lenta.ru/news/2026/11/27/kitay-predstavit-tyazhelyy-voenno-transportnyy-samolet-y-20b/",
-   "category": "Наука и техника",
-   "date": "2026-11-27T16:03:00+00:00"
-  },
-  {
-   "id": "rossiyskiy-amberavto-a5-poluchil-otts-dlya-nachala-prodazh",
-   "title": "Российский «Амберавто А5» получил ОТТС для начала продаж",
-   "link": "https://lenta.ru/news/2026/11/27/rossiyskiy-amberavto-a5-poluchil-otts-dlya-nachala-prodazh/",
-   "category": "Авто",
-   "date": "2026-11-27T15:58:00+00:00"
-  },
-  {
-   "id": "mat-chempionki-evropy-po-sportivnoy-gimnastike-izbili-na-parkovke",
-   "title": "Мать чемпионки Европы по спортивной гимнастике избили на парковке",
-   "link": "https://lenta.ru/news/2026/11/27/mat-chempionki-evropy-po-sportivnoy-gimnastike-izbili-na-parkovke/",
+   "id": "cas-diskvalifitsiroval-chetyreh-rossiyskih-grebtsov-za-doping",
+   "title": "CAS дисквалифицировал четырех российских гребцов за допинг",
+   "link": "https://lenta.ru/news/2026/11/28/cas-diskvalifitsiroval-chetyreh-rossiyskih-grebtsov-za-doping/",
    "category": "Спорт",
-   "date": "2026-11-27T15:53:00+00:00"
+   "date": "2026-11-27T21:11:43+00:00"
   },
   {
-   "id": "avtomobilistam-napomnili-o-vrede-dolgogo-progreva-dvigatelya",
-   "title": "Автомобилистам напомнили о вреде долгого прогрева двигателя",
-   "link": "https://lenta.ru/news/2026/11/27/avtomobilistam-napomnili-o-vrede-dolgogo-progreva-dvigatelya/",
-   "category": "Авто",
-   "date": "2026-11-27T15:47:26+00:00"
+   "id": "long-gromkoeubiystvo",
+   "title": "«Заманил в каземат, заковал в наручники, изнасиловал и заколол» Убийцу 24-летней туристки нашли спустя 32 года. Кем он оказался?",
+   "link": "https://lenta.ru/news/2026/11/28/long-gromkoeubiystvo/",
+   "category": "Путешествия",
+   "date": "2026-11-27T21:01:16+00:00"
+  },
+  {
+   "id": "krus-pobedil-subhankulova-i-zabral-poyas-ibf",
+   "title": "Крус победил Субханкулова и забрал пояс IBF",
+   "link": "https://lenta.ru/news/2026/11/27/krus-pobedil-subhankulova-i-zabral-poyas-ibf/",
+   "category": "Спорт",
+   "date": "2026-11-27T21:00:00+00:00"
+  },
+  {
+   "id": "bank-rossii-vypustit-monety-v-chest-futbolnyh-klubov",
+   "title": "Банк России выпустит монеты в честь футбольных клубов",
+   "link": "https://lenta.ru/news/2026/11/27/bank-rossii-vypustit-monety-v-chest-futbolnyh-klubov/",
+   "category": "Спорт",
+   "date": "2026-11-27T20:58:19+00:00"
+  },
+  {
+   "id": "niskanen-soobschil-o-diagnostirovannom-onkologicheskom-zabolevanii",
+   "title": "Нисканен сообщил о диагностированном онкологическом заболевании",
+   "link": "https://lenta.ru/news/2026/11/27/niskanen-soobschil-o-diagnostirovannom-onkologicheskom-zabolevanii/",
+   "category": "Спорт",
+   "date": "2026-11-27T20:47:00+00:00"
+  },
+  {
+   "id": "michkov-propustil-match-nhl-iz-za-vnutrennego-dela-v-klube",
+   "title": "Мичков пропустил матч НХЛ из-за внутреннего дела в клубе",
+   "link": "https://lenta.ru/news/2026/11/27/michkov-propustil-match-nhl-iz-za-vnutrennego-dela-v-klube/",
+   "category": "Спорт",
+   "date": "2026-11-27T20:41:49+00:00"
+  },
+  {
+   "id": "v-ispanii-zayavili-o-nevozmozhnosti-provedeniya-chm-2030-sovmestno-s-marokko",
+   "title": "В Испании заявили о невозможности проведения ЧМ-2030 совместно с Марокко",
+   "link": "https://lenta.ru/news/2026/11/27/v-ispanii-zayavili-o-nevozmozhnosti-provedeniya-chm-2030-sovmestno-s-marokko/",
+   "category": "Спорт",
+   "date": "2026-11-27T20:39:00+00:00"
+  },
+  {
+   "id": "prohorov-pereshel-iz-aylenders-v-dinamo-na-pravah-arendy",
+   "title": "Прохоров перешел из «Айлендерс» в «Динамо» на правах аренды",
+   "link": "https://lenta.ru/news/2026/11/27/prohorov-pereshel-iz-aylenders-v-dinamo-na-pravah-arendy/",
+   "category": "Спорт",
+   "date": "2026-11-27T20:37:53+00:00"
+  },
+  {
+   "id": "rospotrebnadzor-pomozhet-pokupatelyam-otmenennyh-vystupleniy-kanie-uesta",
+   "title": "Роспотребнадзор поможет вернуть деньги покупателям билетов на концерты Канье Уэста",
+   "link": "https://lenta.ru/news/2026/11/27/rospotrebnadzor-pomozhet-pokupatelyam-otmenennyh-vystupleniy-kanie-uesta/",
+   "category": "Культура",
+   "date": "2026-11-27T20:34:00+00:00"
+  },
+  {
+   "id": "artemiy-lebedev-vysmeyal-zapreschayuschie-russkiy-yazyk-strany-razmerom-s-chihuahua",
+   "title": "Артемий Лебедев высмеял запрещающие русский язык страны «размером с чихуахуа»",
+   "link": "https://lenta.ru/news/2026/11/27/artemiy-lebedev-vysmeyal-zapreschayuschie-russkiy-yazyk-strany-razmerom-s-chihuahua/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-27T20:23:00+00:00"
+  },
+  {
+   "id": "shvedskiy-hokkeist-pozhalel-o-vystupleniyah-v-khl",
+   "title": "Шведский хоккеист пожалел о выступлениях в КХЛ",
+   "link": "https://lenta.ru/news/2026/11/27/shvedskiy-hokkeist-pozhalel-o-vystupleniyah-v-khl/",
+   "category": "Спорт",
+   "date": "2026-11-27T20:13:00+00:00"
+  },
+  {
+   "id": "uehavshiy-iz-rossii-populyarnyy-strimer-rasskazal-o-pozhertvovaniyah-na-ukrainu",
+   "title": "Уехавший из России популярный стример рассказал о пожертвованиях на Украину",
+   "link": "https://lenta.ru/news/2026/11/27/uehavshiy-iz-rossii-populyarnyy-strimer-rasskazal-o-pozhertvovaniyah-na-ukrainu/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-27T19:17:00+00:00"
+  },
+  {
+   "id": "kechinov-naznachen-otvetstvennym-za-rabotu-s-bolelschikami-spartaka",
+   "title": "Кечинов назначен ответственным за работу с болельщиками «Спартака»",
+   "link": "https://lenta.ru/news/2026/11/27/kechinov-naznachen-otvetstvennym-za-rabotu-s-bolelschikami-spartaka/",
+   "category": "Спорт",
+   "date": "2026-11-27T19:08:00+00:00"
+  },
+  {
+   "id": "sbornaya-rossii-po-gandbolu-vyshla-v-polufinal-turnira",
+   "title": "Сборная России по гандболу вышла в полуфинал турнира",
+   "link": "https://lenta.ru/news/2026/11/27/sbornaya-rossii-po-gandbolu-vyshla-v-polufinal-turnira/",
+   "category": "Спорт",
+   "date": "2026-11-27T19:00:00+00:00"
+  },
+  {
+   "id": "izvestnaya-rossiyskaya-muzykalnaya-gruppa-podgotovila-syurpriz-dlya-svoih-poklonnikov",
+   "title": "Известная российская музыкальная группа подготовила сюрприз для своих поклонников",
+   "link": "https://lenta.ru/news/2026/11/27/izvestnaya-rossiyskaya-muzykalnaya-gruppa-podgotovila-syurpriz-dlya-svoih-poklonnikov/",
+   "category": "Культура",
+   "date": "2026-11-27T18:43:00+00:00"
+  },
+  {
+   "id": "eberg-vyigrala-individualnuyu-gonku-na-starte-kubka-mira",
+   "title": "Эберг выиграла индивидуальную гонку на старте Кубка мира",
+   "link": "https://lenta.ru/news/2026/11/27/eberg-vyigrala-individualnuyu-gonku-na-starte-kubka-mira/",
+   "category": "Спорт",
+   "date": "2026-11-27T18:38:00+00:00"
+  },
+  {
+   "id": "fanaty-torpedo-i-habarovskogo-ska-ustroili-draku-na-stadione",
+   "title": "Фанаты «Торпедо» и хабаровского СКА устроили драку на стадионе",
+   "link": "https://lenta.ru/news/2026/11/27/fanaty-torpedo-i-habarovskogo-ska-ustroili-draku-na-stadione/",
+   "category": "Спорт",
+   "date": "2026-11-27T18:17:00+00:00"
+  },
+  {
+   "id": "izvestnaya-televeduschaya-rasskazala-o-s-emkah-v-mertvetski-pyanom-vide",
+   "title": "Известная телеведущая рассказала о съемках в «мертвецки пьяном» виде",
+   "link": "https://lenta.ru/news/2026/11/27/izvestnaya-televeduschaya-rasskazala-o-s-emkah-v-mertvetski-pyanom-vide/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-27T18:15:00+00:00"
+  },
+  {
+   "id": "v-britanii-dali-sovet-pribaltike-iz-za-rossiyskoy-ugrozy",
+   "title": "В Британии дали совет Прибалтике из-за «российской угрозы»",
+   "link": "https://lenta.ru/news/2026/11/27/v-britanii-dali-sovet-pribaltike-iz-za-rossiyskoy-ugrozy/",
+   "category": "Интернет и СМИ",
+   "date": "2026-11-27T18:13:00+00:00"
+  },
+  {
+   "id": "nazvan-favorit-v-matche-16-go-tura-rpl-tsska-zenit",
+   "title": "Назван фаворит в матче 16-го тура РПЛ ЦСКА — «Зенит»",
+   "link": "https://lenta.ru/news/2026/11/27/nazvan-favorit-v-matche-16-go-tura-rpl-tsska-zenit/",
+   "category": "Спорт",
+   "date": "2026-11-27T18:06:00+00:00"
+  },
+  {
+   "id": "muzhchin-predupredili-o-posledstviyah-nizkogo-urovnya-testosterona",
+   "title": "Мужчин предупредили о последствиях низкого уровня тестостерона",
+   "link": "https://lenta.ru/news/2026/11/27/muzhchin-predupredili-o-posledstviyah-nizkogo-urovnya-testosterona/",
+   "category": "Забота о себе",
+   "date": "2026-11-27T18:03:00+00:00"
   }
  ]
 }
